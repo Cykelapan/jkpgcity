@@ -1,0 +1,498 @@
+[
+  {
+    "google_id": "ChIJXzq6j-ltWkYRs3lqyrXXVow",
+    "name": "Filmstaden Jönköping",
+    "address": "Västra Storgatan 17, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "http://www.filmstaden.se/biografer",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 8 562 600 00",
+    "coordinates": {
+      "longitude": 14.1611235,
+      "latitude": 57.7833388
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=10112507189092055475",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJBQH1H-htWkYRndXFCX82pKs",
+    "name": "Folkets Bio",
+    "address": "Svavelsticksgränd 3, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "http://www.folketsbiojonkoping.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 19 05 69",
+    "coordinates": {
+      "longitude": 14.1560325,
+      "latitude": 57.78552999999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12368070395918931357",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJ4Sq2MG1tWkYRbNwQ6D2cRW4",
+    "name": "Biograf Fokus",
+    "address": "Dag Hammarskjölds plats 1, 553 22 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1767831,
+      "latitude": 57.7801193
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=7945928907265465452",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJdfyjpONtWkYRO5KhYkLIdwY",
+    "name": "Fågelmuseum Stadsparken",
+    "address": "Humlevägen, 553 13 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "https://fagelmuseet.jonkoping.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 55 43",
+    "coordinates": {
+      "longitude": 14.1445649,
+      "latitude": 57.7814384
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=466061273904288315",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJQdIagxdtWkYRdsUqcAsTt9w",
+    "name": "Österängens Konsthall",
+    "address": "Hoppets Torg 4, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: 11:00 AM – 5:00 PM",
+      "Friday: 11:00 AM – 5:00 PM",
+      "Saturday: 11:00 AM – 3:00 PM",
+      "Sunday: 11:00 AM – 3:00 PM"
+    ],
+    "website": "http://www.osterangenskonsthall.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 70 867 21 20",
+    "coordinates": {
+      "longitude": 14.169806,
+      "latitude": 57.7822723
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=15904201548929615222",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJ6YPyZ5RtWkYRn1cXTylzeBE",
+    "name": "Jönköping County Museum",
+    "address": "Dag Hammarskjölds plats 2, 553 22 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 10:00 AM – 7:00 PM",
+      "Wednesday: 10:00 AM – 9:00 PM",
+      "Thursday: 10:00 AM – 7:00 PM",
+      "Friday: 10:00 AM – 7:00 PM",
+      "Saturday: 11:00 AM – 3:00 PM",
+      "Sunday: 11:00 AM – 3:00 PM"
+    ],
+    "website": "http://jonkopingslansmuseum.se/",
+    "description": "County museum with artwork, historical artifacts & areas for kids, plus workshops & a store.",
+    "contactPhoneNumber": "+46 36 30 18 00",
+    "coordinates": {
+      "longitude": 14.175911,
+      "latitude": 57.78014839999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=1258882717107836831",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJp3yn2ultWkYRkxQFJQlwJeg",
+    "name": "The Match Museum",
+    "address": "Tändsticksgränd 27, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 11:00 AM – 3:00 PM",
+      "Wednesday: 11:00 AM – 3:00 PM",
+      "Thursday: 11:00 AM – 3:00 PM",
+      "Friday: 11:00 AM – 3:00 PM",
+      "Saturday: 11:00 AM – 3:00 PM",
+      "Sunday: 11:00 AM – 3:00 PM"
+    ],
+    "website": "http://matchmuseum.jonkoping.se/",
+    "description": "19th-century factory charting the history of match-making, with a worker's house & shop.",
+    "contactPhoneNumber": "+46 36 10 55 43",
+    "coordinates": {
+      "longitude": 14.1596136,
+      "latitude": 57.78468269999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=16727899575515681939",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJh42dDuxtWkYRaC-VpLgHW3U",
+    "name": "match monument",
+    "address": "553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1615332,
+      "latitude": 57.7788286
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=8456361214934855528",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJqf_BLehtWkYRWrKsSORocAA",
+    "name": "Tändsticksområdet i Jönköping AB",
+    "address": "Tändsticksgränd 28, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: Closed",
+      "Saturday: 8:00 AM – 12:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "http://tandsticksomradet.com/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 95 66",
+    "coordinates": {
+      "longitude": 14.155722,
+      "latitude": 57.7854319
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=31640527072703066",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJhxDTelttWkYRzYebW_0B8Pw",
+    "name": "Bastion Carolus",
+    "address": "Unnamed Road, Hamngatan 7, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1678979,
+      "latitude": 57.780532
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=18226069879643670477",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJs4uqUuptWkYRsfOHkuuS3Do",
+    "name": "Brahe park",
+    "address": "Residensgatan, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://www.jonkoping.se/upplevagora/friluftslivochmotion/parker/braheparkenjonkoping.4.74fef9ab15548f0b800235a.html",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1648531,
+      "latitude": 57.7819196
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=4241426489549517745",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJFSdWLu5tWkYRGITcJ8Lsl4o",
+    "name": "The Church of Sofia",
+    "address": "Klostergatan, 553 17 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ],
+    "website": "http://www.svenskakyrkan.se/jonkoping",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 30 35 50",
+    "coordinates": {
+      "longitude": 14.1596533,
+      "latitude": 57.7819678
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=9986711017353937944",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJbUa-9-ptWkYR0xoJVfBrbR8",
+    "name": "The Red House Park",
+    "address": "Skolgatan, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "http://www.jonkoping.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 50 00",
+    "coordinates": {
+      "longitude": 14.166773,
+      "latitude": 57.7825158
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=2264584867600210643",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJ2dHhc_VtWkYR68OjB5ZLZYY",
+    "name": "Hoppets vision (staty)",
+    "address": "Östra Storgatan 6, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1699718,
+      "latitude": 57.78247520000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=9684229681475470315",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJWQ1P1wBtWkYRZQ_tUKBGGRY",
+    "name": "Barco Antiguo",
+    "address": "Järnvägsgatan 4, 553 15 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.16887,
+      "latitude": 57.78417819999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=1592381597618605925",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJgTaz7xZtWkYR5Be12DikBUk",
+    "name": "Escape House Jönköping",
+    "address": "Östra Storgatan 3, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 2:50 – 8:50 PM",
+      "Tuesday: 2:50 – 8:50 PM",
+      "Wednesday: 2:50 – 8:50 PM",
+      "Thursday: 2:50 – 8:50 PM",
+      "Friday: 2:50 – 10:20 PM",
+      "Saturday: 10:20 AM – 10:20 PM",
+      "Sunday: 11:50 AM – 8:50 PM"
+    ],
+    "website": "https://escapehouse.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 35 00",
+    "coordinates": {
+      "longitude": 14.1700652,
+      "latitude": 57.78276070000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5261792303713163236",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJgQ-xMottWkYRzaZEFI9ZxRU",
+    "name": "Dunkehallafallet",
+    "address": "Hallmansvägen, 554 48 Jönköping, Sweden",
+    "district": "Bymarken",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1412972,
+      "latitude": 57.7874335
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=1568758516263724749",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJYV-9B8ptWkYRN7nd2xX7FDg",
+    "name": "Krönikebrunnen",
+    "address": "Hovrättstorget 4, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "https://m.facebook.com/107876884405353/posts/198265942033113/",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1760946,
+      "latitude": 57.7816781
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=4041130836959803703",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJmy9zrJZtWkYRHEDDRznklXw",
+    "name": "UPPTECH, Jönköping Science Center",
+    "address": "Västra Holmgatan 34A, 553 23 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "website": "http://www.upptech.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 60 77",
+    "coordinates": {
+      "longitude": 14.1806728,
+      "latitude": 57.7760827
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=8977332366901198876",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJnUlwUpVtWkYRxQPrepUHf38",
+    "name": "Vikingaskeppet",
+    "address": "Jönköping, 553 23 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1801802,
+      "latitude": 57.7743771
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=9187070103452844997",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJF1XqggNtWkYR3pWCtIT66O8",
+    "name": "Psykiatrins Arbetsplatsmuseum",
+    "address": "553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.192333,
+      "latitude": 57.77051340000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17287342617532732894",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJlSJst-BtWkYRLZJfGLiqkhg",
+    "name": "SLINGAN ~ Natur- & KulturStig, Ryhov, Jönköping",
+    "address": "Regementsgatan, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "http://slinganrjl.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1984032,
+      "latitude": 57.7703277
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=1770665311169647149",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJrTZyVr1tWkYRrlaoSrFr6Mo",
+    "name": "Vätterstranden",
+    "address": "Norra Strandgatan 84, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1887053,
+      "latitude": 57.7821171
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=14621054599464244910",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJ_fjPDIVtWkYRTGAzU3_tkzI",
+    "name": "Naturreservatet Rocksjön",
+    "address": "Unnamed Road, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1813218,
+      "latitude": 57.77040379999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=3644517654585368652",
+    "interestType": "ENTERTAIMENT"
+  },
+  {
+    "google_id": "ChIJM_8R_A9tWkYRg69YzsymPf0",
+    "name": "Smedberg Produktion",
+    "address": "Husargatan, 554 53 Jönköping, Sweden",
+    "district": "Liljeholmen",
+    "openingHours": "Unknown",
+    "website": "http://www.kulturarvsverige.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 70 581 21 45",
+    "coordinates": {
+      "longitude": 14.2096926,
+      "latitude": 57.7790786
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=18247924663740575619",
+    "interestType": "ENTERTAIMENT"
+  }
+]

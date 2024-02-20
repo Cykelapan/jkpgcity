@@ -1,0 +1,1914 @@
+[
+  {
+    "google_id": "ChIJw0JtZultWkYRK_egDCG01S4",
+    "name": "ProfilHotels | Savoy",
+    "address": "Brunnsgatan 13-15, 553 17 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://ligula.se/profilhotels/hotel-savoy-centrala-jonkoping/",
+    "description": "Contemporary rooms & suites in an informal hotel offering a restaurant/bar & a sauna.",
+    "contactPhoneNumber": "+46 36 17 32 90",
+    "coordinates": {
+      "longitude": 14.1602457,
+      "latitude": 57.781366
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=3374801549822850859",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ0f5kLrBtWkYRmXKqc0kuui0",
+    "name": "Vox Hotel",
+    "address": "Lantmätargränd 2C, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://voxhotel.se/",
+    "description": "Stylish, modern lodging featuring lake views & free breakfast, plus a gym & a restaurant/bar.",
+    "contactPhoneNumber": "+46 36 770 00 00",
+    "coordinates": {
+      "longitude": 14.1741404,
+      "latitude": 57.78296899999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=3294996970382979737",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJVyD70ettWkYRawODuCIKTvg",
+    "name": "Aqua Dinner & Drinks",
+    "address": "Barnarpsgatan 24, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:30 AM – 2:30 PM, 5:00 – 10:00 PM",
+      "Tuesday: 11:30 AM – 2:30 PM, 5:00 – 10:00 PM",
+      "Wednesday: 11:30 AM – 2:30 PM, 5:00 – 10:00 PM",
+      "Thursday: 11:30 AM – 2:30 PM, 5:00 – 10:00 PM",
+      "Friday: 11:30 AM – 10:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ],
+    "website": "http://www.aquadinner.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 00 99",
+    "coordinates": {
+      "longitude": 14.1624094,
+      "latitude": 57.7816327
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17892249513830318955",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJOaqL6ultWkYRjxb_tlf0zVw",
+    "name": "O'Learys Jönköping",
+    "address": "Västra Storgatan 16, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 2:00 PM – 2:00 AM",
+      "Tuesday: 2:00 PM – 2:00 AM",
+      "Wednesday: 2:00 PM – 2:00 AM",
+      "Thursday: 2:00 PM – 2:00 AM",
+      "Friday: 2:00 PM – 3:00 AM",
+      "Saturday: 12:00 PM – 3:00 AM",
+      "Sunday: 12:00 PM – 2:00 AM"
+    ],
+    "website": "https://olearys.se/jonkoping/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 00 60",
+    "coordinates": {
+      "longitude": 14.161655,
+      "latitude": 57.783607
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=6687269679284557455",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ10auZZNtWkYReGcOER-wxU4",
+    "name": "Restaurang Spira",
+    "address": "Kulturgatan 3, 553 24 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:00 AM – 2:00 PM",
+      "Tuesday: 11:00 AM – 2:00 PM",
+      "Wednesday: 11:00 AM – 2:00 PM",
+      "Thursday: 11:00 AM – 2:00 PM",
+      "Friday: 11:00 AM – 2:00 PM",
+      "Saturday: Closed",
+      "Sunday: 10:00 AM – 2:00 PM"
+    ],
+    "website": "http://www.restaurangspira.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 30 54 27",
+    "coordinates": {
+      "longitude": 14.1716368,
+      "latitude": 57.77756340000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5676136552847009656",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ7aAjGeptWkYRxZz6yy5tsgA",
+    "name": "Restaurant Jensen's steakhouse Jönköping",
+    "address": "Västra Storgatan 12, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:30 AM – 9:00 PM",
+      "Tuesday: 11:30 AM – 9:00 PM",
+      "Wednesday: 11:30 AM – 9:00 PM",
+      "Thursday: 11:30 AM – 9:00 PM",
+      "Friday: 11:30 AM – 10:00 PM",
+      "Saturday: 11:30 AM – 10:00 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ],
+    "website": "http://www.jensens.com/sv/restauranger/jonkoping-2/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 34 83 48",
+    "coordinates": {
+      "longitude": 14.163306,
+      "latitude": 57.783441
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=50222593612618949",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJh2nMJeptWkYRBmPLNDOjFZs",
+    "name": "Nya Karlssons Salonger i Jönköping AB",
+    "address": "Västra Storgatan 9, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 71 21 60",
+    "coordinates": {
+      "longitude": 14.1628833,
+      "latitude": 57.783316
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=11175017490714157830",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJz-89wpVtWkYRY0K76Z7YxPw",
+    "name": "Pizzeria Prima",
+    "address": "Östra Storgatan 48, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "website": "http://www.primapizzeria.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 71 50 88",
+    "coordinates": {
+      "longitude": 14.1783648,
+      "latitude": 57.78165319999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=18213920970030924387",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJuSnn3OttWkYRjAc53eMZn_g",
+    "name": "Sushi Bar",
+    "address": "Barnarpsgatan 36, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ],
+    "website": "http://sushibarjonkoping.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 61 16",
+    "coordinates": {
+      "longitude": 14.161963,
+      "latitude": 57.78086500000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17915066309162895244",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJPWAmyvFtWkYReMVW6Vs2fKU",
+    "name": "Cicki MA MA PÅ Torpa AB",
+    "address": "Klostergatan 62, 553 35 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 9:00 PM",
+      "Saturday: 12:00 – 8:00 PM",
+      "Sunday: 12:00 – 7:00 PM"
+    ],
+    "website": "https://www.cickimama.com/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 16 00 61",
+    "coordinates": {
+      "longitude": 14.1524065,
+      "latitude": 57.77325879999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=11924465681754932600",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ2dDlmO5tWkYRxcHo6oBQ9lI",
+    "name": "Tandoori Palace",
+    "address": "Kungsgatan 3, 553 31 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:30 AM – 9:30 PM",
+      "Tuesday: 11:30 AM – 9:30 PM",
+      "Wednesday: 11:30 AM – 9:30 PM",
+      "Thursday: 11:30 AM – 9:30 PM",
+      "Friday: 11:30 AM – 10:30 PM",
+      "Saturday: 12:00 – 10:30 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ],
+    "website": "https://tandooripalace.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 16 53 03",
+    "coordinates": {
+      "longitude": 14.1585437,
+      "latitude": 57.778039
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5978054070008070597",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJHb5Ah-ltWkYRkfLOC4zdTKs",
+    "name": "Dal Baffo Piren",
+    "address": "Hamnpiren, 553 15 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "http://pirendalbaffo.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 16 84 06",
+    "coordinates": {
+      "longitude": 14.1691295,
+      "latitude": 57.78460810000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12343484272278958737",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJJRU8xettWkYRPsIa9sqxbJw",
+    "name": "HKV I Nässjö AB",
+    "address": "Barnarpsgatan 27, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 70 751 54 27",
+    "coordinates": {
+      "longitude": 14.1626248,
+      "latitude": 57.7812049
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=11271579452671967806",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJE0yXIeltWkYRQYfrB8zeZMY",
+    "name": "Indiska Köket - Restaurang/Lunch Jönköping",
+    "address": "Kapellgatan 15, 553 17 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:15 AM – 9:00 PM",
+      "Tuesday: 11:15 AM – 9:00 PM",
+      "Wednesday: 11:15 AM – 9:00 PM",
+      "Thursday: 11:15 AM – 9:00 PM",
+      "Friday: 11:15 AM – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ],
+    "website": "https://www.indiska-koket.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 30 12",
+    "coordinates": {
+      "longitude": 14.1569368,
+      "latitude": 57.78115030000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=14295796085068367681",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ04fDa-ltWkYRhSHSxpLDxwI",
+    "name": "pizzeria giannino",
+    "address": "Fabriksgatan 10, 553 18 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 3:00 AM",
+      "Saturday: 12:00 PM – 3:00 AM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "website": "https://virawo.me/pizzeria-giannino-444585-se",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 16 08 60",
+    "coordinates": {
+      "longitude": 14.1591999,
+      "latitude": 57.78108520000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=200343743609577861",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJUy0P7-5tWkYRLcjxafnQoEU",
+    "name": "Tortellini Pizza & Pasta House",
+    "address": "Klostergatan 29, 553 35 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ],
+    "website": "http://www.tortellini.nu/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 19 00 70",
+    "coordinates": {
+      "longitude": 14.1560662,
+      "latitude": 57.7779637
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5017239754533619757",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ2d4NZultWkYROWTvOW4D2DM",
+    "name": "La Gare by Sofiehof",
+    "address": "Brunnsgatan 13, 553 17 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 6:30 – 10:00 AM",
+      "Tuesday: 6:30 – 10:00 AM, 5:00 – 9:30 PM",
+      "Wednesday: 6:30 – 10:00 AM, 5:00 – 9:30 PM",
+      "Thursday: 6:30 – 10:00 AM, 5:00 – 9:30 PM",
+      "Friday: 6:30 – 10:00 AM, 5:00 – 9:30 PM",
+      "Saturday: 7:30 – 11:00 AM, 5:00 – 9:30 PM",
+      "Sunday: 7:30 – 11:00 AM"
+    ],
+    "website": "https://ligula.se/la-gare-by-sofiehof/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 30 03 90",
+    "coordinates": {
+      "longitude": 14.1600289,
+      "latitude": 57.78140740000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=3735739662857102393",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJf8FPVu5tWkYR0_Eo5G8pFqY",
+    "name": "Olgas Crêpes & Gelato",
+    "address": "Klostergatan 42, 553 35 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 12:00 – 7:00 PM",
+      "Wednesday: 12:00 – 7:00 PM",
+      "Thursday: 12:00 – 7:00 PM",
+      "Friday: 12:00 – 7:00 PM",
+      "Saturday: 11:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "https://www.facebook.com/pages/Olgas-Cr%C3%AApes-Gelato/682297335121845",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1549654,
+      "latitude": 57.7770202
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=11967798620329669075",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJpYQEfultWkYRhVp2tHV4hXU",
+    "name": "Brooklyn Burger City",
+    "address": "Trädgårdsgatan 23, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:30 AM – 2:30 PM, 4:30 – 10:00 PM",
+      "Tuesday: 11:30 AM – 2:30 PM, 4:30 – 10:00 PM",
+      "Wednesday: 11:30 AM – 2:30 PM, 4:30 – 10:00 PM",
+      "Thursday: 11:30 AM – 2:30 PM, 4:30 – 10:00 PM",
+      "Friday: 11:30 AM – 2:30 PM, 4:30 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "website": "http://brooklynburger.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 71 40 50",
+    "coordinates": {
+      "longitude": 14.16145379999999,
+      "latitude": 57.78188549999998
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=8468307121274247813",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJCXhWwuttWkYRSzHasd5Ib8I",
+    "name": "Liban Deli",
+    "address": "Barnarpsgatan 29, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 77 99",
+    "coordinates": {
+      "longitude": 14.1622222,
+      "latitude": 57.7808333
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=14010497087076708683",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJX0ntMdxtWkYRV7WmbixXxVA",
+    "name": "Wallentins Konditori",
+    "address": "Kortebovägen 5, 553 11 Jönköping, Sweden",
+    "district": "Bymarken",
+    "openingHours": [
+      "Monday: 6:30 AM – 6:00 PM",
+      "Tuesday: 6:30 AM – 6:00 PM",
+      "Wednesday: 6:30 AM – 6:00 PM",
+      "Thursday: 6:30 AM – 6:00 PM",
+      "Friday: 6:30 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 2:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "http://wallentinskonditori.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 29 90",
+    "coordinates": {
+      "longitude": 14.1488169,
+      "latitude": 57.7898552
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5820153941792830807",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJHb5Ah-ltWkYRCSYvTxuLd1A",
+    "name": "Amals Café AB",
+    "address": "A 6 Center, 553 05 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 9:00 AM – 6:00 PM",
+      "Tuesday: 9:00 AM – 6:00 PM",
+      "Wednesday: 9:00 AM – 6:00 PM",
+      "Thursday: 9:00 AM – 6:00 PM",
+      "Friday: 9:00 AM – 6:00 PM",
+      "Saturday: 11:00 AM – 4:00 PM",
+      "Sunday: 11:00 AM – 4:00 PM"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 71 28 90",
+    "coordinates": {
+      "longitude": 14.1618221,
+      "latitude": 57.78258169999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5798255994671670793",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ17QZH-htWkYRQx21uNIjB2w",
+    "name": "Cafe nyfiket",
+    "address": "Svavelsticksgränd 13, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:00 AM – 4:00 PM",
+      "Tuesday: 11:00 AM – 4:00 PM",
+      "Wednesday: Closed",
+      "Thursday: 11:00 AM – 4:00 PM",
+      "Friday: 11:00 AM – 4:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "website": "http://kulturhusetjonkoping.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 119 01 81",
+    "coordinates": {
+      "longitude": 14.1564499,
+      "latitude": 57.78547939999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=7784229868882173251",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ01IHOuptWkYRT3i2o7QBp3k",
+    "name": "Trä- & Möbelföretagen",
+    "address": "Skolgatan 4, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 30 32 00",
+    "coordinates": {
+      "longitude": 14.1636659,
+      "latitude": 57.78251789999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=8765977075052345423",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJWeftyfFtWkYRB_Qs7aKtm7s",
+    "name": "Lindstrom's Cafe",
+    "address": "Klostergatan 63, 553 35 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 7:00 AM – 6:00 PM",
+      "Tuesday: 7:00 AM – 6:00 PM",
+      "Wednesday: 7:00 AM – 6:00 PM",
+      "Thursday: 7:00 AM – 6:00 PM",
+      "Friday: 7:00 AM – 6:00 PM",
+      "Saturday: 8:00 AM – 3:00 PM",
+      "Sunday: 9:00 AM – 2:00 PM"
+    ],
+    "website": "http://www.malmborgskonditori.se/lindstroms-har-oppnat-konditoricafe/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 71 16 56",
+    "coordinates": {
+      "longitude": 14.152992,
+      "latitude": 57.77327500000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=13518589621758129159",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJnQiUk5VtWkYRp__HQcqyWPI",
+    "name": "Hantverksföreningen",
+    "address": "Östra Storgatan 39B, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 8:30 AM – 6:00 PM",
+      "Tuesday: 8:30 AM – 6:00 PM",
+      "Wednesday: 8:30 AM – 6:00 PM",
+      "Thursday: 8:30 AM – 6:00 PM",
+      "Friday: 8:30 AM – 6:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: 12:00 – 3:00 PM"
+    ],
+    "website": "http://www.j-hantverk.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 30 89 95",
+    "coordinates": {
+      "longitude": 14.1775057,
+      "latitude": 57.78226549999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17462904136885862311",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJA1A4mJVtWkYRGF_sbMOnIEw",
+    "name": "Malmborgs confectionery",
+    "address": "Östra Storgatan 31, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 7:30 AM – 6:00 PM",
+      "Tuesday: 7:30 AM – 6:00 PM",
+      "Wednesday: 7:30 AM – 6:00 PM",
+      "Thursday: 7:30 AM – 6:00 PM",
+      "Friday: 7:30 AM – 6:00 PM",
+      "Saturday: 9:00 AM – 4:00 PM",
+      "Sunday: 11:00 AM – 3:00 PM"
+    ],
+    "website": "http://www.malmborgskonditori.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 07 77",
+    "coordinates": {
+      "longitude": 14.1760483,
+      "latitude": 57.7820763
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5485568803925155608",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJp0wL-OltWkYREif1783HqPM",
+    "name": "Espresso House",
+    "address": "Järnvägsgatan 12, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 6:00 AM – 7:00 PM",
+      "Tuesday: 6:00 AM – 7:00 PM",
+      "Wednesday: 6:00 AM – 7:00 PM",
+      "Thursday: 6:00 AM – 7:00 PM",
+      "Friday: 6:00 AM – 7:00 PM",
+      "Saturday: 8:00 AM – 6:00 PM",
+      "Sunday: 8:00 AM – 6:00 PM"
+    ],
+    "website": "https://espressohouse.com/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 76 521 92 23",
+    "coordinates": {
+      "longitude": 14.1629827,
+      "latitude": 57.78431830000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17557502834611922706",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJtX7US-ptWkYRxQ1Js2ls5R4",
+    "name": "Bernard Confectionery",
+    "address": "Kyrkogatan 12, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 7:30 AM – 6:00 PM",
+      "Tuesday: 7:30 AM – 6:00 PM",
+      "Wednesday: 7:30 AM – 6:00 PM",
+      "Thursday: 7:30 AM – 6:00 PM",
+      "Friday: 7:30 AM – 6:00 PM",
+      "Saturday: 9:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "http://www.dittcafe.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 71 11 21",
+    "coordinates": {
+      "longitude": 14.1641464,
+      "latitude": 57.78215609999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=2226304792039853509",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ9VyWMuptWkYRnwVyIYThl2s",
+    "name": "Konditori Napoleon",
+    "address": "Barnarpsgatan 17, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 6:00 AM – 6:00 PM",
+      "Tuesday: 6:00 AM – 6:00 PM",
+      "Wednesday: 6:00 AM – 6:00 PM",
+      "Thursday: 6:00 AM – 6:00 PM",
+      "Friday: 6:00 AM – 6:00 PM",
+      "Saturday: 7:30 AM – 3:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "https://konditorinapoleon.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 25 35",
+    "coordinates": {
+      "longitude": 14.1630691,
+      "latitude": 57.78222230000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=7752913241154651551",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ44WTKDptWkYRgF34KIuKI4c",
+    "name": "Pique Nique Restaurant",
+    "address": "Klostergatan 15, 553 17 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 9:00 PM",
+      "Saturday: 11:00 AM – 10:00 PM",
+      "Sunday: 11:00 AM – 5:00 PM"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 70 498 10 99",
+    "coordinates": {
+      "longitude": 14.1576928,
+      "latitude": 57.78036179999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=9737779149597597056",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJDe6CRNxtWkYRZ-SnSzEJOqg",
+    "name": "Café Immanuel",
+    "address": "Oxtorgsgatan 15, 553 17 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 9:00 AM – 2:00 PM",
+      "Tuesday: 9:00 AM – 2:00 PM",
+      "Wednesday: 9:00 AM – 2:00 PM",
+      "Thursday: 9:00 AM – 2:00 PM",
+      "Friday: 9:00 AM – 1:00 PM",
+      "Saturday: 9:00 AM – 1:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "http://www.vaxtplats.com/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 17 33 48",
+    "coordinates": {
+      "longitude": 14.1581753,
+      "latitude": 57.7808687
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12122011454348452967",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJe8kg7-5tWkYRwZkM5oeUL6M",
+    "name": "Bageriet på Bryggan i Jönköping AB",
+    "address": "Klostergatan 29, 553 35 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 6:00 PM",
+      "Saturday: 9:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "https://bryggancafebistro.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 76 788 08 00",
+    "coordinates": {
+      "longitude": 14.1561313,
+      "latitude": 57.77796420000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=11758780463488735681",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ6wyOwShtWkYRuqhcb70JFvk",
+    "name": "FinduZz Catcafe",
+    "address": "Nygatan 15, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 11:00 AM – 5:30 PM",
+      "Thursday: 11:00 AM – 6:00 PM",
+      "Friday: 11:00 AM – 6:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: 10:00 AM – 6:00 PM"
+    ],
+    "website": "https://finduzzcatcafe.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 72 289 31 32",
+    "coordinates": {
+      "longitude": 14.1616982,
+      "latitude": 57.78186649999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17948544074153502906",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJda4nJS1tWkYRXl7hGwlszYU",
+    "name": "Friend's Coffee House",
+    "address": "Trädgårdsgatan 2, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 10:00 AM – 10:00 PM",
+      "Tuesday: 10:00 AM – 10:00 PM",
+      "Wednesday: 10:00 AM – 10:00 PM",
+      "Thursday: 10:00 AM – 10:00 PM",
+      "Friday: 10:00 AM – 1:00 AM",
+      "Saturday: 10:00 AM – 1:00 AM",
+      "Sunday: 10:00 AM – 10:00 PM"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 70 498 80 10",
+    "coordinates": {
+      "longitude": 14.1615514,
+      "latitude": 57.78308940000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=9641481163648360030",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJCznW4cNtWkYRNjiBuprn99I",
+    "name": "Blankdays AB",
+    "address": "Tändsticksgränd 20, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 11:00 AM – 4:00 PM",
+      "Thursday: 11:00 AM – 4:00 PM",
+      "Friday: 11:00 AM – 5:00 PM",
+      "Saturday: 11:00 AM – 2:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "https://www.blankdays.com/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 76 188 65 66",
+    "coordinates": {
+      "longitude": 14.1576719,
+      "latitude": 57.78481589999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=15201873718952409142",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJqf_BLehtWkYRdRCyUuQFOsQ",
+    "name": "Café Ångan",
+    "address": "Svavelsticksgränd 22, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1580811,
+      "latitude": 57.7848506
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=14139620458281177205",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJawe8cextWkYRRaozG4hL9Bg",
+    "name": "Café Dallucci",
+    "address": "Gjuterigatan 5, 553 18 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 7:30 AM – 4:00 PM",
+      "Tuesday: 7:30 AM – 4:00 PM",
+      "Wednesday: 7:30 AM – 4:00 PM",
+      "Thursday: 7:30 AM – 4:00 PM",
+      "Friday: 7:30 AM – 2:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 73 429 90 28",
+    "coordinates": {
+      "longitude": 14.1626205,
+      "latitude": 57.77855539999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=1798145199171676741",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJozsYieltWkYRBqiKYaUGLag",
+    "name": "MYway Express",
+    "address": "Västra Storgatan 16, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 7:00 AM – 10:00 PM",
+      "Tuesday: 7:00 AM – 10:00 PM",
+      "Wednesday: 7:00 AM – 10:00 PM",
+      "Thursday: 7:00 AM – 10:00 PM",
+      "Friday: 7:00 AM – 11:00 PM",
+      "Saturday: 10:00 AM – 10:00 PM",
+      "Sunday: 10:00 AM – 10:00 PM"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 30 22 15",
+    "coordinates": {
+      "longitude": 14.1622627,
+      "latitude": 57.7836758
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12118349479699720198",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJiSBRmf9tWkYR8dDKrNUkLLs",
+    "name": "Lolli Nonna Café",
+    "address": "Kyrkogatan 14, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 11:00 AM – 3:00 PM",
+      "Tuesday: 11:00 AM – 3:00 PM",
+      "Wednesday: 11:00 AM – 8:00 PM",
+      "Thursday: 11:00 AM – 8:00 PM",
+      "Friday: 11:00 AM – 8:00 PM",
+      "Saturday: 11:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1640609,
+      "latitude": 57.78196140000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=13487195484213399793",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJP250op5tWkYRq_95Ww5Y964",
+    "name": "Hasse på Sjökanten",
+    "address": "Rekrytvägen 5, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 7:00 AM – 8:00 PM",
+      "Tuesday: 7:00 AM – 8:00 PM",
+      "Wednesday: 7:00 AM – 8:00 PM",
+      "Thursday: 7:00 AM – 8:00 PM",
+      "Friday: 7:00 AM – 8:00 PM",
+      "Saturday: 3:00 – 6:00 PM",
+      "Sunday: 3:00 – 6:00 PM"
+    ],
+    "website": "https://www.hassepasjokanten.se/",
+    "description": "Colorful rooms in a casual hotel offering a restaurant, parking & a breakfast buffet.",
+    "contactPhoneNumber": "+46 36 777 73 77",
+    "coordinates": {
+      "longitude": 14.1969344,
+      "latitude": 57.77595090000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12607642500534501291",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJOUASspdtWkYRV2d0_0zQ83A",
+    "name": "Bada Bing City",
+    "address": "Östra Storgatan 82, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:30 AM – 9:00 PM",
+      "Tuesday: 11:30 AM – 9:00 PM",
+      "Wednesday: 11:30 AM – 9:00 PM",
+      "Thursday: 11:30 AM – 9:00 PM",
+      "Friday: 11:30 AM – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "website": "https://badabingburger.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 30 03 33",
+    "coordinates": {
+      "longitude": 14.1844678,
+      "latitude": 57.78103729999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=8139077980710528855",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJl8K7x5dtWkYRz5nMf8RpaSA",
+    "name": "Pizzeria Cigarren",
+    "address": "Östra Storgatan 84, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 11:00 AM – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "website": "https://pizzeriacigarren.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 16 60 25",
+    "coordinates": {
+      "longitude": 14.1847295,
+      "latitude": 57.7812992
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=2335514174446934479",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJPzHhJsBtWkYRk9Bjee0ZMk8",
+    "name": "Dal Baffo",
+    "address": "Östra Storgatan 73, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:00 AM – 10:00 PM",
+      "Tuesday: 11:00 AM – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 11:00 AM – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "website": "http://www.dalbaffo.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 16 84 07",
+    "coordinates": {
+      "longitude": 14.1854725,
+      "latitude": 57.78152079999998
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5706652185566367891",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJBx2OuKql6UMRASNMnkt0GcI",
+    "name": "La Locandiera",
+    "address": "Östra Storgatan 39, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 4:00 – 9:00 PM",
+      "Tuesday: 4:00 – 9:00 PM",
+      "Wednesday: 4:00 – 9:00 PM",
+      "Thursday: 4:00 – 9:00 PM",
+      "Friday: 11:30 AM – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "http://lalocandiera.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 19 03 02",
+    "coordinates": {
+      "longitude": 14.1775953,
+      "latitude": 57.78186540000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=13986337985902945025",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJA1A4mJVtWkYRd9y6UEe-Go0",
+    "name": "Rosegarden",
+    "address": "Östra Storgatan 33, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:30 AM – 2:30 PM, 5:30 – 9:00 PM",
+      "Tuesday: 11:30 AM – 2:30 PM, 5:30 – 9:00 PM",
+      "Wednesday: 11:30 AM – 2:30 PM, 5:30 – 9:00 PM",
+      "Thursday: 11:30 AM – 2:30 PM, 5:30 – 9:00 PM",
+      "Friday: 11:30 AM – 2:30 PM, 5:00 – 10:00 PM",
+      "Saturday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
+      "Sunday: 1:00 – 9:00 PM"
+    ],
+    "website": "https://rosegarden.se/locations/jkpggrand",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 860 28 89",
+    "coordinates": {
+      "longitude": 14.1764226,
+      "latitude": 57.7820778
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=10167648322248694903",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJw_uwH5VtWkYR2rsnDsAaJPA",
+    "name": "Pizzeria Bella Marie",
+    "address": "Södra Strandgatan 25D, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 11:00 AM – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 16 16 50",
+    "coordinates": {
+      "longitude": 14.1728348,
+      "latitude": 57.78107499999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17303985080437816282",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJifHEM5VtWkYRHW0mzf8gZlU",
+    "name": "Dirty Dick's Saloon",
+    "address": "Smedjegatan 9, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 70 850 06 68",
+    "coordinates": {
+      "longitude": 14.1712715,
+      "latitude": 57.7821154
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=6153642223878958365",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ4ycdf5htWkYR5w6Ju_b0Zlg",
+    "name": "Pizzabagarna",
+    "address": "Östra Storgatan 116A, 554 52 Jönköping, Sweden",
+    "district": "Liljeholmen",
+    "openingHours": [
+      "Monday: 4:00 – 9:00 PM",
+      "Tuesday: 4:00 – 9:00 PM",
+      "Wednesday: 4:00 – 9:00 PM",
+      "Thursday: 4:00 – 9:00 PM",
+      "Friday: 2:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "website": "https://dlivrr.com/web/page/store/1226513/pizzabagarna",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 24 20",
+    "coordinates": {
+      "longitude": 14.1935339,
+      "latitude": 57.78127569999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=6370048063507599079",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJB-hlvOptWkYRBliDpeeHXbQ",
+    "name": "Subway",
+    "address": "Östra Storgatan 1, 551 12 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 9:00 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 8:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: 11:00 AM – 5:00 PM"
+    ],
+    "website": "https://restaurants.subway.com/sv/sverige/jonkoping/ostra-storgatan-1?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=40065&utm_campaign=evergreen-2020&y_source=1_MTQ5MjU0NzQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+    "description": "Casual counter-serve chain for build-your-own sandwiches & salads, with health-conscious options.",
+    "contactPhoneNumber": "+46 36 16 99 36",
+    "coordinates": {
+      "longitude": 14.1698593,
+      "latitude": 57.78215480000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12996693528645163014",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJkZ3cB5htWkYRBYsJhAxnFnY",
+    "name": "Centralkonditoriet",
+    "address": "Östra Storgatan 85B, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 6:00 PM",
+      "Saturday: 9:00 AM – 6:00 PM",
+      "Sunday: 9:00 AM – 6:00 PM"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 71 26 19",
+    "coordinates": {
+      "longitude": 14.1886502,
+      "latitude": 57.781468
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=8509101849415617285",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJX2cFDJVtWkYRmL_m_dEJC2k",
+    "name": "Espresso House",
+    "address": "Östra Storgatan 32, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 7:30 AM – 8:00 PM",
+      "Tuesday: 7:30 AM – 8:00 PM",
+      "Wednesday: 7:30 AM – 8:00 PM",
+      "Thursday: 7:30 AM – 8:00 PM",
+      "Friday: 7:30 AM – 8:00 PM",
+      "Saturday: 9:00 AM – 6:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ],
+    "website": "https://espressohouse.com/",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1737306,
+      "latitude": 57.78213119999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=7569154396238823320",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJi_9wU5RtWkYRvCt4jiM9Ps0",
+    "name": "Kaffeteket",
+    "address": "Slottsgatan 2, 553 22 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 10:00 AM – 7:00 PM",
+      "Tuesday: 10:00 AM – 7:00 PM",
+      "Wednesday: 10:00 AM – 7:00 PM",
+      "Thursday: 10:00 AM – 7:00 PM",
+      "Friday: 10:00 AM – 7:00 PM",
+      "Saturday: 11:00 AM – 3:00 PM",
+      "Sunday: 11:00 AM – 3:00 PM"
+    ],
+    "website": "http://bibliotek.jonkoping.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 61 87",
+    "coordinates": {
+      "longitude": 14.1766039,
+      "latitude": 57.7800804
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=14789325449254677436",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJf84UCiptWkYRBBZYNyAe4vE",
+    "name": "Kålgården's Oystermushroom farm and Café",
+    "address": "Västra Holmgatan, 553 23 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 12:00 – 2:00 PM",
+      "Thursday: 12:00 – 2:00 PM",
+      "Friday: 11:00 AM – 4:30 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "website": "http://www.jonkopingsodlingar.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 70 589 95 16",
+    "coordinates": {
+      "longitude": 14.183103,
+      "latitude": 57.7751106
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17429526631593547268",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ11AubJVtWkYRWiTK4_sTh8E",
+    "name": "STUK - Cafe Jönköping",
+    "address": "Lantmätargränd 3, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 8:00 AM – 8:30 PM",
+      "Tuesday: 8:00 AM – 8:30 PM",
+      "Wednesday: 8:00 AM – 8:30 PM",
+      "Thursday: 8:00 AM – 8:30 PM",
+      "Friday: 8:00 AM – 8:30 PM",
+      "Saturday: 9:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "https://www.stukjonkoping.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 05 55",
+    "coordinates": {
+      "longitude": 14.1742621,
+      "latitude": 57.7825508
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=13945136743755424858",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJHbkSb2xtWkYRrad1e47liuw",
+    "name": "Heddagretas Café",
+    "address": "Smedjegatan 26, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 10:00 AM – 6:00 PM",
+      "Wednesday: 10:00 AM – 6:00 PM",
+      "Thursday: 10:00 AM – 6:00 PM",
+      "Friday: 10:00 AM – 6:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1731026,
+      "latitude": 57.78177840000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17044688139856488365",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJhRKHBCxtWkYRlCGBhIeOy4s",
+    "name": "Oas",
+    "address": "Borgmästargränd 5, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1723779,
+      "latitude": 57.78159119999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=10073301704239030676",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ__9jI5VtWkYRPnfPQA-tWt4",
+    "name": "Kiosken",
+    "address": "Borgmästargränd 5, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1723313,
+      "latitude": 57.7815572
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=16022308905347413822",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJY7vGvu5tWkYRaBxYU1tkym0",
+    "name": "Rio Café och Restaurang",
+    "address": "Gjuterigatan 3C, 553 18 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 8:00 AM – 4:00 PM",
+      "Tuesday: 8:00 AM – 4:00 PM",
+      "Wednesday: 8:00 AM – 4:00 PM",
+      "Thursday: 8:00 AM – 4:00 PM",
+      "Friday: 8:00 AM – 4:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1641619,
+      "latitude": 57.7788462
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=7911246038832782440",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJrb6Mf4BtWkYRFW2R9TqSfX4",
+    "name": "First Hotel Jönköping",
+    "address": "Ryhovsgatan 3-5, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://www.firsthotels.se/hotell/sverige/jonkoping/first-hotel-jonkoping/",
+    "description": "Unfussy lodging offering 13 meeting rooms, a restaurant & a sauna, plus free breakfast & Wi-Fi.",
+    "contactPhoneNumber": "+46 36 18 36 00",
+    "coordinates": {
+      "longitude": 14.19004,
+      "latitude": 57.76135710000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=9114602002793458965",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJQ_4ikYZtWkYRroATO44tM8c",
+    "name": "Restaurang Raggmunken",
+    "address": "Bangårdsgatan 23, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 6:00 AM – 3:00 PM",
+      "Tuesday: 6:00 AM – 3:00 PM",
+      "Wednesday: 6:00 AM – 3:00 PM",
+      "Thursday: 6:00 AM – 3:00 PM",
+      "Friday: 6:00 AM – 3:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "website": "http://raggmunken.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 90 70",
+    "coordinates": {
+      "longitude": 14.1858778,
+      "latitude": 57.7651751
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=14353866526259642542",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJUU0PMnZtWkYR2jGPazoikrE",
+    "name": "IKEA",
+    "address": "Kompanigatan 6, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 10:00 AM – 7:00 PM",
+      "Tuesday: 10:00 AM – 7:00 PM",
+      "Wednesday: 10:00 AM – 7:00 PM",
+      "Thursday: 10:00 AM – 7:00 PM",
+      "Friday: 10:00 AM – 7:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: 11:00 AM – 6:00 PM"
+    ],
+    "website": "https://www.ikea.com/ext/local-store/se/sv/jonkoping/om-varuhuset/",
+    "description": "Chain store restaurant featuring Swedish-inspired food, including classic meatball & salmon dishes.",
+    "contactPhoneNumber": "+46 77 570 05 00",
+    "coordinates": {
+      "longitude": 14.2034624,
+      "latitude": 57.772034
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12795327125620994522",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJbe8DU5xtWkYRRTYX7G8Z1QI",
+    "name": "McDonald's",
+    "address": "Sjukhusgatan 6, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "http://www.mcdonalds.se/",
+    "description": "Classic, long-running fast-food chain known for its burgers, fries & shakes.",
+    "contactPhoneNumber": "+46 36 30 26 00",
+    "coordinates": {
+      "longitude": 14.1985171,
+      "latitude": 57.7729012
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=204097326608234053",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJM7M3WZxtWkYRc6dzdvq80rI",
+    "name": "ChopChop Asian Express",
+    "address": "Sjukhusgatan 12, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 10:00 AM – 9:00 PM",
+      "Tuesday: 10:00 AM – 9:00 PM",
+      "Wednesday: 10:00 AM – 9:00 PM",
+      "Thursday: 10:00 AM – 9:00 PM",
+      "Friday: 10:00 AM – 10:00 PM",
+      "Saturday: 10:00 AM – 10:00 PM",
+      "Sunday: 11:00 AM – 10:00 PM"
+    ],
+    "website": "http://www.chopchop.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 291 66 93",
+    "coordinates": {
+      "longitude": 14.1967097,
+      "latitude": 57.7725158
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12885569267775547251",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJDXIyVIJtWkYREoLhhR5JtI8",
+    "name": "Restaurang Matilda",
+    "address": "Sjukhusgatan, 551 85 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 7:30 AM – 1:30 PM",
+      "Tuesday: 7:30 AM – 1:30 PM",
+      "Wednesday: 7:30 AM – 1:30 PM",
+      "Thursday: 7:30 AM – 1:30 PM",
+      "Friday: 7:30 AM – 1:30 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "website": "http://www.rjl.se/Folkhalsa-och-vard/sa-kontaktar-du-varden/besok-pa-vara-sjukhus/lanssjukhuset-ryhov/Restaurang-Matilda",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 32 27 27",
+    "coordinates": {
+      "longitude": 14.1949644,
+      "latitude": 57.7666152
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=10354981838675608082",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJUf61_HVtWkYRcvaokYHjIvk",
+    "name": "Chili & Wok",
+    "address": "Jönköping, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:00 AM – 8:00 PM",
+      "Tuesday: 11:00 AM – 8:00 PM",
+      "Wednesday: 11:00 AM – 8:00 PM",
+      "Thursday: 11:00 AM – 8:00 PM",
+      "Friday: 11:00 AM – 8:00 PM",
+      "Saturday: 11:00 AM – 6:00 PM",
+      "Sunday: 11:00 AM – 5:00 PM"
+    ],
+    "website": "http://www.chili-wok.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 07 21",
+    "coordinates": {
+      "longitude": 14.2053453,
+      "latitude": 57.77472299999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17952161210286274162",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJQ5BCvfltWkYRgdmesJILoPY",
+    "name": "Stilsäkert",
+    "address": "M2 center, Ryhovsgatan 3, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 10 330 38 99",
+    "coordinates": {
+      "longitude": 14.1893552,
+      "latitude": 57.76029189999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17771216854260308353",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJB7D3ZKBtWkYR4abq_pJhpKo",
+    "name": "Sjön",
+    "address": "Östra Storgatan 173, 554 52 Jönköping, Sweden",
+    "district": "Liljeholmen",
+    "openingHours": [
+      "Monday: 11:30 AM – 2:00 PM",
+      "Tuesday: 11:30 AM – 2:00 PM, 5:00 – 11:00 PM",
+      "Wednesday: 11:30 AM – 2:00 PM, 5:00 – 11:00 PM",
+      "Thursday: 11:30 AM – 2:00 PM, 5:00 – 11:00 PM",
+      "Friday: 11:30 AM – 2:00 PM, 5:00 – 11:00 PM",
+      "Saturday: 12:00 – 3:00 PM, 5:00 – 11:00 PM",
+      "Sunday: Closed"
+    ],
+    "website": "http://sjon.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 332 05 50",
+    "coordinates": {
+      "longitude": 14.2063714,
+      "latitude": 57.7823972
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12296060166598207201",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJp3uzyIhtWkYR8bNVciTDSb0",
+    "name": "Restaurang Johans Bar",
+    "address": "Porfyrvägen 2, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 8:00 – 10:00 AM, 11:00 AM – 3:00 PM",
+      "Tuesday: 8:00 – 10:00 AM, 11:00 AM – 3:00 PM",
+      "Wednesday: 8:00 – 10:00 AM, 11:00 AM – 3:00 PM",
+      "Thursday: 8:00 – 10:00 AM, 11:00 AM – 3:00 PM",
+      "Friday: 8:00 – 10:00 AM, 11:00 AM – 3:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "website": "http://www.johansbar.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 13 31",
+    "coordinates": {
+      "longitude": 14.1763984,
+      "latitude": 57.76566800000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=13639647507772716017",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJLdMPcAttWkYRE2N67j_QQZM",
+    "name": "Pizzabutiken Shalom",
+    "address": "Hermansvägen 142, 554 53 Jönköping, Sweden",
+    "district": "Liljeholmen",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "website": "https://pizzabutikshalom.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 16 34 70",
+    "coordinates": {
+      "longitude": 14.2154595,
+      "latitude": 57.78126269999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=10610991170064114451",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJy6lSr3JtWkYRFXS81RD96_U",
+    "name": "Ekhagens Pizzeria",
+    "address": "Ekhagsringen 2, 554 56 Jönköping, Sweden",
+    "district": "Ekhagen",
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "website": "http://www.pizzeria.ekhagen.net/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 17 63 60",
+    "coordinates": {
+      "longitude": 14.223052,
+      "latitude": 57.777407
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17720535407566550037",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ__2kMJJtWkYRknuIY7-xUSQ",
+    "name": "Restaurang Klubbhusgatan 13",
+    "address": "Klubbhusgatan 13, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 11:00 AM – 2:00 PM",
+      "Tuesday: 11:00 AM – 2:00 PM",
+      "Wednesday: 11:00 AM – 2:00 PM",
+      "Thursday: 11:00 AM – 2:00 PM",
+      "Friday: 11:00 AM – 2:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "website": "http://kg13.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 16 00 90",
+    "coordinates": {
+      "longitude": 14.1737432,
+      "latitude": 57.7742385
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=2617068294045727634",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ8-SF7oBtWkYRRJ1v80Hr-TE",
+    "name": "Circle K Jönköping Eurostop",
+    "address": "Ryhovsgatan 3, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 6:00 AM – 10:00 PM",
+      "Tuesday: 6:00 AM – 10:00 PM",
+      "Wednesday: 6:00 AM – 10:00 PM",
+      "Thursday: 6:00 AM – 10:00 PM",
+      "Friday: 6:00 AM – 10:00 PM",
+      "Saturday: 7:00 AM – 10:00 PM",
+      "Sunday: 7:00 AM – 10:00 PM"
+    ],
+    "website": "https://www.circlek.se/station/circle-k-jonkoping-eurostop?utm_source=google&utm_medium=local&utm_campaign=google-local",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 18 36 30",
+    "coordinates": {
+      "longitude": 14.1906795,
+      "latitude": 57.7605179
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=3601168045549002052",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJr9eVFohtWkYRSs_eu01rY6I",
+    "name": "Subway",
+    "address": "Solåsvägen 8, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 8:00 AM – 9:00 PM",
+      "Tuesday: 8:00 AM – 9:00 PM",
+      "Wednesday: 8:00 AM – 9:00 PM",
+      "Thursday: 8:00 AM – 9:00 PM",
+      "Friday: 8:00 AM – 9:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: 11:00 AM – 6:00 PM"
+    ],
+    "website": "https://restaurants.subway.com/sv/sverige/jonkoping/solasvagen-8?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=56822&utm_campaign=evergreen-2020&y_source=1_MTQ5MjczODItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+    "description": "Casual counter-serve chain for build-your-own sandwiches & salads, with health-conscious options.",
+    "contactPhoneNumber": "+46 36 71 06 93",
+    "coordinates": {
+      "longitude": 14.1759769,
+      "latitude": 57.7614442
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=11701314238447275850",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ74La6IZtWkYR9kZdm-OpYbI",
+    "name": "Biltema Jönköping",
+    "address": "Solåsvägen 26, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 7:00 AM – 8:00 PM",
+      "Tuesday: 7:00 AM – 8:00 PM",
+      "Wednesday: 7:00 AM – 8:00 PM",
+      "Thursday: 7:00 AM – 8:00 PM",
+      "Friday: 7:00 AM – 8:00 PM",
+      "Saturday: 9:00 AM – 6:00 PM",
+      "Sunday: 9:00 AM – 6:00 PM"
+    ],
+    "website": "https://www.biltema.se/varuhus-och-oppettider/jonkoping/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 77 520 00 00",
+    "coordinates": {
+      "longitude": 14.1862983,
+      "latitude": 57.76296079999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12853741606521358070",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ39TfxoZtWkYRkmsGM6HYvbs",
+    "name": "Biltema Café",
+    "address": "Solåsvägen 26, 553 03 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 8:00 AM – 7:00 PM",
+      "Tuesday: 8:00 AM – 7:00 PM",
+      "Wednesday: 8:00 AM – 7:00 PM",
+      "Thursday: 8:00 AM – 7:00 PM",
+      "Friday: 8:00 AM – 7:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ],
+    "website": "https://www.biltema.se/biltema-cafe/",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1859944,
+      "latitude": 57.76325130000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=13528207042548231058",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJU25kPFttWkYR_1gKnntXVIc",
+    "name": "IKEA Kafé",
+    "address": "553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 10:00 AM – 8:00 PM",
+      "Tuesday: 10:00 AM – 8:00 PM",
+      "Wednesday: 10:00 AM – 8:00 PM",
+      "Thursday: 10:00 AM – 8:00 PM",
+      "Friday: 10:00 AM – 8:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: 10:00 AM – 6:00 PM"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.2035171,
+      "latitude": 57.7715106
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=9751515281608038655",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJnRSIxT1tWkYRhO1j_Au5DmM",
+    "name": "Välkommen in",
+    "address": "Sjukhusgatan 6, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 6:00 AM – 12:00 AM",
+      "Tuesday: 6:00 AM – 12:00 AM",
+      "Wednesday: 6:00 AM – 12:00 AM",
+      "Thursday: 6:00 AM – 12:00 AM",
+      "Friday: 6:00 AM – 12:00 AM",
+      "Saturday: 6:00 AM – 12:00 AM",
+      "Sunday: 6:00 AM – 12:00 AM"
+    ],
+    "website": "http://www.valkommenin.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 12 29 50",
+    "coordinates": {
+      "longitude": 14.197853,
+      "latitude": 57.77262199999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=7137845920559000964",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ80Gal_NtWkYRik-SXiWvoWo",
+    "name": "Café Nero",
+    "address": "Bataljonsgatan 5, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.2060478,
+      "latitude": 57.77231959999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=7683615014306074506",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJSQjcykRtWkYRNgQKnDqIs3Q",
+    "name": "Crêpe L'u",
+    "address": "Kompanigatan 36, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 10:00 AM – 8:00 PM",
+      "Tuesday: 10:00 AM – 8:00 PM",
+      "Wednesday: 10:00 AM – 8:00 PM",
+      "Thursday: 10:00 AM – 8:00 PM",
+      "Friday: 10:00 AM – 8:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: 11:00 AM – 5:00 PM"
+    ],
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.2054536,
+      "latitude": 57.7730644
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=8409214714538230838",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJwdLRXHZtWkYRhDtfUkXWghU",
+    "name": "Waynes Coffee",
+    "address": "Kompanigatan 16, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 10:00 AM – 8:00 PM",
+      "Tuesday: 10:00 AM – 8:00 PM",
+      "Wednesday: 10:00 AM – 8:00 PM",
+      "Thursday: 10:00 AM – 8:00 PM",
+      "Friday: 10:00 AM – 8:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: 11:00 AM – 5:00 PM"
+    ],
+    "website": "https://www.waynescoffee.se/cafe/waynes-jonkoping-a6/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 73 539 28 17",
+    "coordinates": {
+      "longitude": 14.2055767,
+      "latitude": 57.7731623
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=1550036814991932292",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJC1x3851tWkYRgi-H8LAg4fc",
+    "name": "Espresso House",
+    "address": "Kompanigatan 3, 550 11 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 10:00 AM – 8:00 PM",
+      "Tuesday: 10:00 AM – 8:00 PM",
+      "Wednesday: 10:00 AM – 8:00 PM",
+      "Thursday: 10:00 AM – 8:00 PM",
+      "Friday: 10:00 AM – 8:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: 11:00 AM – 5:00 PM"
+    ],
+    "website": "https://espressohouse.com/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 76 521 92 02",
+    "coordinates": {
+      "longitude": 14.2032513,
+      "latitude": 57.7748476
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17861593541449822082",
+    "interestType": "RESTURANTS"
+  },
+  {
+    "google_id": "ChIJ-13A1nhtWkYRvkfaKeJWSlI",
+    "name": "Rosa Villan",
+    "address": "Östra Storgatan 175, 554 52 Jönköping, Sweden",
+    "district": "Liljeholmen",
+    "openingHours": "Unknown",
+    "website": "http://www.rosavillan.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 76 593 17 10",
+    "coordinates": {
+      "longitude": 14.2072057,
+      "latitude": 57.78247269999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5929647388751447998",
+    "interestType": "RESTURANTS"
+  }
+]
