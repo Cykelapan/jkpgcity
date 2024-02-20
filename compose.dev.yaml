@@ -1,0 +1,15 @@
+services:
+  db:
+    env_file:
+      - .env
+    image: mongo
+    restart: always
+    container_name: ${MONGO_CONTAINER_NAME}
+    environment:
+      - MONGO_HOST=${MONGO_HOST}
+    ports:
+      - "5551:${MONGO_PORT}"
+    volumes:
+      - mongo_data:/data/db
+volumes:
+  mongo_data:
