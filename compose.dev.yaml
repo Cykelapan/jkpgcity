@@ -11,5 +11,7 @@ services:
       - "5551:${MONGO_PORT}"
     volumes:
       - mongo_data:/data/db
+
 volumes:
   mongo_data:
+    name: mongo_data_dev

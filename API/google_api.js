@@ -15,7 +15,7 @@ async function getPlacesAroundPoint(latitude, longitude, radius, categories) {
     url.searchParams.set('radius', radius);
     url.searchParams.set('key', API_KEY_GOOGLE);
     url.searchParams.set('type', categories);
-    url.searchParams.set('max_results', '60');
+    url.searchParams.set('max_results', await CALL.getMaxSearch(categories));
 
     //what happens if you get multiple pages?
     try {
@@ -24,12 +24,41 @@ async function getPlacesAroundPoint(latitude, longitude, radius, categories) {
         if (response.status !== 200) {
             throw new Error(`API request failed with status ${response.status}`);
         }
-
-        return await response.data;
+        return await response.data.results;
     } catch (error) {
         console.error(`Error fetching data: ${error.message}`);
         return [];
     }
+}
+async function getPlacesAllAroundPoint(latitude, longitude, radius, categories) {
+    const url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
+    url.searchParams.set('location', `${latitude},${longitude}`);
+    url.searchParams.set('radius', radius);
+    url.searchParams.set('key', API_KEY_GOOGLE);
+    url.searchParams.set('type', categories); // Set desired category filters
+    url.searchParams.set('max_results', '200');
+
+    const results = [];
+    let nextPageToken = '';
+
+    do {
+        url.searchParams.set('pagetoken', nextPageToken); // Add pagetoken for subsequent requests
+
+        try {
+            const response = await axios.get(url);
+
+            if (response.status !== 200) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+            results.push(...response.data);
+            nextPageToken = response.data.next_page_token;
+        } catch (error) {
+            console.error(`Error fetching data: ${error.message}`);
+            break; // Exit the loop on errors
+        }
+    } while (nextPageToken);
+    console.log(results);
+    return await results;
 }
 
 async function getPlaceDetails(placeId) {
@@ -51,25 +80,26 @@ async function getPlaceDetails(placeId) {
     }
 }
 
-async function getSublocality(addressComponents) {
+async function getSublocality(addressComponents, PLACENAME) {
     // Find the sublocality component using Lodash's find method
-    const sublocalityComponent = _.find(addressComponents, (component) =>
+    console.log(addressComponents);
+    const sublocalityComponent = await _.find(addressComponents, (component) =>
         component.types.includes('sublocality') || component.types.includes('sublocality_level_1')
     );
 
-    return sublocalityComponent ? sublocalityComponent.long_name : 'Unknown';
+    return sublocalityComponent ? sublocalityComponent.long_name : PLACENAME;
 }
 
-async function processData(placesAroundPin, INTEREST) {
+async function processData(placesAroundPin, INTEREST, PLACENAME) {
     const processData = [];
-    for (const place of placesAroundPin.results) {
+    for (const place of placesAroundPin) {
         const details = await getPlaceDetails(place.place_id);
         if (details) {
             const dataObject = {
                 google_id: place.place_id,
                 name: details.result.name,
                 address: details.result.formatted_address,
-                district: await getSublocality(details.result.address_components),
+                district: await getSublocality(details.result.address_components, PLACENAME),
                 openingHours: details.result.opening_hours ? details.result.opening_hours.weekday_text : 'Unknown',
                 website: details.result.website || 'None',
                 description: details.result.editorial_summary ? details.result.editorial_summary.overview : 'No description available',
@@ -79,7 +109,7 @@ async function processData(placesAroundPin, INTEREST) {
                     latitude: details.result.geometry.location.lat,
                 },
                 linkGoogleMaps: details.result.url,
-                interestType: INTEREST,
+                interestType: [INTEREST],
             }
             processData.push(dataObject);
         }
@@ -117,10 +147,13 @@ async function updateDataMerge(oldData, newData) {
             const oldIndex = _.findIndex(oldData, (item) => _.isEqual(item.google_id, newObj.google_id));
 
             if (oldObj) {
-                console.log('UPDATE OLD DATA WITH NEW');
-                oldData[oldIndex] = newObj;
+                //uppdaterar intrestype så ett object kan ha fler instrestype
+                const newInterest = newObj.interestType[0];
+                if (!oldObj.interestType.includes(newInterest)) {
+                    oldData[oldIndex].interestType.push(newInterest);
+                };
             } else {
-                console.log('ADD NEW DATA TO OLD');
+                //lägger till nya obj i listan
                 oldData.push(newObj);
             }
         });
@@ -137,27 +170,36 @@ function hasDataValue(data) {
         Object.keys(data).length > 0;
 }
 
+async function updateData(placesAroundPin, interestType, placeName) {
+    const pathFile = './data/JSON/api_google_allData.json';
+    const oldData = await readFileData(pathFile);
+    const newData = await processData(placesAroundPin, interestType, placeName);
+    if (hasDataValue(oldData)) {
+        const updateData = await updateDataMerge(oldData, newData);
+        writeDataToFile(pathFile, updateData);
+    } else {
+        writeDataToFile(pathFile, newData);
+    }
+
+}
+
 
 async function loadGoogleAPI() {
     for (pin of CALL.PINS) {
         for (request of pin.request) {
-            const pathFile = await CALL.getFileName(request.interestType);
-            const oldData = await readFileData(pathFile);
             const placesAroundPin = await getPlacesAroundPoint(pin.latitude, pin.longitude, pin.radius, request.categories);
-            const newData = await processData(placesAroundPin, request.interestType);
-            if (hasDataValue(oldData)) {
-                const updateData = await updateDataMerge(oldData, newData);
-                writeDataToFile(pathFile, updateData);
-            } else {
-                writeDataToFile(pathFile, newData);
-            }
+            await updateData(placesAroundPin, request.interestType, pin.name);
+
 
         }
     }
 }
 
 loadGoogleAPI();
-
+// rows last time 7102 and then -> 8916
+//DENNA SKA BARA KÖRAS OM DET INTE FINNS NÅGON JSON FIL!!
+// TAR 1000år att ladda..
+//UPDATERA SEN BARA ENSKILDA OBJECT MEN VAD SOM BEHÖVS INTE ALLT!!!!
 
 
 /*
@@ -217,6 +259,12 @@ loadGoogleAPI();
 }
 test();
 
-
+why can i loop throug pages? if (pin.name === CALL.PLACENAME.VÄSTER && request.categories === 'store' || pin.name === CALL.PLACENAME.ÖSTER && request.categories === 'store' || pin.name === CALL.PLACENAME.ASECS && request.categories === 'store') {
+                const placesAroundPin = await getPlacesAllAroundPoint(pin.latitude, pin.longitude, pin.radius, request.categories);
+                await updateData(placesAroundPin, request.interestType, pin.name);
+            } else {
+                const placesAroundPin = await getPlacesAroundPoint(pin.latitude, pin.longitude, pin.radius, request.categories);
+                await updateData(placesAroundPin, request.interestType, pin.name);
+            }
   
    */

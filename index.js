@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 const dotenv = require('dotenv').config();
 if (dotenv.error) {
     console.error('Error loading .env file:', dotenv.error);
@@ -21,9 +19,8 @@ app.get('/', async (req, res) => {
 })
 
 const setupServer = async () => {
-    db = new DB();
+    db = await new DB();
     await db.entryData();
     app.listen(SERVER_PORT, () => { console.log(`Server runing on ${SERVER_PORT}`) });
 }
 setupServer()
->>>>>>> Stashed changes

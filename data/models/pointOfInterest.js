@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
-const i = require('../../API/api_pins_google');
+const i = require('./../../API/api_pins_google');
 
-
+//TODO: REMBER DUPLETS!!!! hotels has resturangs as well as living, 
 const itemPointOfInterest = mongoose.Schema({
     google_id: {
         type: String,
-        unique: true,
-        required: true
     },
 
     name: String,
@@ -24,9 +22,9 @@ const itemPointOfInterest = mongoose.Schema({
     linkGoogleMaps: String,
 
     interestType: {
-        type: String,
+        type: [String],
         required: true,
-        enum: [i.INTEREST.STORES, i.INTEREST.WELLNESS, i.INTEREST.RESTAURANTS, i.INTEREST.HOTELS, i.INTEREST.ENTERTAIMENT]
+        enum: [i.INTEREST.STORES, i.INTEREST.WELLNESS, i.INTEREST.RESTURANTS, i.INTEREST.HOTELS, i.INTEREST.ENTERTAIMENT]
     },
 
     //rating should be like or dislike, and the number of like and dislike it have

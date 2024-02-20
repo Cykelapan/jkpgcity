@@ -1,11 +1,11 @@
 const mongoose = require(`mongoose`);
 const { MONGO_PORT, MONGO_CONTAINER_NAME, MONGO_URI } = process.env;
 const PointOfInterest = require('./models/pointOfInterest');
+const fs = require('fs');
 const Users = require('./models/user');
 const Comments = require('./models/comments');
-const PointOfInterest = require('./models/pointOfInterest');
-const filePaths = ['./JSON/api_google_entertaiment.json', './JSON/api_google_hotels.json', './JSON/api_google_resturants.json', './JSON/api_google_stores.json', './JSON/api_google_wellness.json'];
-
+const filesdasdasdadPath = ['./data/JSON/api_google_stores.json', './data/JSON/api_google_wellness.json', './data/JSON/api_google_resturants.json', './data/JSON/api_google_entertaiment.json', './data/JSON/api_google_hotels.json'];
+const filePathData = './data/JSON/api_google_allData.json';
 //need to know if it is better to make one schema with all the diffrent types and querie it or use diffrent schemas?
 class DB {
     constructor() {
@@ -34,19 +34,17 @@ class DB {
         }
     }
     //******************** GET DATA ******************************* */
-    async readJsonFiles(filePaths) {
-        const data = [];
-        for (const filePath of filePaths) {
-            try {
-                const fileData = await fs.promises.readFile(filePath, 'utf-8');
-                const parsedData = JSON.parse(fileData);
-                data.push(...parsedData); // Merge array elements
-            } catch (error) {
-                console.error(`Error reading file ${filePath}:`, error);
-            }
+
+    async readJsonFile(path) {
+
+        try {
+            const fileData = await fs.promises.readFile(path, 'utf-8');
+            return await JSON.parse(fileData);
+        } catch (error) {
+            console.error(`Error reading file ${path}:`, error);
         }
-        return data;
     }
+
     async insertPOIs(data) {
         try {
             const insertedPOIs = await PointOfInterest.insertMany(data);
@@ -67,7 +65,8 @@ class DB {
             console.log(count)
 
         } else {
-            const jsonData = await this.readJsonFiles(filePaths);
+            const jsonData = await this.readJsonFile(filePathData);
+            console.log(jsonData);
             await this.insertPOIs(jsonData);
         }
 

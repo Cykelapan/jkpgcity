@@ -8,6 +8,15 @@ const INTEREST = {
     ENTERTAIMENT: 'ENTERTAIMENT'
 }
 
+const PLACENAME = {
+    VÄSTER: 'Väster',
+    ÖSTER: 'Öster',
+    SOLÅSEN: 'Solåsen',
+    SÖDER: 'Söder',
+    ASECS: 'Asecs',
+
+}
+
 function getFileName(category) {
     switch (category) {
         case INTEREST.WELLNESS:
@@ -50,14 +59,25 @@ function getFileName(category) {
 
 const PINS = [
     { // väster 57.780632, 14.154856
-        latitude: 57.780632,
-        longitude: 14.154856,
-        radius: 1800,
+        //57.781935, 14.158684
+        name: PLACENAME.VÄSTER,
+        latitude: 57.781935,
+        longitude: 14.158684,
+        radius: 1100,
         request: [{
             categories: 'lodging',
             interestType: INTEREST.HOTELS
         }, {
             categories: 'store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'night_club',
+            interestType: INTEREST.ENTERTAIMENT
+        }, {
+            categories: 'park',
+            interestType: INTEREST.ENTERTAIMENT
+        }, {
+            categories: 'drugstore',
             interestType: INTEREST.STORES
         }, {
             categories: 'supermarket',
@@ -93,14 +113,25 @@ const PINS = [
 
 
     }, { // öster 57.779667, 14.181839
-        latitude: 57.779667,
-        longitude: 14.181839,
-        radius: 1800,
+        //57.782132, 14.184268
+        name: PLACENAME.ÖSTER,
+        latitude: 57.782132,
+        longitude: 14.184268,
+        radius: 1100,
         request: [{
             categories: 'lodging',
             interestType: INTEREST.HOTELS
         }, {
             categories: 'store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'night_club',
+            interestType: INTEREST.ENTERTAIMENT
+        }, {
+            categories: 'park',
+            interestType: INTEREST.ENTERTAIMENT
+        }, {
+            categories: 'drugstore',
             interestType: INTEREST.STORES
         }, {
             categories: 'supermarket',
@@ -136,6 +167,7 @@ const PINS = [
 
     },
     { // solåsen 57.761732, 14.178252
+        name: PLACENAME.SOLÅSEN,
         latitude: 57.761732,
         longitude: 14.178252,
         radius: 1500,
@@ -148,16 +180,44 @@ const PINS = [
         }, {
             categories: 'gym',
             interestType: INTEREST.WELLNESS
-        }]
-    }, { //asecs 57.770144, 14.199983
-        latitude: 57.770144,
-        longitude: 14.199983,
-        radius: 1800,
+        }, {
+            categories: 'park',
+            interestType: INTEREST.ENTERTAIMENT
+        },]
+    }, { //asecs 57.772049, 14.199010
+        name: PLACENAME.ASECS,
+        latitude: 57.772049,
+        longitude: 14.199010,
+        radius: 700,
         request: [{
             categories: 'store',
             interestType: INTEREST.STORES
         }, {
+            categories: 'drugstore',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'clothing_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'electronics_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'shoe_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'supermarket',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'convenience_store',
+            interestType: INTEREST.STORES
+        }, {
             categories: 'shopping_mall',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'furniture_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'book_store',
             interestType: INTEREST.STORES
         }, {
             categories: 'restaurant',
@@ -175,8 +235,52 @@ const PINS = [
 
 
     },
+    { //Söder 57.772609, 14.152337
+        name: PLACENAME.SÖDER,
+        latitude: 57.772609,
+        longitude: 14.152337,
+        radius: 800,
+        request: [{
+            categories: 'store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'supermarket',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'restaurant',
+            interestType: INTEREST.RESTURANTS,
+        }, {
+            categories: 'tourist_attraction',
+            interestType: INTEREST.ENTERTAIMENT,
+        }, {
+            categories: 'cafe',
+            interestType: INTEREST.RESTURANTS,
+        }, {
+            categories: 'park',
+            interestType: INTEREST.ENTERTAIMENT
+        },]
+    },
 ];
 
+
+async function getMaxSearch(category) {
+    switch (category) {
+        case 'store':
+            return 200;
+        case 'physiotherapist' || 'gym' || 'museum' || 'electronics_store' || 'hair_care' || 'beauty_salon':
+            return 20;
+        case 'supermarket' || 'convenience_store':
+            return 10;
+        case 'clothing_store' || 'shoe_store' || 'lodging':
+            return 60;
+        case 'shopping_mall' || 'movie_theater':
+            return 5;
+        case 'restaurant' || 'cafe' || 'tourist_attraction':
+            return 100;
+        default:
+            return 5;
+    }
+};
 
 
 
@@ -184,4 +288,6 @@ module.exports = {
     INTEREST,
     PINS,
     getFileName,
+    PLACENAME,
+    getMaxSearch
 };
