@@ -16,7 +16,7 @@ const itemComment = mongoose.Schema({
         ref: `User`,
         required: true
     }
-})
+});
 
 console.log('Comments schema has been created')
 

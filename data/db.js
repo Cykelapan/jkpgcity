@@ -4,6 +4,7 @@ const PointOfInterest = require('./models/pointOfInterest');
 const fs = require('fs');
 const Users = require('./models/user');
 const Comments = require('./models/comments');
+const { log } = require('console');
 const filesdasdasdadPath = ['./data/JSON/api_google_stores.json', './data/JSON/api_google_wellness.json', './data/JSON/api_google_resturants.json', './data/JSON/api_google_entertaiment.json', './data/JSON/api_google_hotels.json'];
 const filePathData = './data/JSON/api_google_allData.json';
 //need to know if it is better to make one schema with all the diffrent types and querie it or use diffrent schemas?
@@ -11,8 +12,6 @@ class DB {
     constructor() {
         this.db = undefined;
         this.mongoose = mongoose;
-
-        this.connect();
     }
 
     async connect() {
@@ -72,34 +71,103 @@ class DB {
 
     }
     //******************** Stores ************************************** 
-    async getAllStoresSorted() {
-        return await PointOfInterest.find().sort({ name: 1 }).select({ name: 1 })
+    async getPOIByID(ID) {
+        return await PointOfInterest.findById(ID).select({});
     }
-    async getStoresByLetter(letter) {
-        return await PointOfInterest.find().sort({ name: /^letter/i })
+    async getPOITypes(INTEREST) {
+        return await PointOfInterest.find({ interestType: INTEREST })
+            .select('_id name district rating.like rating.dislike numberOfComments')
+            .sort({ name: 1 });
     }
-    async getByDistrict(district) {
-        return await PointOfInterest.find().sort({ district: /^district/i })
+    async updatePOILikes(likeType, ID) {
+        try {
+            await PointOfInterest.findByIdAndUpdate(ID, {
+                $inc: { [`rating.${likeType}`]: 1 }
+            } // Increment specific like/dislike count
+            );
+        } catch (error) {
+            console.error(error);
+            // Handle errors
+        }
+    }
+
+    //see if you need this or not
+    async getPOIComments(ID) {
 
     }
-    async updateStore(id) {
+    async addPOIComments(poiID, userID, comment) {
+        try {
+            //check if user exist
+            const user = await Users.findById(userID);
+            if (!user) {
+                console.log("USER DOSEN'T EXIST WHEN ADD COMMENT");
+                return
+
+            }
+            const newComment = new Comment({
+                user: userId,
+                content: comment,
+            });
+
+            await PointOfInterest.findByIdAndUpdate(
+                poiId,
+                { $push: { comments: newComment } }
+            );
+
+            poi.comments.push(newComment);
+            poi.numberOfComments = poi.comments.length;
+
+            await poi.save();
+            console.log('Comment added successfully!');
+        } catch (error) {
+            console.error(error);
+            // Handle errors appropriately
+        }
+
 
     }
-    async addStore() {
+    // se how you can use the frontend of what you should update
+    async updatePOI(ID) {
 
     }
 
     //***************************** Users **************************************
-    async addUser() {
+    async addUser(userObject) {
+        try {
+            const newUser = new User({
+                fName: userObject.fName,
+                lName: userObject.lName,
+                email: userObject.email,
+                username: userObject.username,
+                password: userObject.password // Use strong password hashing in practice!
+            });
+            await newUser.save();
+        } catch {
+            console.log("SOMETING WRONG WHEN SAVE A NEW USER");
+        }
 
     }
 
-    async deleteUser() {
+    async checkUsername(email) {
+        try {
+            const existingUser = await User.findOne({ username });
+            return !!existingUser; // Returns true if user exists, false otherwise
+        } catch (error) {
+            console.error('Error checking username:', error);
+        }
+    }
+    async checkEmail(email) {
+        try {
+            const existingUser = await User.findOne({ email });
+            return !!existingUser; // Returns true if user exists, false otherwise
+        } catch (error) {
+            console.error('Error checking email:', error);
 
+        }
     }
 
     async getUser(id) {
-
+        return await Users.findById(userID).select({});
     }
 
     //***************************** Comments **************************************

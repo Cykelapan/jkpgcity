@@ -6,21 +6,29 @@ if (dotenv.error) {
 const { SERVER_PORT, } = process.env;
 
 const express = require(`express`);
-const DB = require(`./data/db`)
+const DB = require(`./data/db`);
+const db = new DB();
 const app = express();
 
+app.use((req, res, next) => {
+    req.db = db;
+    next();
+});
 
-//git fetch origin
-///git checkout 1-test-issues
+app.use('/discover', require('./routes/discover'));
+app.use('/login', require('./routes/login'));
+app.use('/contact', require('./routes/contact'));
+app.use('/districts', require('./routes/district'));
 
 app.get('/', async (req, res) => {
-    console.log('Hello world')
-    res.send('<h1>Hello world</h1>');
+    const data = await db.getAllStoresSorted();
+
+    res.send(`<h1>Hello world</h1> <h4> ${data}  </h4>`);
 })
 
 const setupServer = async () => {
-    db = await new DB();
+    await db.connect();
     await db.entryData();
     app.listen(SERVER_PORT, () => { console.log(`Server runing on ${SERVER_PORT}`) });
 }
-setupServer()
+setupServer();
