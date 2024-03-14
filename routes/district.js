@@ -13,8 +13,9 @@ router.route('/')
 
 router.route('/:districtID')
     .get(async (req, res) => {
-
-        res.status(200).send('<h1> DISTICT ID </h1>');
+        const db = req.db;
+        db.
+            res.status(200).send('<h1> DISTICT ID </h1>');
 
     })
     .post(async (req, res) => {

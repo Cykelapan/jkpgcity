@@ -23,23 +23,6 @@ const createToken = (userData) => {
     }
 };
 
-const refreshToken = async (token) => {
-    if (validate.isJWT(token)) {
-        jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, async (err, decodeToken) => {
-            if (err) {
-                return
-            } else {
-                console.log(decodeToken);
-                const refreshedToken = jwt.sign(decodeToken, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30m' });
-                return await refreshedToken
-            }
-        });
-    } else {
-        return
-    }
-
-
-};
 
 
 module.exports = {

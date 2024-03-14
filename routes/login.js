@@ -29,10 +29,6 @@ router.route('/')
 
                     res.setHeader('Authorization', `Bearer ${token}`);
                     res.status(200).json(`${user.username} is logged on`);
-                    /*cookie.setCookieWithToken(res, token);
-                    res
-                        .status(200)
-                        .json(`${user.username} is logged on`);*/
                 }
 
 
