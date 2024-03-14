@@ -1,0 +1,514 @@
+[
+  {
+    "google_id": "ChIJv1jOPOptWkYR7w81Mub7VNA",
+    "name": "Scandic Portalen",
+    "address": "Barnarpsgatan 6, 551 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "http://www.scandichotels.com/portalen",
+    "description": "Unfussy lodging in an upscale spot offering free breakfast & bike use, plus a gym & a sauna.",
+    "contactPhoneNumber": "+46 36 585 42 00",
+    "coordinates": {
+      "longitude": 14.1633333,
+      "latitude": 57.78323329999998
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=15011900424036093935",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJvVJok-ltWkYRm2oGzZBJqiM",
+    "name": "Familjen Ericsson's City Hotel",
+    "address": "Västra Storgatan 25A, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: 7:00 AM – 11:00 PM",
+      "Tuesday: 7:00 AM – 11:00 PM",
+      "Wednesday: 7:00 AM – 11:00 PM",
+      "Thursday: 7:00 AM – 11:00 PM",
+      "Friday: 7:00 AM – 11:00 PM",
+      "Saturday: 8:00 AM – 11:00 PM",
+      "Sunday: 8:00 AM – 10:00 PM"
+    ],
+    "website": "http://www.cityhotel.se/",
+    "description": "Informal hotel offering lake views & a spa area, plus a bar, a restaurant & breakfast.",
+    "contactPhoneNumber": "+46 36 71 92 80",
+    "coordinates": {
+      "longitude": 14.159109,
+      "latitude": 57.78368400000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=2569947423632157339",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJUecMvJVtWkYRfn3_TXJaoJY",
+    "name": "Grand Hotel",
+    "address": "Hovrättstorget 1, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 6:30 AM – 9:00 PM",
+      "Tuesday: 6:30 AM – 9:00 PM",
+      "Wednesday: 6:30 AM – 9:00 PM",
+      "Thursday: 6:30 AM – 9:00 PM",
+      "Friday: 6:30 AM – 9:00 PM",
+      "Saturday: 7:30 AM – 9:00 PM",
+      "Sunday: 7:30 AM – 9:00 PM"
+    ],
+    "website": "http://grandhoteljonkoping.se/",
+    "description": "Bright rooms, some with lake views, in a relaxed property featuring dining, plus breakfast.",
+    "contactPhoneNumber": "+46 36 14 00 00",
+    "coordinates": {
+      "longitude": 14.1768687,
+      "latitude": 57.78163920000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=10853774548944256382",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJw0JtZultWkYRK_egDCG01S4",
+    "name": "ProfilHotels | Savoy",
+    "address": "Brunnsgatan 13-15, 553 17 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://ligula.se/profilhotels/hotel-savoy-centrala-jonkoping/",
+    "description": "Contemporary rooms & suites in an informal hotel offering a restaurant/bar & a sauna.",
+    "contactPhoneNumber": "+46 36 17 32 90",
+    "coordinates": {
+      "longitude": 14.1602457,
+      "latitude": 57.781366
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=3374801549822850859",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJ6bLVy19tWkYRxS1XatTvXY0",
+    "name": "Elite Stora hotel",
+    "address": "Hotellplan, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://www.elite.se/sv/hotell/jonkoping/stora-hotellet/",
+    "description": "Relaxed rooms & suites in an elegant lakefront hotel with a modern restaurant & a sauna.",
+    "contactPhoneNumber": "+46 36 10 00 00",
+    "coordinates": {
+      "longitude": 14.169529,
+      "latitude": 57.78317260000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=10186561627778133445",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJAafB2u5tWkYRObjQhGLtVXY",
+    "name": "Comfort Hotel Jönköping",
+    "address": "Klostergatan 28, 553 17 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://www.strawberry.se/hotell/sverige/jonkoping/comfort-hotel-jonkoping/?utm_campaign=gmb-listing&utm_medium=organic&utm_source=google",
+    "description": "Informal property offering a sauna & conference space, plus a complimentary breakfast buffet.",
+    "contactPhoneNumber": "+46 36 10 08 00",
+    "coordinates": {
+      "longitude": 14.1563299,
+      "latitude": 57.7789958
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=8526982476886751289",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJ6zttg-ltWkYR9xlZtQ_La3o",
+    "name": "Clarion Collection Hotel Victoria",
+    "address": "F E Elmgrens gata 5, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://www.strawberry.se/hotell/sverige/jonkoping/clarion-collection-hotel-victoria/?utm_campaign=gmb-listing&utm_medium=organic&utm_source=google",
+    "description": "Elegant hotel offering 2 saunas & a gym, as well as complimentary breakfast, dinner & Wi-Fi.",
+    "contactPhoneNumber": "+46 36 71 28 00",
+    "coordinates": {
+      "longitude": 14.1605475,
+      "latitude": 57.78244679999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=8821367563462711799",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJo9-e6fxtWkYR25wAtCPvTZg",
+    "name": "SVF Konferens",
+    "address": "Mångatan 10, 554 39 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 8:00 AM – 4:00 PM",
+      "Tuesday: 8:00 AM – 4:00 PM",
+      "Wednesday: 8:00 AM – 4:00 PM",
+      "Thursday: 8:00 AM – 4:00 PM",
+      "Friday: 8:00 AM – 4:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "website": "https://www.svf.fhsk.se/hotell-konferens-jonkoping/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 30 69 08",
+    "coordinates": {
+      "longitude": 14.1362134,
+      "latitude": 57.7747233
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=10974690803594599643",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJ_3ZfvJVtWkYRU5anAukh0lU",
+    "name": "Jönköping Vandrarhem",
+    "address": "Östra Storgatan 42, 553 21 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: 6:30 AM – 8:00 PM",
+      "Tuesday: 6:30 AM – 8:00 PM",
+      "Wednesday: 6:30 AM – 8:00 PM",
+      "Thursday: 6:30 AM – 8:00 PM",
+      "Friday: 6:30 AM – 8:00 PM",
+      "Saturday: 7:30 AM – 8:00 PM",
+      "Sunday: 7:30 AM – 8:00 PM"
+    ],
+    "website": "http://www.jkpgvandrarhem.se/",
+    "description": "Pared-back rooms with shared bathrooms in a utilitarian hostel offering breakfast at a nearby hotel.",
+    "contactPhoneNumber": "+46 36 71 96 00",
+    "coordinates": {
+      "longitude": 14.1771776,
+      "latitude": 57.7817254
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=6184042522988746323",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJ0f5kLrBtWkYRmXKqc0kuui0",
+    "name": "Vox Hotel",
+    "address": "Lantmätargränd 2C, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://voxhotel.se/",
+    "description": "Stylish, modern lodging featuring lake views & free breakfast, plus a gym & a restaurant/bar.",
+    "contactPhoneNumber": "+46 36 770 00 00",
+    "coordinates": {
+      "longitude": 14.1741404,
+      "latitude": 57.78296899999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=3294996970382979737",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJEbsfO-ltWkYR2t0o2eW43dk",
+    "name": "City Apartments in Jonkoping",
+    "address": "Klostergatan 18, 553 17 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "http://www.cityapartments.nu/om-oss-42452200",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 70 817 22 20",
+    "coordinates": {
+      "longitude": 14.1575125,
+      "latitude": 57.7806794
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=15698907173413772762",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJxzmEKJVtWkYRe1CHq04426Q",
+    "name": "Best Western John Bauer Hotel",
+    "address": "Södra Strandgatan 15, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "website": "https://www.johnbauer.se/",
+    "description": "Unassuming hotel featuring a gym, a sauna & a restaurant/bar, plus free breakfast & Wi-Fi.",
+    "contactPhoneNumber": "+46 36 34 90 00",
+    "coordinates": {
+      "longitude": 14.171469,
+      "latitude": 57.781516
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=11879150352656191611",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJEUY7G-htWkYR4gYpxUotudE",
+    "name": "Kastanjegården",
+    "address": "Västra Storgatan 37, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "https://www.jonkoping.se/omsorghjalp/funktionshinder/gemenskapochdelaktighetfunktionshinder/traffpunktkastanjegarden.4.74fef9ab15548f0b8002427.html",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 72 72",
+    "coordinates": {
+      "longitude": 14.1554147,
+      "latitude": 57.7852778
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=15112159823777040098",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJ60zwo-5tWkYRtwlIo_-js8w",
+    "name": "Gruppbostad",
+    "address": "Lasarettsgatan 5C, 553 18 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 71 28",
+    "coordinates": {
+      "longitude": 14.1581681,
+      "latitude": 57.77888240000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=14750313522919901623",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJ2dDlmO5tWkYRjCozMJffDA4",
+    "name": "Comfort Hotel Jönköping",
+    "address": "Kungsgatan 3, 553 31 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "https://www.nordicchoicehotels.se/hotell/sverige/jonkoping/comfort-hotel-jonkoping/",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1585947,
+      "latitude": 57.7780461
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=1012429856693234316",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJHb5Ah-ltWkYR3MlMEkyCHMY",
+    "name": "Dsign i Huskvarna AB",
+    "address": "553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 13 77 72",
+    "coordinates": {
+      "longitude": 14.1618368,
+      "latitude": 57.78257879999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=14275428182093777372",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJ811Gb-5tWkYRGlvvuZLrdwY",
+    "name": "Gruppbostad",
+    "address": "Brahegatan 18, 553 34 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 31 39",
+    "coordinates": {
+      "longitude": 14.1566061,
+      "latitude": 57.77616979999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=466100101873359642",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJuy994x9tWkYR7fUT7p5OwvM",
+    "name": "Quality Hotel Match",
+    "address": "Brånebacken 4, 553 15 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "https://www.strawberry.se/hotell/sverige/jonkoping/quality-hotel-match/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 293 72 20",
+    "coordinates": {
+      "longitude": 14.1608382,
+      "latitude": 57.78402289999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=17564687941204440557",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJ-ZI4B3htWkYRNAN_a_uB_SU",
+    "name": "Park Hotel Jönköping",
+    "address": "Kyrkogatan 6, 553 16 Jönköping, Sweden",
+    "district": "Väster",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1645667,
+      "latitude": 57.7826177
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=2737487065351390004",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJY2UTZAhtWkYRc26e2DSnIzI",
+    "name": "WFCottage",
+    "address": "Tomtebogatan 7A, 553 13 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 73 375 84 51",
+    "coordinates": {
+      "longitude": 14.1428781,
+      "latitude": 57.78682559999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=3612915171495669363",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJe9XYxZ5tWkYR_i9ETCeqGYY",
+    "name": "A6 Hotel & Hostel Jansson",
+    "address": "Rekrytvägen 5, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "Contemporary dorms & private rooms in a bright lakeside hostel featuring free breakfast & Wi-Fi.",
+    "contactPhoneNumber": "+46 36 34 00 41",
+    "coordinates": {
+      "longitude": 14.196882,
+      "latitude": 57.77585670000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=9662941561260093438",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJR1qSV59tWkYRUHp5LSi5klg",
+    "name": "Jönköpings Kommun Socialtjänst ÄHO administration",
+    "address": "Lillgatan 20, 554 51 Jönköping, Sweden",
+    "district": "Liljeholmen",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 50 00",
+    "coordinates": {
+      "longitude": 14.1987091,
+      "latitude": 57.7807539
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=6382367204150180432",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJpRfFKoltWkYRzoSBafbzm0o",
+    "name": "Arkadien",
+    "address": "Södra Strandgatan 25, 553 20 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1729307,
+      "latitude": 57.78101699999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=5376158819854419150",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJ-yQRTEdtWkYRn2mFkbColNQ",
+    "name": "Fia",
+    "address": "Mellangatan 16B, 554 51 Jönköping, Sweden",
+    "district": "Liljeholmen",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1975171,
+      "latitude": 57.78019099999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=15318053708903049631",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJSVs9Q7RtWkYR99DMX0rIuLE",
+    "name": "Aig",
+    "address": "Mellangatan 16A, 554 51 Jönköping, Sweden",
+    "district": "Liljeholmen",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "No contact information available",
+    "coordinates": {
+      "longitude": 14.1975171,
+      "latitude": 57.78019099999999
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=12806205762188398839",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJp8Rzo55tWkYRzZI6STgI50E",
+    "name": "Svif",
+    "address": "Rekrytvägen 5, 553 05 Jönköping, Sweden",
+    "district": "Unknown",
+    "openingHours": "Unknown",
+    "website": "http://www.svif.se/",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 31 82 88 00",
+    "coordinates": {
+      "longitude": 14.196882,
+      "latitude": 57.77585670000001
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=4748773369925243597",
+    "interestType": "HOTELS"
+  },
+  {
+    "google_id": "ChIJdf5h6aFtWkYRtIPuZhGmr-o",
+    "name": "Wetterliljans dagverksamhet",
+    "address": "Spinnerigatan 2, 554 52 Jönköping, Sweden",
+    "district": "Liljeholmen",
+    "openingHours": "Unknown",
+    "website": "None",
+    "description": "No description available",
+    "contactPhoneNumber": "+46 36 10 28 96",
+    "coordinates": {
+      "longitude": 14.2002415,
+      "latitude": 57.7816385
+    },
+    "linkGoogleMaps": "https://maps.google.com/?cid=16910917719471063988",
+    "interestType": "HOTELS"
+  }
+]

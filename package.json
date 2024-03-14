@@ -4,15 +4,33 @@
   "description": "webdev project in school",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run start:docker && npm run start:node",
+    "dev:restart": "npm run stop:docker && docker-compose -f compose.dev.yaml up -d --build",
+    "start:docker": "docker-compose -f compose.dev.yaml up -d --build",
+    "start:node": "nodemon index.js",
+    "stop:docker": "docker-compose -f compose.dev.yaml down --volumes"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.7",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
     "mongoose": "^8.1.2",
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.21.1"
   }
 }
