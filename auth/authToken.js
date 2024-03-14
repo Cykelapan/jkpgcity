@@ -40,8 +40,14 @@ const requiredAuthAdmin = async (req, res, next) => {
     const decodeToken = await getDecodeToken(req.headers.authorization);
     if (decodeToken.isAdmin) next();
     else redirect('/');
-
 }
+
+const requiredAuthStoreOwner = async (req, res, next) => {
+    const decodeToken = await getDecodeToken(req.headers.authorization);
+    if (decodeToken.ownAStore) next();
+    else redirect('/');
+}
+
 
 //For specific routes that need a user that is logged in 
 const userLoggedInRequired = (req, res, next) => {
@@ -59,28 +65,6 @@ const userLoggedInRequired = (req, res, next) => {
     }
 };
 
-const checkToken = (req, res, next) => {
-    const token = req.cookies.jwt;
-    if (validate.isJWT(token)) {
-        jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decodeToken) => {
-            if (err) {
-                if (err.name === 'TokenExpiredError') {
-                    res.status(401).json({ message: 'Your session has expired. Please re-login.' }).redirect('/login');
-                } else {
-                    console.log("6");
-                    res.status(500).json({ message: 'Internal server error.' });
-                    next();
-                }
-            } else {
-                console.log(decodeToken);
-
-                next();
-            }
-        });
-    } else {
-        next();
-    }
-};
 
 
 module.exports = {
