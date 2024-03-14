@@ -11,7 +11,7 @@ router.route('/:interestType')
         const db = req.db;
         const t = await req.params.interestType;
         console.log(t);
-        data = await db.getPointsOfIntrestType(t);
+        data = await db.getPOITypes(t);
         res.send(`<h1> this should be intrest point ${req.params.interestType}   </h1> \n ${data}`)
     })
     .post(async (req, res) => { });

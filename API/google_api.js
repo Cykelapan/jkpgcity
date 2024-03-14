@@ -8,27 +8,59 @@ const CALL = require('./api_pins_google');
 const fs = require('fs');
 const _ = require('lodash');
 const axios = require('axios');
+const { log } = require('console');
 
 async function getPlacesAroundPoint(latitude, longitude, radius, categories) {
-    const url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
+    let url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
     url.searchParams.set('location', `${latitude},${longitude}`);
     url.searchParams.set('radius', radius);
     url.searchParams.set('key', API_KEY_GOOGLE);
     url.searchParams.set('type', categories);
-    url.searchParams.set('max_results', await CALL.getMaxSearch(categories));
+    //url.searchParams.set('max_results', "1");
+    //await CALL.getMaxSearch(categories)
 
+    let allPlaces = [];
+    let nextPageToken = null;
+    let iterationCount = 0;
+    const maxIterations = 7;
+    do {
+        try {
+            const response = await axios.get(url);
+
+            if (response.status !== 200) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+            allPlaces.push(...response.data.results);
+            //allPlaces = allPlaces.concat(response.data.results);
+            nextPageToken = response.data.next_page_token;
+            iterationCount++;
+
+            if (nextPageToken && iterationCount < maxIterations) {
+                url.searchParams.set('next_page_token', nextPageToken); // Set for next iteration
+            } else {
+                console.log('No more pages available or maximum iterations reached.');
+            }
+        } catch (error) {
+            console.error(`Error fetching data: ${error.message}`);
+            return [];
+        }
+    } while (nextPageToken && iterationCount < maxIterations);
+    console.log(allPlaces.length);
+    return await allPlaces;
     //what happens if you get multiple pages?
+    /*
     try {
         const response = await axios.get(url);
 
         if (response.status !== 200) {
             throw new Error(`API request failed with status ${response.status}`);
         }
+        console.log(response.data.next_page_token);
         return await response.data.results;
     } catch (error) {
         console.error(`Error fetching data: ${error.message}`);
         return [];
-    }
+    }*/
 }
 async function getPlacesAllAroundPoint(latitude, longitude, radius, categories) {
     const url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
@@ -94,6 +126,7 @@ async function processData(placesAroundPin, INTEREST, PLACENAME) {
     const processData = [];
     for (const place of placesAroundPin) {
         const details = await getPlaceDetails(place.place_id);
+        console.log(details);
         if (details) {
             const dataObject = {
                 google_id: place.place_id,
@@ -195,7 +228,7 @@ async function loadGoogleAPI() {
     }
 }
 
-loadGoogleAPI();
+//loadGoogleAPI();
 // rows last time 7102 and then -> 8916
 //DENNA SKA BARA KÖRAS OM DET INTE FINNS NÅGON JSON FIL!!
 // TAR 1000år att ladda..
@@ -268,3 +301,18 @@ why can i loop throug pages? if (pin.name === CALL.PLACENAME.VÄSTER && request.
             }
   
    */
+
+async function test() {
+    const pin = {
+        latitude: 57.780632,
+        longitude: 14.154856,
+        radius: 2500,
+        categories: 'restaurant',
+
+    };
+    const placesAroundPin = await getPlacesAroundPoint(pin.latitude, pin.longitude, pin.radius, pin.categories);
+    const a = await processData(placesAroundPin)
+}
+
+
+test();

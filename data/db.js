@@ -4,7 +4,7 @@ const PointOfInterest = require('./models/pointOfInterest');
 const fs = require('fs');
 const Users = require('./models/user');
 const Comments = require('./models/comments');
-const { log } = require('console');
+const { log, error } = require('console');
 const filesdasdasdadPath = ['./data/JSON/api_google_stores.json', './data/JSON/api_google_wellness.json', './data/JSON/api_google_resturants.json', './data/JSON/api_google_entertaiment.json', './data/JSON/api_google_hotels.json'];
 const filePathData = './data/JSON/api_google_allData.json';
 //need to know if it is better to make one schema with all the diffrent types and querie it or use diffrent schemas?
@@ -132,33 +132,48 @@ class DB {
     }
 
     //***************************** Users **************************************
-    async addUser(userObject) {
+
+    //Could return user and create a token at once
+    async userSingup(userObject) {
         try {
-            const newUser = new User({
-                fName: userObject.fName,
-                lName: userObject.lName,
-                email: userObject.email,
-                username: userObject.username,
-                password: userObject.password // Use strong password hashing in practice!
-            });
+            console.log(userObject);
+            let newUser = new Users(userObject);
             await newUser.save();
-        } catch {
+        } catch (error) {
+            console.log(error)
+            console.error(`Error message: ${error.message}`);
             console.log("SOMETING WRONG WHEN SAVE A NEW USER");
+            throw error;
         }
 
     }
 
-    async checkUsername(email) {
+    async getUserLogin(username, password) {
         try {
-            const existingUser = await User.findOne({ username });
-            return !!existingUser; // Returns true if user exists, false otherwise
+            return await Users.login(username, password);
+
+        } catch (error) {
+            console.log(error);
+            return
+        }
+    }
+
+    async checkUsernameAndEmail(username, email) {
+        try {
+            const existingUsername = await Users.findOne({ username });
+            const existingEmail = await Users.findOne({ email });
+            return {
+                usernameExist: !!existingUsername,
+                emailExist: !!existingEmail
+            }
         } catch (error) {
             console.error('Error checking username:', error);
         }
     }
+
     async checkEmail(email) {
         try {
-            const existingUser = await User.findOne({ email });
+            const existingUser = await Users.findOne({ email });
             return !!existingUser; // Returns true if user exists, false otherwise
         } catch (error) {
             console.error('Error checking email:', error);

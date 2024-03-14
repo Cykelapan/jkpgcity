@@ -1,11 +1,11 @@
 
 
 const INTEREST = {
-    STORES: 'STORES',
-    WELLNESS: 'WELLNESS',
-    RESTURANTS: 'RESTURANTS',
-    HOTELS: 'HOTELS',
-    ENTERTAIMENT: 'ENTERTAIMENT'
+    STORES: 'stores',
+    WELLNESS: 'wellness',
+    RESTURANTS: 'resturants',
+    HOTELS: 'accommodation',
+    ENTERTAIMENT: 'entertaiment'
 }
 
 const PLACENAME = {
@@ -14,6 +14,8 @@ const PLACENAME = {
     SOLÅSEN: 'Solåsen',
     SÖDER: 'Söder',
     ASECS: 'Asecs',
+    TÄNDSTICKSOMRÅDET: 'Tändsticksområdet',
+    PIREN: 'Piren'
 
 }
 
@@ -55,36 +57,67 @@ function getFileName(category) {
 // söder 57.771654, 14.149068
 // solåsen 57.761732, 14.178252
 // asecs 57.770144, 14.199983
-
+// 57.785713, 14.156878 to 100m
+// 57.785342, 14.158601 to 100m
+//57.784977, 14.159896 to 100m
 
 const PINS = [
-    { // väster 57.780632, 14.154856
-        //57.781935, 14.158684
-        name: PLACENAME.VÄSTER,
-        latitude: 57.781935,
-        longitude: 14.158684,
-        radius: 1100,
+    {
+        // 57.785383, 14.158439 to 100m
+        name: PLACENAME.TÄNDSTICKSOMRÅDET,
+        latitude: 57.785383,
+        longitude: 14.158439,
+        radius: 230,
         request: [{
-            categories: 'lodging',
-            interestType: INTEREST.HOTELS
-        }, {
             categories: 'store',
             interestType: INTEREST.STORES
         }, {
             categories: 'night_club',
             interestType: INTEREST.ENTERTAIMENT
         }, {
-            categories: 'park',
+            categories: 'restaurant',
+            interestType: INTEREST.RESTURANTS
+        }, {
+            categories: 'cafe',
+            interestType: INTEREST.RESTURANTS
+        }, {
+            categories: 'museum',
+            interestType: INTEREST.ENTERTAIMENT,
+        }, {
+            categories: 'tourist_attraction',
+            interestType: INTEREST.ENTERTAIMENT,
+        },]
+    },
+    {
+        // //57.784655, 14.169145 -> piren 70m
+        name: PLACENAME.PIREN,
+        latitude: 57.785383,
+        longitude: 14.158439,
+        radius: 80,
+        request: [{
+            categories: 'restaurant',
+            interestType: INTEREST.RESTURANTS
+        }, {
+            categories: 'night_club',
+            interestType: INTEREST.ENTERTAIMENT
+        },]
+    },
+
+    { // väster 57.780632, 14.154856
+        //57.780858, 14.159219
+        name: PLACENAME.VÄSTER,
+        latitude: 57.780858,
+        longitude: 14.159219,
+        radius: 1200,
+        request: [{
+            categories: 'lodging',
+            interestType: INTEREST.HOTELS
+        }, {
+            categories: 'night_club',
             interestType: INTEREST.ENTERTAIMENT
         }, {
-            categories: 'drugstore',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'supermarket',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'convenience_store',
-            interestType: INTEREST.STORES
+            categories: 'park',
+            interestType: INTEREST.ENTERTAIMENT
         }, {
             categories: 'restaurant',
             interestType: INTEREST.RESTURANTS
@@ -109,36 +142,27 @@ const PINS = [
         }, {
             categories: 'physiotherapist',
             interestType: INTEREST.WELLNESS
+        }, {
+            categories: 'store',
+            interestType: INTEREST.STORES
         }]
 
 
     }, { // öster 57.779667, 14.181839
-        //57.782132, 14.184268
+        //57.781254, 14.177045
         name: PLACENAME.ÖSTER,
-        latitude: 57.782132,
-        longitude: 14.184268,
-        radius: 1100,
+        latitude: 57.781254,
+        longitude: 14.177045,
+        radius: 1200,
         request: [{
             categories: 'lodging',
             interestType: INTEREST.HOTELS
-        }, {
-            categories: 'store',
-            interestType: INTEREST.STORES
         }, {
             categories: 'night_club',
             interestType: INTEREST.ENTERTAIMENT
         }, {
             categories: 'park',
             interestType: INTEREST.ENTERTAIMENT
-        }, {
-            categories: 'drugstore',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'supermarket',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'convenience_store',
-            interestType: INTEREST.STORES
         }, {
             categories: 'restaurant',
             interestType: INTEREST.RESTURANTS
@@ -163,18 +187,19 @@ const PINS = [
         }, {
             categories: 'physiotherapist',
             interestType: INTEREST.WELLNESS
-        }]
+        }, {
+            categories: 'store',
+            interestType: INTEREST.STORES
+        },]
 
     },
+    /*
     { // solåsen 57.761732, 14.178252
         name: PLACENAME.SOLÅSEN,
         latitude: 57.761732,
         longitude: 14.178252,
         radius: 1500,
         request: [{
-            categories: 'supermarket',
-            interestType: INTEREST.STORES
-        }, {
             categories: 'store',
             interestType: INTEREST.STORES
         }, {
@@ -259,7 +284,7 @@ const PINS = [
             categories: 'park',
             interestType: INTEREST.ENTERTAIMENT
         },]
-    },
+    },*/
 ];
 
 
@@ -281,6 +306,20 @@ async function getMaxSearch(category) {
             return 5;
     }
 };
+
+//57.785533, 14.158831 -> tändsticks området 200/250m
+//57.782129, 14.155344 -> väster området 400m
+//57.780163, 14.162843 -> väster 400m
+//57.781497, 14.155598 -> väster 320m
+//57.782982, 14.159233 -> väster 200
+//57.784655, 14.169145 -> piren 70m
+//57.782164, 14.174242 -> öster 400m
+//57.778964, 14.173292 -> öster 250m
+//57.780999, 14.181215 -> öster 500m
+
+
+
+
 
 
 

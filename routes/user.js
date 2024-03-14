@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../auth/authToken');
+
 //CHECK THAT A USER IS LOGGED IN AND ACTIVE TO SEE THIS SITE
 router.route('/')
     .get(async (req, res,) => {
