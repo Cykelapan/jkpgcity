@@ -1,3 +1,4 @@
+"use strict";
 const express = require('express')
 const interstDetails = require('./intrestDetails')
 const router = express.Router()

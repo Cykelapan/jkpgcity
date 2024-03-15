@@ -1,3 +1,4 @@
+"use strict";
 const calls = require('./api_calls')
 const axios = require(`axios`)
 const fs = require('fs')

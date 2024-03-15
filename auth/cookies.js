@@ -1,4 +1,4 @@
-
+"use strict";
 
 async function setCookieWithToken(res, token) {
     res.cookie('jwt', token, {

@@ -1,3 +1,4 @@
+"use strict";
 const mongoose = require(`mongoose`);
 const { MONGO_PORT, MONGO_CONTAINER_NAME, MONGO_URI } = process.env;
 const PointOfInterest = require('./models/pointOfInterest');

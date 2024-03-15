@@ -2,6 +2,11 @@
 const dotenv = require('dotenv').config();
 const { SERVER_PORT } = process.env;
 
+if (dotenv.error) {
+    console.error(dotenv.error);
+    process.exit(1);
+}
+
 const cookieParser = require('cookie-parser');
 const express = require(`express`);
 const app = express();
@@ -28,7 +33,7 @@ app.get('/', checkToken, async (req, res) => {
     const data = "await db.getAllStoresSorted();"
 
     res.send(`<h1>Hello world</h1> <h4> ${data}  </h4>`);
-})
+});
 
 app.listen(SERVER_PORT, async () => {
   await db.connect();

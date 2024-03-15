@@ -1,3 +1,4 @@
+"use strict";
 const mongoose = require('mongoose');
 const i = require('./../../API/api_pins_google');
 

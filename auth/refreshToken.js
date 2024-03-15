@@ -1,3 +1,4 @@
+"use strict";
 const JWT = require('jsonwebtoken');
 const validate = require(`validator`);
 
@@ -6,8 +7,7 @@ async function isAnValidToken(bearer) {
     let token = bearer.split(' ')[1];
     if (validate.isJWT(token)) return token;
     return null;
-
-};
+}
 
 async function refreshJWTtoken(token, res) {
     const payload = {
@@ -15,7 +15,7 @@ async function refreshJWTtoken(token, res) {
         username: token.username,
         ownAStore: token.ownAStore,
         isAdmin: token.isAdmin,
-    };
+    }
     const newToken = JWT.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30m' });
     res.header('Authorization', `Bearer ${newToken}`);
 }

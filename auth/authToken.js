@@ -1,3 +1,4 @@
+"use strict";
 const jwt = require('jsonwebtoken');
 const validate = require(`validator`);
 

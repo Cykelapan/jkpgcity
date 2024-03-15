@@ -1,3 +1,4 @@
+"use strict";
 const dotenv = require('dotenv').config();
 if (dotenv.error) {
     console.error('Error loading .env file:', dotenv.error);

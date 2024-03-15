@@ -1,3 +1,4 @@
+"use strict";
 const validate = require(`validator`);
 const _ = require('lodash');
 
