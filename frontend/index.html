@@ -3,8 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style media="screen">
+      body {
+        background-color: gray 
+      }
+    </style>
   </head>
   <body>
-    Hello world
+    <nav>
+      <button id="district-api" type="button" name="button">
+        make district api call
+      </button>
+    </nav>
+    <section>
+      hello world
+      <span id="api_result" ></span>
+    </section>
   </body>
+  <script type="text/javascript">
+    // AbortController - is for cancelling fetch request
+    const controller = new AbortController();
+    const signal = controller.signal;
+    
+    const district = document.querySelector("#district-api");
+    const api_result = document.querySelector("#api_result")
+    
+    district.addEventListener("click", async () => {
+      try {
+        const response = await fetch("/district", { signal });
+        console.log("Fetch complete", response);
+        api_result.textContent = "Got API Response, look web console"
+      } catch (error) {
+        console.error(`Fetch error: ${error.message}`);
+        api_result.textContent = error.message
+      }
+    });
+  </script>
 </html>

@@ -1,12 +1,25 @@
 "use strict";
-const mongoose = require(`mongoose`);
+const fs = require('node:fs');
+//const path = require('node:path');
+const { log, error } = require('node:console');
+
 const { MONGO_PORT, MONGO_CONTAINER_NAME, MONGO_URI } = process.env;
+const mongoose = require(`mongoose`);
+
 const PointOfInterest = require('./models/pointOfInterest');
-const fs = require('fs');
 const Users = require('./models/user');
 const Comments = require('./models/comments');
-const { log, error } = require('console');
-const filesdasdasdadPath = ['./data/JSON/api_google_stores.json', './data/JSON/api_google_wellness.json', './data/JSON/api_google_resturants.json', './data/JSON/api_google_entertaiment.json', './data/JSON/api_google_hotels.json'];
+
+// RECOMMENDED: use require("path")
+// const path = require('node:path');
+// path.join(__dirname, "JSON", "api_google_allData.json") =>  '<this directory>/data/JSON/api_google_allData.json'
+const filesdasdasdadPath = [
+  './data/JSON/api_google_stores.json', 
+  './data/JSON/api_google_wellness.json', 
+  './data/JSON/api_google_resturants.json', 
+  './data/JSON/api_google_entertaiment.json', 
+  './data/JSON/api_google_hotels.json'
+];
 const filePathData = './data/JSON/api_google_allData.json';
 //need to know if it is better to make one schema with all the diffrent types and querie it or use diffrent schemas?
 class DB {
@@ -82,10 +95,10 @@ class DB {
     }
     async updatePOILikes(likeType, ID) {
         try {
-            await PointOfInterest.findByIdAndUpdate(ID, {
-                $inc: { [`rating.${likeType}`]: 1 }
+          await PointOfInterest.findByIdAndUpdate(ID, {
+              $inc: { [`rating.${likeType}`]: 1 }
             } // Increment specific like/dislike count
-            );
+          );
         } catch (error) {
             console.error(error);
             // Handle errors
@@ -94,7 +107,7 @@ class DB {
 
     //see if you need this or not
     async getPOIComments(ID) {
-
+      return
     }
     async addPOIComments(poiID, userID, comment) {
         try {
@@ -103,7 +116,6 @@ class DB {
             if (!user) {
                 console.log("USER DOSEN'T EXIST WHEN ADD COMMENT");
                 return
-
             }
             const newComment = new Comment({
                 user: userId,
@@ -124,12 +136,10 @@ class DB {
             console.error(error);
             // Handle errors appropriately
         }
-
-
     }
     // se how you can use the frontend of what you should update
     async updatePOI(ID) {
-
+      return
     }
 
     //***************************** Users **************************************
@@ -146,13 +156,11 @@ class DB {
             console.log("SOMETING WRONG WHEN SAVE A NEW USER");
             throw error;
         }
-
     }
 
     async getUserLogin(username, password) {
         try {
             return await Users.login(username, password);
-
         } catch (error) {
             console.log(error);
             return
@@ -178,7 +186,6 @@ class DB {
             return !!existingUser; // Returns true if user exists, false otherwise
         } catch (error) {
             console.error('Error checking email:', error);
-
         }
     }
 

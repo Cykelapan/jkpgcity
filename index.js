@@ -1,10 +1,12 @@
 "use strict";
+const path = require('node:path');
+
 const dotenv = require('dotenv').config();
 const { SERVER_PORT } = process.env;
 
 if (dotenv.error) {
-    console.error(dotenv.error);
-    process.exit(1);
+  console.error(dotenv.error);
+  process.exit(1);
 }
 
 const cookieParser = require('cookie-parser');
@@ -27,16 +29,17 @@ app.use('/discover', require('./routes/discover'));
 app.use('/login', require('./routes/login'));
 app.use('/contact', require('./routes/contact'));
 app.use('/districts', require('./routes/district'));
-app.use('/userpage', auth.userLoggedInRequired, require('./routes/user'));
+//app.use('/userpage', auth.userLoggedInRequired, require('./routes/user'));
 app.use('/intrest', require('./routes/interstOverview'));
 app.get('/', checkToken, async (req, res) => {
-    const data = "await db.getAllStoresSorted();"
+    const htmlFilePath = path.join(__dirname, "./frontend", "index.html")
 
-    res.send(`<h1>Hello world</h1> <h4> ${data}  </h4>`);
+    res.sendFile(htmlFilePath)
 });
 
-app.listen(SERVER_PORT, async () => {
-  await db.connect();
-  await db.entryData();
+app.listen(SERVER_PORT, async (error) => {
+  if (error) { console.log(error); } 
+  //await db.connect();
+  //await db.entryData();
   console.log(`Server runing on ${SERVER_PORT}`)
 });
