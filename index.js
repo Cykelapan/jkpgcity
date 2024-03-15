@@ -23,8 +23,8 @@ app.use(express.static(path.join(__dirname, "frontend")))
 
 //How to send the db in another way?
 app.use((req, res, next) => {
-    req.db = db;
-    next();
+  req.db = db;
+  next();
 });
 
 app.use('/discover', require('./routes/discover'));

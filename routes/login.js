@@ -9,34 +9,45 @@ const cookie = require('../auth/cookies');
 
 router.use(bodyParser.json());
 
-
 router.route('/')
     .get(async (req, res,) => {
         const db = req.db;
-
         res.status(200).send('<h1> Login PAGE </h1>');
     })
-
     .post(async (req, res) => {
-
-        const validate = await validateLogin(req.body);
-        if (validate.haveErrors) { res.status(406).send("not vaild login crededitals"); }
-        else {
-            try {
-                const db = req.db;
-                const user = await db.getUserLogin(validate.validData.username, validate.validData.password);
-                const token = await jwt.createToken(user);
-                if (user && token) {
-
-                    res.setHeader('Authorization', `Bearer ${token}`);
-                    res.status(200).json(`${user.username} is logged on`);
-                }
-
-
-            } catch (error) {
-                res.status(401).json({ error: error.messages });
-            }
-        }
+      // handle validation here
+      const validate = await validateLogin(req.body);
+      if (validate.haveErrors) { 
+        res.status(406).send("not vaild login crededitals");
+        return
+      }
+      
+      // handle login logic here
+      const db = req.db;
+      const user = await db.getUserLogin(
+        validate.validData.username, 
+        validate.validData.password
+      );
+      
+      if (!user) {
+        return res.status(500).json({ error: "interval login error" });
+      }
+      
+      // create jwt token
+      const token = await jwt.createToken(user);
+      if (!token) {
+        return res.status(500).json({ error: "interval token error" });
+      }
+      
+      // successfully identified
+      res.setHeader('Authorization', `Bearer ${token}`);
+      res.status(200).json({
+        error: false,
+        username: user.username,
+        description: `${user.username} is loggin`
+      });
+      
+      return
     });
 
 
@@ -44,9 +55,7 @@ router.route('/')
 
 router.route('/register')
     .get(async (req, res) => {
-
         res.status(200).send('<h1> REGISTER PAGE </h1>');
-
     })
     .post(async (req, res) => {
         const validate = await validateRegister(req.body);

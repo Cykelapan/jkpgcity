@@ -162,8 +162,8 @@ class DB {
         try {
             return await Users.login(username, password);
         } catch (error) {
-            console.log(error);
-            return
+            console.log("getUserLogin:", error);
+            return null
         }
     }
 
