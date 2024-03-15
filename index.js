@@ -19,6 +19,8 @@ const checkToken = require('./auth/refreshToken');
 const DB = require(`./data/db`);
 const db = new DB();
 
+app.use(express.static(path.join(__dirname, "frontend")))
+
 //How to send the db in another way?
 app.use((req, res, next) => {
     req.db = db;
@@ -30,7 +32,7 @@ app.use('/login', require('./routes/login'));
 app.use('/contact', require('./routes/contact'));
 app.use('/districts', require('./routes/district'));
 //app.use('/userpage', auth.userLoggedInRequired, require('./routes/user'));
-app.use('/intrest', require('./routes/interstOverview'));
+//app.use('/intrest', require('./routes/interstOverview'));
 app.get('/', checkToken, async (req, res) => {
     const htmlFilePath = path.join(__dirname, "./frontend", "index.html")
 
