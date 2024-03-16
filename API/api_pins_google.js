@@ -16,7 +16,6 @@ const PLACENAME = {
     ASECS: 'Asecs',
     TÄNDSTICKSOMRÅDET: 'Tändsticksområdet',
     PIREN: 'Piren'
-
 }
 
 function getFileName(category) {

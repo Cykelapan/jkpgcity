@@ -1,11 +1,13 @@
 "use strict";
 const express = require('express');
+const router = express.Router();
+
 const bodyParser = require('body-parser');
+const cookie = require('../auth/cookies');
+
 const validateRegister = require('../validators/register');
 const validateLogin = require('../validators/login');
 const jwt = require('../auth/createToken');
-const router = express.Router();
-const cookie = require('../auth/cookies');
 
 router.use(bodyParser.json());
 
@@ -49,8 +51,6 @@ router.route('/')
       
       return
     });
-
-
 
 
 router.route('/register')

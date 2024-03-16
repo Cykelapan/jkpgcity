@@ -8,9 +8,7 @@ router.route('/')
 
         res.status(200).send('<h1> ABOUT PAGE </h1>');
     })
-    .post(async (req, res) => {
-
-    });
+    .post(async (req, res) => { res.json({}); });
 
 
 

@@ -1,6 +1,6 @@
 "use strict";
 const mongoose = require('mongoose');
-const i = require('./../../API/api_pins_google');
+const API_PINS = require('./../../API/api_pins_google');
 
 //TODO: REMBER DUPLETS!!!! hotels has resturangs as well as living, 
 const itemPointOfInterest = mongoose.Schema({
@@ -25,15 +25,18 @@ const itemPointOfInterest = mongoose.Schema({
     interestType: {
         type: [String],
         required: true,
-        enum: [i.INTEREST.STORES, i.INTEREST.WELLNESS, i.INTEREST.RESTURANTS, i.INTEREST.HOTELS, i.INTEREST.ENTERTAIMENT]
+        enum: [
+          API_PINS.INTEREST.STORES, 
+          API_PINS.INTEREST.WELLNESS, 
+          API_PINS.INTEREST.RESTURANTS, 
+          API_PINS.INTEREST.HOTELS, 
+          API_PINS.INTEREST.ENTERTAIMENT
+        ]
     },
 
     //rating should be like or dislike, and the number of like and dislike it have
     rating: {
-        type: {
-            like: Number,
-            dislike: Number,
-        },
+        type: { like: Number, dislike: Number },
         default: { like: 0, dislike: 0 },
     },
 
@@ -73,7 +76,6 @@ const itemPointOfInterest = mongoose.Schema({
         type: Date,
         default: Date.now()
     }
-
 });
 
 // add functions for schema when updating like / dislike, comment and more information, also how the updated functions should be

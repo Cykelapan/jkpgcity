@@ -10,19 +10,13 @@ router.route('/')
 
         res.status(200).send('<h1> USER PAGE </h1>');
     })
-    .post(async (req, res) => {
-
-    });
+    .post(async (req, res) => { res.json({}); });
 
 router.route('/settings')
     .get(async (req, res) => {
-
         res.status(200).send('<h1> USER SETTINGS PAGE </h1>');
-
     })
-    .post(async (req, res) => {
-
-    });
+    .post(async (req, res) => { res.json({}); });
 
 
 module.exports = router;

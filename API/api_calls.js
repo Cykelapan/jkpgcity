@@ -4,7 +4,7 @@ if (dotenv.error) {
     console.error('Error loading .env file:', dotenv.error);
     process.exit(1);
 }
-const { API_KEY_GEOAPIFY, } = process.env;
+const { API_KEY_GEOAPIFY } = process.env;
 
 const API_URL = {
     SUPERMARKETS: `https://api.geoapify.com/v2/places?categories=commercial.supermarket&filter=circle:14.173161595253987,57.77703948111014,2150&bias=proximity:14.173161595253987,57.77703948111014&lang=en&limit=50&apiKey=${API_KEY_GEOAPIFY}`,

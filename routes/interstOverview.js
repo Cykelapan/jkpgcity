@@ -15,16 +15,16 @@ router.route('/:interestType')
         data = await db.getPOITypes(t);
         res.send(`<h1> this should be intrest point ${req.params.interestType}   </h1> \n ${data}`)
     })
-    .post(async (req, res) => { });
+    .post(async (req, res) => { res.json({}); });
 
 router.route('/:interestType/:id')
     .get(async (req, res) => {
         const db = req.db;
-        const t = await req.params.id;
+        const t = req.params.id;
         console.log(t);
         data = await db.getPointsOfIntrestID(t);
         res.send(`<h1> this should be details ${req.params.interestType}   </h1> \n ${data}`)
     })
-    .post(async (req, res) => { });
+    .post(async (req, res) => { res.json({}); });
 
 module.exports = router;

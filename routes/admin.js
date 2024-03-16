@@ -12,8 +12,6 @@ router.route('/')
 
         res.status(200).send('<h1> ADMIN PAGE </h1>');
     })
-    .post(async (req, res) => {
-
-    });
+    .post(async (req, res) => { res.json({}); });
 
 module.exports = router;

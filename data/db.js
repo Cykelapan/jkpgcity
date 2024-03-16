@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const { log, error } = require('node:console');
 
 const { MONGO_PORT, MONGO_CONTAINER_NAME, MONGO_URI } = process.env;
-const mongoose = require(`mongoose`);
+const mongoose = require("mongoose");
 
 const PointOfInterest = require('./models/pointOfInterest');
 const Users = require('./models/user');
@@ -49,7 +49,6 @@ class DB {
     //******************** GET DATA ******************************* */
 
     async readJsonFile(path) {
-
         try {
             const fileData = await fs.promises.readFile(path, 'utf-8');
             return await JSON.parse(fileData);
