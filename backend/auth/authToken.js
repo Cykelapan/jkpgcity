@@ -1,5 +1,5 @@
 "use strict";
-const getDecodedToken = require('./getDecodedToken');
+const getDecodedToken = require('./getDecodedToken.js');
 
 
 //todo Make specifc auth for routes that needs it
@@ -7,7 +7,7 @@ const getDecodedToken = require('./getDecodedToken');
 then get tokenData? 
 Create Token in one place login, refresh token when? Middleware allways?  */
 
-const requiredAdminLoggedIn = async (req, res, next) => {
+async function requiredAdminLoggedIn(req, res, next) {
     const decodeToken = await getDecodedToken(req.headers.authorization);
     if (decodeToken) {
         if (decodeToken.isAdmin) next();
@@ -17,7 +17,7 @@ const requiredAdminLoggedIn = async (req, res, next) => {
     }
 };
 
-const requiredUserLoggedIn = async (req, res, next) => {
+async function requiredUserLoggedIn(req, res, next) {
     const decodeToken = await getDecodedToken(req.headers.authorization);
     if (decodeToken) {
         next();
