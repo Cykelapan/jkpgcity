@@ -1,3 +1,37 @@
+@import "./util/form.css";
+@import "./nav.css";
+
+html,
 body {
-  background-color: gray 
+  height: 100%;
+}
+
+body {
+  background-color: gray;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  --var-nav-height: 48px;
+  display: none;
+  position: absolute;
+  
+  background-color: lightblue;
+  
+  left: 100%;
+  top: var(--var-nav-height);
+  width: 100%;
+  height: calc(100% - var(--var-nav-height));
+}
+
+.container.active {
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

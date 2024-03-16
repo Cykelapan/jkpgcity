@@ -15,6 +15,5 @@ loginButton.addEventListener("click", () => {
 });
 
 district.addEventListener("click", () => {
-  console.log(FetchHeader);
-  //getDisctrict()
+  getDisctrict()
 });

@@ -2,22 +2,44 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>JPKG City</title>
     <link rel="stylesheet" href="./css/index.css">
   </head>
   <body>
-    <nav>
-      <button id="login" type="button" name="button">
-        Login
-      </button>
-      <button id="district-api" type="button" name="button">
-        make district api call
-      </button>
+    <nav class="topnav" id="topNavBar">
+      <!-- <a class="active">Discover</a> -->
+      <a data-target="discover">Discrict</a>
+      <a data-target="login">Login</a>
+      <a class="icon" onclick="toggleNavbar()">
+        <i class="fa fa-bars"></i>
+      </a>
     </nav>
-    <section>
-      hello world
-      <div id="api_result">Here</div>
+    <section data-source="login" class="container">
+      <div class="form">
+        <div class="title">Welcome</div>
+        <div class="subtitle">User portal</div>
+        <div class="input-container ic1">
+          <input id="username" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="username" class="placeholder">Username</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="password" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="password" class="placeholder">Password</>
+        </div>
+        <button type="text" class="submit">Login / Register</button>
+      </div>
+    </section>
+    <section data-source="discover" class="container active">
+      User Page
+      <div>
+        <button id="login" type="button" name="button">Login</button>
+        <button id="district-api" type="button" name="button">make district api call</button>
+      </div>
+      <div id="api_result"></div>
     </section>
   </body>
   <script type="module" src="./js/index.js" charset="utf-8"></script>
+  <script src="./js/functionality.js" charset="utf-8"></script>
 </html>
