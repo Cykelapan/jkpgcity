@@ -1,12 +1,13 @@
 "use strict";
 import CreateHeaders from "../util/headerManager.js"
+import request from "../util/request.js"
 
 const controller = new AbortController();
 const signal = controller.signal;
 
 export async function login() {
   try {
-    const response = await fetch("/login", {
+    const response = await request("/login", {
       method: "POST",
       headers: CreateHeaders.getHeaders(),
       body: JSON.stringify({
