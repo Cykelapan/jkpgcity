@@ -5,14 +5,17 @@ import request from "../util/request.js"
 const controller = new AbortController();
 const signal = controller.signal;
 
-export async function login() {
+const api_result = document.querySelector("#api_result");
+
+export async function login({ username, password }) {
+  console.log(username, password);
   try {
     const response = await request("/login", {
       method: "POST",
       headers: CreateHeaders.getHeaders(),
       body: JSON.stringify({
-        username: "james_webs",
-        password: "hello123123"
+        username: username,
+        password: password
       }),
       signal: signal
     });
@@ -20,7 +23,7 @@ export async function login() {
     const bearer_token = response.headers.get('Authorization');
     CreateHeaders.addAuth(bearer_token)
     
-    const data = await response.json()
+    const data = await response.json();
     api_result.textContent = data.description;
   } catch (error) {
     console.error(`Fetch error: ${error.message}`);

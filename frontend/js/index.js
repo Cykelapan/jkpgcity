@@ -6,14 +6,17 @@ import { login } from "./route/login.js"
 FetchHeader.add('Accept', 'application/json');
 FetchHeader.add('Content-Type', 'application/json');
 
-const loginButton = document.querySelector("#login");
+const loginForm = document.querySelector("#login-form");
 const district = document.querySelector("#district-api");
-const api_result = document.querySelector("#api_result")
 
-loginButton.addEventListener("click", () => {
-  login()
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  
+  const myFormData = new FormData(event.target);
+  const form = Object.fromEntries(myFormData);
+  login(form);
 });
 
-district.addEventListener("click", () => {
+district.addEventListener("click", (event) => {
   getDisctrict()
 });

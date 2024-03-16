@@ -3,7 +3,10 @@ import CreateHeaders from "./headerManager.js"
 
 async function sideEffect(response) {
   const bearer_token = response.headers.get('Authorization');
-  CreateHeaders.addAuth(bearer_token)
+  
+  if (!bearer_token) { return; }
+  
+  CreateHeaders.addAuth(bearer_token);
 }
 
 async function request(url, config) {

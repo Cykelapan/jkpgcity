@@ -15,7 +15,7 @@ for (targetBtn of targetButtons) {
     
     // switch active screen: 
     // incase error default to first screen
-    const isSwitchedScreen = switchActiveScreen(eventData)
+    const isSwitchedScreen = switchActiveScreen(eventData);
     
     if (!isSwitchedScreen && sourcePages.length !== 0) {
       sourcePages[0].classList.toggle("active", true);

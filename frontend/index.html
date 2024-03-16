@@ -8,36 +8,49 @@
   <body>
     <nav class="topnav" id="topNavBar">
       <!-- <a class="active">Discover</a> -->
-      <a data-target="discover">Discrict</a>
-      <a data-target="login">Login</a>
+      <a data-target="discover" class="">Discover</a>
+      <a data-target="login" class="active">Login</a>
       <a class="icon" onclick="toggleNavbar()">
         <i class="fa fa-bars"></i>
       </a>
     </nav>
-    <section data-source="login" class="container">
-      <div class="form">
+    <section data-source="login" class="container active">
+      <form id="login-form" class="form">
         <div class="title">Welcome</div>
         <div class="subtitle">User portal</div>
         <div class="input-container ic1">
-          <input id="username" class="input" type="text" placeholder=" " />
+          <input 
+            id="username" 
+            name="username" 
+            class="input" 
+            type="text" 
+            placeholder=" " 
+            value="james_webs"
+          />
           <div class="cut"></div>
           <label for="username" class="placeholder">Username</label>
         </div>
         <div class="input-container ic2">
-          <input id="password" class="input" type="text" placeholder=" " />
+          <input 
+            id="password" 
+            name="password" 
+            class="input" 
+            type="password" 
+            placeholder=" "
+            value="hello123123"
+          />
           <div class="cut"></div>
           <label for="password" class="placeholder">Password</>
         </div>
-        <button type="text" class="submit">Login / Register</button>
-      </div>
+        <button type="submit" class="submit">Login / Register</button>
+      </form>
+      <div id="api_result"></div>
     </section>
-    <section data-source="discover" class="container active">
+    <section data-source="discover" class="container">
       User Page
       <div>
-        <button id="login" type="button" name="button">Login</button>
         <button id="district-api" type="button" name="button">make district api call</button>
       </div>
-      <div id="api_result"></div>
     </section>
   </body>
   <script type="module" src="./js/index.js" charset="utf-8"></script>
