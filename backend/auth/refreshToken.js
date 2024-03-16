@@ -1,7 +1,7 @@
 "use strict";
 const JWT = require('jsonwebtoken');
-const validate = require(`validator`);
-const getDecodeToken = require('./getDecodedToken');
+const validate = require("validator");
+const { getDecodeToken } = require('./getDecodedToken.js');
 const { models } = require('mongoose');
 
 //should have an white or blacklist with valid tokens in the db for extra security..

@@ -6,7 +6,7 @@ const router = express.Router();
 
 const google_data = require(
   path.join(
-    __dirname, "..backend/data/JSON", "./api_google_allData1.json"
+    __dirname, "../backend/data/JSON", "./api_google_allData1.json"
   )
 );
 

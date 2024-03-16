@@ -1,7 +1,7 @@
 "use strict";
-const JWT = require('jsonwebtoken');
 const { isNil } = require('lodash');
-const validate = require(`validator`);
+const validate = require("validator");
+const jwt = require('jsonwebtoken');
 
 async function isAnValidToken(bearer) {
     if (!bearer) return null;
