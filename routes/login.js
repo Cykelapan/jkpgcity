@@ -4,9 +4,9 @@ const router = express.Router();
 
 const bodyParser = require('body-parser');
 
-const validateRegister = require('../backend/validators/register');
-const validateLogin = require('../backend/validators/login');
-const jwt = require('../backend/auth/createToken');
+const validateRegister = require('../backend/validators/register.js');
+const validateLogin = require('../backend/validators/login.js');
+const jwt = require('../backend/auth/createToken.js');
 
 router.use(bodyParser.json());
 
@@ -19,7 +19,7 @@ router.route('/')
     // handle validation here
     const validate = await validateLogin(req.body);
     if (validate.haveErrors) {
-      res.status(406).send("not vaild login crededitals");
+      res.status(406).json({ error: "not vaild login crededitals" });
       return
     }
 

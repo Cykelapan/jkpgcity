@@ -24,7 +24,7 @@ itemComment.statics.addComment = async function (userID, comment) {
         comment: commentText,
         madeBy: userID
     });
-    await newComment.save(); newComment
+    await newComment.save();
     return newComment
 };
 

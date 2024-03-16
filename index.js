@@ -19,7 +19,7 @@ const checkToken = require('./backend/auth/refreshToken');
 const DB = require('./backend/data/db');
 const db = new DB();
 
-app.use(express.static(path.join(__dirname, "frontend")))
+app.use(express.static(path.join(__dirname, "frontend")));
 
 //How to send the db in another way?
 app.use((req, res, next) => {
