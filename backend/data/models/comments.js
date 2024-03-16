@@ -19,6 +19,21 @@ const itemComment = mongoose.Schema({
     }
 });
 
+itemComment.statics.addComment = async function (userID, comment) {
+    const newComment = new Comment({
+        comment: commentText,
+        madeBy: userID
+    });
+    await newComment.save(); newComment
+    return newComment
+};
+
+itemComment.statics.removeComment = async function (commentID) {
+    const comment = await this.findById(commentID);
+    comment.delete();
+};
+
+
 console.log('Comments schema has been created')
 
 module.exports = mongoose.model('Comment', itemComment)

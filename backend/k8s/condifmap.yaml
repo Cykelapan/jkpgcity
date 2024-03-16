@@ -1,0 +1,11 @@
+# configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-Config
+data:
+  K8S_NAME: value1
+  K8S_URI: value2
+  K8S_PORT: value3
+  K8S_VERSION: value4
+  K8S_LABLE: value5
