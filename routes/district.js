@@ -29,16 +29,20 @@ function groupByDistricts() {
 
 const groupedByDistrict = groupByDistricts();
 
-router.get("/", auth.requiredAdminLoggedIn, async (req, res) => {
-  console.log("admin logged in");
-    //const db = req.db;
-    let disctrictNames = [];
-    for (let district in groupedByDistrict) {
-      disctrictNames.push(district);
-    }
-    
-    res.status(200).json(disctrictNames);
-  })
+router.get("/", async (req, res) => {
+  //const db = req.db;
+  let disctrictNames = [];
+  for (let district in groupedByDistrict) {
+    disctrictNames.push(district);
+  }
+  
+  res.status(200).json(disctrictNames);
+});
+
+router.post("/", auth.requiredAdminLoggedIn, async (req, res) => {
+  // safe route
+  res.json({ ok: true });
+});
 
 router.route('/:districtID')
   .get(async (req, res) => {
