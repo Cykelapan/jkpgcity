@@ -1,5 +1,6 @@
 const targetButtons = document.querySelectorAll("[data-target]");
 const sourcePages = document.querySelectorAll("[data-source]");
+const switchPages = document.querySelectorAll("[data-switch]");
 let topNavBar = document.querySelector("#topNavBar");
 
 // navigation
@@ -15,25 +16,35 @@ for (targetBtn of targetButtons) {
     
     // switch active screen: 
     // incase error default to first screen
-    const isSwitchedScreen = switchActiveScreen(eventData);
-    
-    if (!isSwitchedScreen && sourcePages.length !== 0) {
-      sourcePages[0].classList.toggle("active", true);
-    }
+    switchActiveScreen(eventData);
   });
 }
 
 function switchActiveScreen(targetScreen = "") {
   let isSwitchSuccess = false;
   
+  for (let switchPage of switchPages) {
+    switchPage.classList.remove("active");
+  }
+  
+  for (let sourcePage of sourcePages) {
+    sourcePage.classList.remove("active");
+  }
+  
   for (sourcePage of sourcePages) {
-    if (isSwitchSuccess) {
-      sourcePage.classList.remove("active");
-      continue;
+    if (sourcePage.dataset.isSwitch === "true") {
+      for (let switchPage of switchPages) {
+        if (switchPage.dataset.switch === targetScreen) {
+          switchPage.classList.add("active");
+          break;
+        }
+      }
     }
-    if (sourcePage.dataset.source === targetScreen) {
-      isSwitchSuccess = true;
-      sourcePage.classList.add("active");
+    else {
+      if (sourcePage.dataset.source === targetScreen) {
+        isSwitchSuccess = true;
+        sourcePage.classList.add("active");
+      }
     }
   }
   

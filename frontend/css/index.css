@@ -21,7 +21,7 @@ body {
   display: none;
   position: absolute;
   
-  background-color: lightblue;
+  /* background-color: lightblue; */
   
   left: 100%;
   top: var(--var-nav-height);
