@@ -1,8 +1,7 @@
 "use strict";
-const JWT = require('jsonwebtoken');
-const validate = require(`validator`);
-const getDecodeToken = require('./getDecodedToken');
-const { models } = require('mongoose');
+const jwt = require('jsonwebtoken');
+const validate = require("validator");
+const { getDecodeToken } = require('./getDecodedToken.js');
 
 //should have an white or blacklist with valid tokens in the db for extra security..
 // have an answer evreyt time the comes and token in the header
@@ -13,26 +12,25 @@ async function refreshJWTtoken(token, res) {
         ownAStore: token.ownAStore,
         isAdmin: token.isAdmin,
     }
-    const newToken = JWT.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30m' });
+    const newToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30m' });
     res.header('Authorization', `Bearer ${newToken}`);
-};
+}
 
+async function checkToken(req, res, next) {
+    const token = await getDecodeToken(req.headers.authorization);
 
-const checkToken = async (req, res, next) => {
-    try {
-        const token = await getDecodeToken(req.headers.authorization);
-        if (token) {
-            const expirationTime = token.exp;
-            const currentTime = Math.floor(Date.now() / 1000);
-            if ((expirationTime - currentTime) < 30) await refreshJWTtoken(decodeToken, res), next();
-        } else {
-            next();
+    if (token) {
+        const expirationTime = token.exp;
+        const currentTime = Math.floor(Date.now() / 1000);
+        const isExpiringSoon = (expirationTime - currentTime) < 450;
+
+        if (isExpiringSoon) {
+            await refreshJWTtoken(decodeToken, res);
         }
-    } catch (err) {
-        console.log('Error at catch', err);
-        next();
     }
-};
+
+    return next();
+}
 
 
 module.exports = checkToken;

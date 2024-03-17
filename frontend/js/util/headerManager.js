@@ -18,6 +18,12 @@ function CreateHeaders() {
     if (!bearer_token) {
       return console.error("NO BEARER TOKEN");
     }
+    
+    if (myHeaders.get('Authorization')) {
+      this.update("Authorization", bearer_token);
+      return;
+    }
+    
     myHeaders.append('Authorization', bearer_token);
   }
   

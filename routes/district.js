@@ -3,10 +3,12 @@ const path = require('node:path');
 
 const express = require('express');
 const router = express.Router();
-const db = require('../backend/data/db');
+
+const auth = require('../backend/auth/authToken.js');
+
 const google_data = require(
   path.join(
-    __dirname, "../backend/data/JSON", "api_google_allData1.json"
+    __dirname, "../backend/data/JSON", "./api_google_allData1.json"
   )
 );
 
@@ -27,15 +29,31 @@ function groupByDistricts() {
   return Object.fromEntries(collection)
 }
 
-const groupedByDistrict = groupByDistricts()
+const groupedByDistrict = groupByDistricts();
 
-router.route('/')
-  .get(async (req, res,) => {
-    res.status(200).json(groupedByDistrict);
-  })
-  .post(async (req, res) => {
+router.get("/", async (req, res) => {
+  //const db = req.db;
+  let disctrictNames = [];
+  for (let district in groupedByDistrict) {
+    disctrictNames.push(district);
+  }
 
-  });
+  res.status(200).json(disctrictNames);
+});
+
+router.post("/", auth.requiredAdminLoggedIn, async (req, res) => {
+  // safe route
+  res.json({ ok: true });
+});
+
+router.delete("/", auth.requiredAdminLoggedIn, async (req, res) => {
+  // safe route
+
+  console.log(req);
+
+  res.json({ ok: true });
+});
+
 
 router.route('/:districtID')
   .get(async (req, res) => {

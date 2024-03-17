@@ -23,6 +23,8 @@ app.use(checkToken);
 
 app.use('/discover', require('./routes/discover'));
 app.use('/login', require('./routes/login'));
+app.use('/logout', require('./routes/logout'));
+
 app.use('/contact', require('./routes/contact'));
 app.use('/districts', require('./routes/district'));
 app.use('/userpage', auth.requiredUserLoggedIn, require('./routes/user'));

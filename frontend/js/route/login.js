@@ -1,40 +1,83 @@
 "use strict";
 import CreateHeaders from "../util/headerManager.js"
+import request from "../util/request.js"
 
 const controller = new AbortController();
 const signal = controller.signal;
 
-export async function login() {
+const sourcePages = document.querySelectorAll("[data-source]");
+
+export function setLoginScreen() {
+  for (let sourcePage of sourcePages) {
+    if (sourcePage.dataset.source === "login") {
+      if (sourcePage.dataset.isSwitch === "true") {
+        sourcePage.dataset.isSwitch = "false";
+      }
+      else {
+        sourcePage.dataset.isSwitch = "true";
+      }
+      break;
+    }
+  }
+}
+
+export async function register({ username, password }) {
   try {
-    const response = await fetch("/login", {
+    const response = await request("/register", {
       method: "POST",
       headers: CreateHeaders.getHeaders(),
       body: JSON.stringify({
-        username: "james_webs",
-        password: "hello123123"
+        username: username,
+        password: password
       }),
       signal: signal
     });
     
     const bearer_token = response.headers.get('Authorization');
-    CreateHeaders.addAuth(bearer_token)
+    CreateHeaders.addAuth(bearer_token);
     
-    const data = await response.json()
-    api_result.textContent = data.description;
+    return await response.json();
   } catch (error) {
-    console.error(`Fetch error: ${error.message}`);
-    api_result.textContent = error.message
+    console.error(`Fetch login error: ${error.message}`);
+    return null;
   }
 }
 
-async function fetchLogin() {
+export async function login({ username, password }) {
   try {
-    const response = await fetch("/login", { signal: signal });
-    const data = await response.text()
-    console.log("Fetch complete", data);
-    api_result.textContent = data
+    const response = await request("/login", {
+      method: "POST",
+      headers: CreateHeaders.getHeaders(),
+      body: JSON.stringify({
+        username: username,
+        password: password
+      }),
+      signal: signal
+    });
+    
+    const bearer_token = response.headers.get('Authorization');
+    CreateHeaders.addAuth(bearer_token);
+    
+    return await response.json();
   } catch (error) {
-    console.error(`Fetch error: ${error.message}`);
-    api_result.textContent = error.message
+    console.error(`Fetch login error: ${error.message}`);
+    return null;
+  }
+}
+
+export async function logout() {
+  try {
+    const response = await request("/logout", {
+      method: "GET",
+      headers: CreateHeaders.getHeaders(),
+      signal: signal
+    });
+    
+    CreateHeaders.delete("Authorization");
+    
+    return await response.json();
+  } catch (error) {
+    console.error(`Fetch logout error: ${error.message}`);
+    return null;
   }
 }

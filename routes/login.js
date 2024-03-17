@@ -18,7 +18,7 @@ router.route('/')
     // handle validation here
     const validate = await validateLogin(req.body);
     if (validate.haveErrors) {
-      res.status(406).send("not vaild login crededitals");
+      res.status(406).json({ error: "not vaild login crededitals" });
       return
     }
     const user = await db.getUserLogin(
@@ -41,6 +41,7 @@ router.route('/')
     res.status(200).json({
       error: false,
       username: user.username,
+      isAdmin: user.isAdmin,
       description: `${user.username} is loggin`
     });
 

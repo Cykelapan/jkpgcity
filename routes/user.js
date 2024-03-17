@@ -3,11 +3,15 @@ const express = require('express');
 const router = express.Router();
 //const auth = require('../backend/auth/authToken');
 const db = require('../backend/data/db');
+const auth = require('../backend/auth/authToken');
+
 //CHECK THAT A USER IS LOGGED IN AND ACTIVE TO SEE THIS SITE
 router.route('/')
     .get(async (req, res,) => {
 
-        res.status(200).send('<h1> USER PAGE </h1>');
+        const userStores = [];
+
+        res.status(200).json(userStores);
     })
     .post(async (req, res) => { res.json({}); });
 
