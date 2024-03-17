@@ -21,6 +21,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+#profile-name {
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
 }
 
 .user-store {
