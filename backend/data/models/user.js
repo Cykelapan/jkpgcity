@@ -58,17 +58,22 @@ userSchema.statics.login = async function (username, password) {
         ownAStore: false,
         isAdmin: true,
     }
+    try {
+        const user = await this.findOne({ username });
+        if (!user) {
+            throw Error('Incorret email');
+        }
+        const match = await bycrypt.compare(password, user.password);
+        if (!match) {
+            throw Error('Incorrect passsword');
+        }
+        return user;
 
-    const user = await this.findOne({ username });
-    if (!user) {
-        throw Error('Incorret email');
+    } catch (error) {
+        console.log(error)
     }
 
-    const match = await bycrypt.compare(password, user.password);
-    if (!match) {
-        throw Error('Incorrect passsword');
-    }
-    return user;
+
 }
 
 userSchema.statics.getAllUsersComments = async function (userID) {
@@ -103,12 +108,24 @@ userSchema.statics.removeCommentUser = async function (userID, commentID) {
             user.commentsMade.pull(commentID);
             await user.save();
         } else {
-            throw new Error("Point of Interest not found");
+            throw new Error("User not found");
         }
     } catch (err) {
         console.error(err);
         throw err;
     }
 }
+userSchema.statics.delete = async function (poiID) {
+    try {
+        const deleteUser = await this.findByIdAndDelete(id);
+        if (!deleteUser) {
+            console.error('User not found with ID:', id);
+        } else {
+            console.log('User deleted:', deleteUser);
+        }
+    } catch (error) {
+        console.error('Error deleting user:', error);
+    }
+};
 
 module.exports = mongoose.model(`Users`, userSchema);

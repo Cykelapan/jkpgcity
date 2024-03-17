@@ -95,7 +95,7 @@ itemPointOfInterest.statics.findByInterest = async function (inType) {
 };
 
 itemPointOfInterest.statics.findByDistrictAndIntrest = async function (inDistrict, inType) {
-    return await this.find({ district: inDistrict, interestType: inType });
+    return await this.find({ district: inDistrict, interestType: inType }).sort({ name: 1 });
 };
 
 
@@ -106,6 +106,18 @@ itemPointOfInterest.statics.getAllComments = async function (poiID) {
     } catch (err) {
         console.error(err);
 
+    }
+};
+itemPointOfInterest.statics.delete = async function (poiID) {
+    try {
+        const deletedPOI = await PointOfInterest.findByIdAndDelete(id);
+        if (!deletedPOI) {
+            console.error('POI not found with ID:', id);
+        } else {
+            console.log('POI deleted:', deletedPOI);
+        }
+    } catch (error) {
+        console.error('Error deleting POI:', error);
     }
 };
 

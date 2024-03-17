@@ -15,7 +15,7 @@ async function getPlacesAroundPoint(latitude, longitude, radius, categories) {
     let url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
     url.searchParams.set('location', `${latitude},${longitude}`);
     url.searchParams.set('radius', radius);
-    url.searchParams.set('key', "AIzaSyDorFBHUNozDPeWaJJUdqvOOKr3vaHE48");
+    url.searchParams.set('key', "AIzaSyCmq1UY4xR0fMiHl4LxdvAE3zqXexbBDCA");
     url.searchParams.set('type', categories);
 
 
@@ -53,7 +53,7 @@ async function getPlacesAllAroundPoint(latitude, longitude, radius, categories) 
     const url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
     url.searchParams.set('location', `${latitude},${longitude}`);
     url.searchParams.set('radius', radius);
-    url.searchParams.set('key', "AIzaSyDorFBHUNozDPeWaJJUdqvOOKr3vaHE48");
+    url.searchParams.set('key', "AIzaSyCmq1UY4xR0fMiHl4LxdvAE3zqXexbBDCA");
     url.searchParams.set('type', categories); // Set desired category filters
     url.searchParams.set('max_results', '200');
 
@@ -83,7 +83,7 @@ async function getPlacesAllAroundPoint(latitude, longitude, radius, categories) 
 async function getPlaceDetails(placeId) {
     const url = new URL('https://maps.googleapis.com/maps/api/place/details/json');
     url.searchParams.set('place_id', placeId);
-    url.searchParams.set('key', "AIzaSyDorFBHUNozDPeWaJJUdqvOOKr3vaHE48");
+    url.searchParams.set('key', "AIzaSyCmq1UY4xR0fMiHl4LxdvAE3zqXexbBDCA");
 
     //make this better, question if you need restriction 
     try {

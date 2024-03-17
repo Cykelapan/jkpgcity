@@ -86,22 +86,28 @@ class DB {
     }
     //******************** POI ************************************** 
     async getPOIAll() {
+        await this.checkConnection()
         const pois = await PointOfInterest.find().select({});
         return pois
     }
     async getPOIByID(ID) {
+        await this.checkConnection()
         return await PointOfInterest.findById(ID).select({});
     }
     async getPOITypes(INTEREST) {
+        await this.checkConnection()
         return await PointOfInterest.findByInterest(INTEREST);
     }
     async getPOIDistrict(DISTRICT) {
+        await this.checkConnection()
         return await PointOfInterest.findByDistrict(DISTRICT);
     }
     async getPOIDistrictIntrest(DISTRICT, INTEREST) {
+        await this.checkConnection()
         return await PointOfInterest.findByDistrictAndIntrest(DISTRICT, INTEREST);
     }
     async getPOIComments(ID) {
+        await this.checkConnection()
         return PointOfInterest.getAllComments(ID)
     }
     async postPOILikes(isLike, ID) {
@@ -134,6 +140,9 @@ class DB {
     async updatePOI(ID, inData) {
         return
     }
+    async deletPOI(ID) {
+        await PointOfInterest.delete(ID);
+    };
 
     //***************************** Users **************************************
 
@@ -185,8 +194,11 @@ class DB {
     async getUser(id) {
         return await Users.findById(userID).select({});
     }
+    async deletUser(ID) {
+        await Users.delete(ID);
+    };
 
-    //***************************** Comments **************************************
+
 
 
 }

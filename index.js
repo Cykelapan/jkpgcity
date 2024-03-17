@@ -18,9 +18,7 @@ const checkToken = require('./backend/auth/refreshToken');
 
 const db = require('./backend/data/db');
 
-
 app.use(express.static(path.join(__dirname, "frontend")))
-
 app.use(checkToken);
 
 app.use('/discover', require('./routes/discover'));
@@ -29,8 +27,11 @@ app.use('/contact', require('./routes/contact'));
 app.use('/districts', require('./routes/district'));
 app.use('/userpage', auth.requiredUserLoggedIn, require('./routes/user'));
 app.use('/intrest', require('./routes/interstOverview'));
+app.use('/admin', auth.requiredAdminLoggedIn, requrie('./routes/admin'));
 
-app.get('/', checkToken, async (req, res) => {
+
+
+app.get('/', async (req, res) => {
   const htmlFilePath = path.join(__dirname, "./frontend", "index.html")
   const data = await db.getPOIAll()
   console.log("hej")
@@ -41,10 +42,7 @@ app.get('/', checkToken, async (req, res) => {
   const data = await db.getPOITypes("STORES");
   res.send(data)
 });
-app.get('/test', async (req, res) => {
-  const data = await await db.getPOIAll()
-  res.send(data)
-});
+
 
 app.listen(SERVER_PORT, async (error) => {
   if (error) { console.log(error); }
