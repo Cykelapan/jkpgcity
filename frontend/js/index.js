@@ -61,6 +61,7 @@ logoutButton.addEventListener("click", async (event) => {
   nav_user.textContent = "Login";
   profile_name.textContent = "<LOG IN>";
   isLogin = false;
+  window.loginUser = null;
   setLoginScreen();
   switchActiveScreen("login");
 });
