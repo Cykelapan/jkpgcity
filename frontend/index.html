@@ -18,7 +18,7 @@
       User Page
       <button id="logout" type="button" name="button">Log out</button>
     </section>
-    <section data-source="login" data-is-switch="false" class="container active">
+    <section data-source="login" data-is-switch="false" class="container">
       <form id="login-form" class="form">
         <div class="title">Welcome</div>
         <div class="subtitle">User portal</div>
@@ -36,8 +36,61 @@
       </form>
       <div id="api_result"></div>
     </section>
-    <section data-source="discover" class="container">
-      User Page
+    <section data-source="discover" class="container active">
+      <div class="discover-district-headline">
+        Discover Jönköping
+      </div>
+      <!-- HERE -->
+      <div class="discover-district"></div>
+      <!-- HERE -->
+      
+      <template id="discover-template">
+        <div class="discover-district-title">
+          <span class="card-title">Title</span>
+        </div>
+      </template>
+      
+      <template id="discover-detail-template">
+        <section class="discover-hero-container">
+          <details class="discover-district-detail-hero">
+        		<summary class="discover-district-detail-summary">
+        			<div>
+        				<span style="background-color: #f2dcbb;">
+                  <i class="fa fa-bars"></i>
+        				</span>
+        				<h3>
+        					<strong>Store name</strong>
+        					<small>Description</small>
+        				</h3>
+        			</div>
+        		</summary>
+        		<div>
+        			<dl class="discover-district-detail-more">
+        				<div>
+        					<dt>Contact number:</dt>
+        					<dd>+46700000000</dd>
+        				</div>
+  
+        				<div>
+        					<dt>Website:</dt>
+        					<dd>- <a href="">https://google.com/</a></dd>
+        				</div>
+                
+        				<div>
+        					<dt>Location:</dt>
+        					<dd>- address</dd>
+        				</div>
+                
+        				<div>
+        					<dt>Location:</dt>
+        					<dd>- <a href="">Google Maps</a></dd>
+        				</div>
+        			</dl>
+        		</div>
+        	</details>
+        </section>
+      </template>
+      
       <div>
         <button id="district-api" type="button" name="button">
           make district api call
@@ -46,5 +99,28 @@
     </section>
   </body>
   <script type="module" src="./js/index.js" charset="utf-8"></script>
-  <script src="./js/functionality.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    window.addEventListener("resize", (event) => {
+      updateNavbarHeight();
+    })
+    
+    function toggleNavbar() {
+      topNavBar.classList.toggle("responsive");
+      updateNavbarHeight();
+    }
+    
+    function updateNavbarHeight() {
+      let computedStyle = getComputedStyle(topNavBar);
+      let height = computedStyle.height;
+      
+      updateRootVariable("--var-nav-height", height);
+    }
+    
+    function updateRootVariable(variable, value) {
+      let rootContainer = document.querySelectorAll('.container');
+      for (container of rootContainer) {
+        container.style.setProperty(variable, value);
+      }
+    }
+  </script>
 </html>

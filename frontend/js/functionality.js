@@ -1,26 +1,44 @@
+"use strict";
+import { getDisctrict, districtGenerateView } from "./route/district.js"
+
 const targetButtons = document.querySelectorAll("[data-target]");
 const sourcePages = document.querySelectorAll("[data-source]");
 const switchPages = document.querySelectorAll("[data-switch]");
 let topNavBar = document.querySelector("#topNavBar");
 
+let currentScreen = "";
+let isSwitchScreen = false;
+
 // navigation
-for (targetBtn of targetButtons) {
+for (let targetBtn of targetButtons) {
   targetBtn.addEventListener("click", (event) => {
-    const eventData = event.target.dataset.target;
-    
     // toggle button actove state
-    for (btn of targetButtons) {
+    for (let btn of targetButtons) {
       btn.classList.remove("active");
     }
     event.target.classList.add("active");
     
     // switch active screen: 
     // incase error default to first screen
-    switchActiveScreen(eventData);
+    switchActiveScreen(event.target.dataset.target);
   });
 }
 
-function switchActiveScreen(targetScreen = "") {
+export async function trigger() {
+  if (currentScreen === "login") {
+    return
+  }
+  if (currentScreen === "discover" && isSwitchScreen) {
+    return console.log("get Detail");
+  }
+  if (currentScreen === "discover") {
+    await getDisctrict();
+    districtGenerateView();
+    return;
+  }
+}
+
+export function switchActiveScreen(targetScreen = "") {
   let isSwitchSuccess = false;
   
   for (let switchPage of switchPages) {
@@ -31,46 +49,31 @@ function switchActiveScreen(targetScreen = "") {
     sourcePage.classList.remove("active");
   }
   
-  for (sourcePage of sourcePages) {
+  for (let sourcePage of sourcePages) {
     if (sourcePage.dataset.isSwitch === "true") {
       for (let switchPage of switchPages) {
+        // incase switch screen again to target
         if (switchPage.dataset.switch === targetScreen) {
+          isSwitchSuccess = true;
+          isSwitchScreen = true;
           switchPage.classList.add("active");
+          currentScreen = targetScreen
           break;
         }
       }
     }
     else {
+      // normal active screen
       if (sourcePage.dataset.source === targetScreen) {
         isSwitchSuccess = true;
+        isSwitchScreen = false
         sourcePage.classList.add("active");
+        currentScreen = targetScreen
       }
     }
   }
   
-  return isSwitchSuccess;
-}
-
-
-window.addEventListener("resize", (event) => {
-  updateNavbarHeight();
-})
-
-function toggleNavbar() {
-  topNavBar.classList.toggle("responsive");
-  updateNavbarHeight();
-}
-
-function updateNavbarHeight() {
-  let computedStyle = getComputedStyle(topNavBar);
-  let height = computedStyle.height;
+  trigger();
   
-  updateRootVariable("--var-nav-height", height);
-}
-
-function updateRootVariable(variable, value) {
-  let rootContainer = document.querySelectorAll('.container');
-  for (container of rootContainer) {
-    container.style.setProperty(variable, value);
-  }
+  return isSwitchSuccess;
 }

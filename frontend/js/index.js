@@ -1,7 +1,11 @@
 "use strict";
 import FetchHeader from "./util/headerManager.js"
-import { getDisctrict } from "./route/district.js"
+import { 
+  getDisctrict, 
+  districtGenerateView 
+} from "./route/district.js"
 import { login } from "./route/login.js"
+import { switchActiveScreen, trigger } from "./functionality.js"
 
 FetchHeader.add('Accept', 'application/json');
 FetchHeader.add('Content-Type', 'application/json');
@@ -56,5 +60,9 @@ function setLoginScreen() {
 }
 
 district.addEventListener("click", (event) => {
-  getDisctrict()
+  districtGenerateView()
 });
+
+window.addEventListener("load", async (event) => {
+  switchActiveScreen("discover");
+})
