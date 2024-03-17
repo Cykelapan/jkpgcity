@@ -23,18 +23,16 @@ loginForm.addEventListener("submit", async (event) => {
   const form = Object.fromEntries(myFormData);
   const isLoggedIn = await login(form);
   
-  if (!isLoggedIn) {
-    api_result.textContent = "Failed to Login";
-    setLoginScreen();
-    switchActiveScreen("login");
-    isLogin = false;
-    return;
-  }
+  isLogin = isLoggedIn ? true : false;
   
-  isLogin = true;
+  if (!isLogin) { return; }
+  
   setLoginScreen();
   switchActiveScreen("login");
-  api_result.textContent = isLoggedIn.description;
+
+  api_result.textContent = isLoggedIn 
+    ? isLoggedIn.description 
+    : "Failed to Login";
 });
 
 logoutButton.addEventListener("click", async (event) => {
@@ -48,12 +46,11 @@ function setLoginScreen() {
     if (sourcePage.dataset.source === "login") {
       if (sourcePage.dataset.isSwitch === "true") {
         sourcePage.dataset.isSwitch = "false";
-        break;
       }
       else {
         sourcePage.dataset.isSwitch = "true";
-        break;
       }
+      break;
     }
   }
 }
