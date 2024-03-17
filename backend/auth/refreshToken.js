@@ -17,19 +17,19 @@ async function refreshJWTtoken(token, res) {
 }
 
 async function checkToken(req, res, next) {
-  const token = await getDecodeToken(req.headers.authorization);
-  
-  if (token) {
-    const expirationTime = token.exp;
-    const currentTime = Math.floor(Date.now() / 1000);
-    const isExpiringSoon = (expirationTime - currentTime) < 450;
-    
-    if (isExpiringSoon) {
-      await refreshJWTtoken(decodeToken, res);
+    const token = await getDecodeToken(req.headers.authorization);
+
+    if (token) {
+        const expirationTime = token.exp;
+        const currentTime = Math.floor(Date.now() / 1000);
+        const isExpiringSoon = (expirationTime - currentTime) < 450;
+
+        if (isExpiringSoon) {
+            await refreshJWTtoken(decodeToken, res);
+        }
     }
-  }
-  
-  return next();
+
+    return next();
 }
 
 

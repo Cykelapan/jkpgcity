@@ -1,31 +1,23 @@
 "use strict";
 const fs = require('node:fs');
-//const path = require('node:path');
-const { log, error } = require('node:console');
-
 const { MONGO_PORT, MONGO_CONTAINER_NAME, MONGO_URI } = process.env;
 const mongoose = require("mongoose");
-
 const PointOfInterest = require('./models/pointOfInterest');
 const Users = require('./models/user');
 const Comments = require('./models/comments');
-
-// RECOMMENDED: use require("path")
-// const path = require('node:path');
-// path.join(__dirname, "JSON", "api_google_allData.json") =>  '<this directory>/data/JSON/api_google_allData.json'
-const filesdasdasdadPath = [
-  './data/JSON/api_google_stores.json', 
-  './data/JSON/api_google_wellness.json', 
-  './data/JSON/api_google_resturants.json', 
-  './data/JSON/api_google_entertaiment.json', 
-  './data/JSON/api_google_hotels.json'
-];
 const filePathData = './data/JSON/api_google_allData.json';
 //need to know if it is better to make one schema with all the diffrent types and querie it or use diffrent schemas?
 class DB {
+    static shared = null;
     constructor() {
+        if (DB.instance) {
+            return DB.instance;
+        }
+
         this.db = undefined;
         this.mongoose = mongoose;
+
+        DB.instance = this;
     }
 
     async connect() {
@@ -36,6 +28,15 @@ class DB {
             this.db = this.mongoose.connection;
         } catch (error) {
             console.error('Error connecting to database:', error);
+        }
+    }
+    async checkConnection() {
+        try {
+            await this.db.command({ ping: 1 });
+            console.log("Connection");
+        } catch (error) {
+            console.error('Ping failed:', error);
+            this.db.connect();
         }
     }
 
@@ -83,63 +84,65 @@ class DB {
         }
 
     }
-    //******************** Stores ************************************** 
+    //******************** POI ************************************** 
+    async getPOIAll() {
+        await this.checkConnection()
+        const pois = await PointOfInterest.find().select({});
+        return pois
+    }
     async getPOIByID(ID) {
+        await this.checkConnection()
         return await PointOfInterest.findById(ID).select({});
     }
     async getPOITypes(INTEREST) {
-        return await PointOfInterest.find({ interestType: INTEREST })
-            .select('_id name district rating.like rating.dislike numberOfComments')
-            .sort({ name: 1 });
+        await this.checkConnection()
+        return await PointOfInterest.findByInterest(INTEREST);
     }
-    async updatePOILikes(likeType, ID) {
+    async getPOIDistrict(DISTRICT) {
+        await this.checkConnection()
+        return await PointOfInterest.findByDistrict(DISTRICT);
+    }
+    async getPOIDistrictIntrest(DISTRICT, INTEREST) {
+        await this.checkConnection()
+        return await PointOfInterest.findByDistrictAndIntrest(DISTRICT, INTEREST);
+    }
+    async getPOIComments(ID) {
+        await this.checkConnection()
+        return PointOfInterest.getAllComments(ID)
+    }
+    async postPOILikes(isLike, ID) {
         try {
-          await PointOfInterest.findByIdAndUpdate(ID, {
-              $inc: { [`rating.${likeType}`]: 1 }
-            } // Increment specific like/dislike count
-          );
+            if (isLike) PointOfInterest.addLike(ID)
+            else PointOfInterest.addDislike(ID)
+
         } catch (error) {
             console.error(error);
             // Handle errors
         }
     }
+    async deletePOIComment(poiID, userID, commentID) {
+        await Comments.removeComment(commentID);
+        await PointOfInterest.removeComment(poiID, commentID);
+        await Users.removeCommentUser(userID, commentID);
+    };
 
-    //see if you need this or not
-    async getPOIComments(ID) {
-      return
-    }
-    async addPOIComments(poiID, userID, comment) {
-        try {
-            //check if user exist
-            const user = await Users.findById(userID);
-            if (!user) {
-                console.log("USER DOSEN'T EXIST WHEN ADD COMMENT");
-                return
-            }
-            const newComment = new Comment({
-                user: userId,
-                content: comment,
-            });
-
-            await PointOfInterest.findByIdAndUpdate(
-                poiId,
-                { $push: { comments: newComment } }
-            );
-
-            poi.comments.push(newComment);
-            poi.numberOfComments = poi.comments.length;
-
-            await poi.save();
-            console.log('Comment added successfully!');
-        } catch (error) {
-            console.error(error);
-            // Handle errors appropriately
+    async postPOIComment(poiID, userID, inComment) {
+        const newComment = await Comments.addComment(userID, inComment);
+        if (newComment) {
+            PointOfInterest.addComment(poiID, newComment);
+            Users.addComment(userID, newComment);
+        } else {
+            await Comments.removeComment(newComment._id);;
         }
     }
-    // se how you can use the frontend of what you should update
-    async updatePOI(ID) {
-      return
+
+    //vad ska uppdateras?
+    async updatePOI(ID, inData) {
+        return
     }
+    async deletPOI(ID) {
+        await PointOfInterest.delete(ID);
+    };
 
     //***************************** Users **************************************
 
@@ -191,10 +194,14 @@ class DB {
     async getUser(id) {
         return await Users.findById(userID).select({});
     }
+    async deletUser(ID) {
+        await Users.delete(ID);
+    };
 
-    //***************************** Comments **************************************
+
 
 
 }
 
-module.exports = DB;
+//är en singleton nu?
+module.exports = new DB();

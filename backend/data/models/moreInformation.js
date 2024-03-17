@@ -15,6 +15,4 @@ const itemMoreInformation = mongoose.Schema({
     iconImage: String,
     bgImage: String,
     color: String,
-
-
 });

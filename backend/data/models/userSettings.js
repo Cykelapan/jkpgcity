@@ -2,7 +2,12 @@
 const mongoose = require('mongoose');
 
 const itemUserSettings = mongoose.Schema({
-
+    avatarURL: {
+        type: String
+    },
+    imageURL: {
+        type: String
+    }
 
 })
 

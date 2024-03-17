@@ -19,7 +19,7 @@ const itemComment = mongoose.Schema({
     }
 });
 
-itemComment.statics.addComment = async function (userID, comment) {
+itemComment.statics.addComment = async function (userID, commentText,) {
     const newComment = new Comment({
         comment: commentText,
         madeBy: userID

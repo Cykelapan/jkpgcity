@@ -27,4 +27,4 @@ async function getDecodeToken(bearer) {
     return await getVerifyToken(token);
 };
 
-module.exports = { getDecodeToken };
+module.exports = getDecodeToken;

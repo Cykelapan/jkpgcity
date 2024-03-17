@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: my-Config
+  name: my-config
 data:
   K8S_NAME: value1
   K8S_URI: value2

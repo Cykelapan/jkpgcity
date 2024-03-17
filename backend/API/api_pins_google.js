@@ -11,9 +11,6 @@ const INTEREST = {
 const PLACENAME = {
     VÄSTER: 'Väster',
     ÖSTER: 'Öster',
-    SOLÅSEN: 'Solåsen',
-    SÖDER: 'Söder',
-    ASECS: 'Asecs',
     TÄNDSTICKSOMRÅDET: 'Tändsticksområdet',
     PIREN: 'Piren'
 }
@@ -62,10 +59,10 @@ function getFileName(category) {
 
 const PINS = [
     {
-        // 57.785383, 14.158439 to 100m
+        // 57.785957, 14.159194
         name: PLACENAME.TÄNDSTICKSOMRÅDET,
-        latitude: 57.785383,
-        longitude: 14.158439,
+        latitude: 57.785957,
+        longitude: 14.159194,
         radius: 230,
         request: [{
             categories: 'store',
@@ -85,7 +82,10 @@ const PINS = [
         }, {
             categories: 'tourist_attraction',
             interestType: INTEREST.ENTERTAIMENT,
-        },]
+        }, {
+            categories: 'movie_theater',
+            interestType: INTEREST.ENTERTAIMENT,
+        }]
     },
     {
         // //57.784655, 14.169145 -> piren 70m
@@ -103,11 +103,11 @@ const PINS = [
     },
 
     { // väster 57.780632, 14.154856
-        //57.780858, 14.159219
+        //57.781647, 14.158387
         name: PLACENAME.VÄSTER,
-        latitude: 57.780858,
-        longitude: 14.159219,
-        radius: 1200,
+        latitude: 57.781647,
+        longitude: 14.158387,
+        radius: 650,
         request: [{
             categories: 'lodging',
             interestType: INTEREST.HOTELS
@@ -144,15 +144,37 @@ const PINS = [
         }, {
             categories: 'store',
             interestType: INTEREST.STORES
-        }]
+        }, {
+            categories: 'drugstore',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'clothing_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'supermarket',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'furniture_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'book_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'convenience_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'shoe_store',
+            interestType: INTEREST.STORES
+        },
+        ]
 
 
     }, { // öster 57.779667, 14.181839
-        //57.781254, 14.177045
+        //57.781546, 14.179326
         name: PLACENAME.ÖSTER,
-        latitude: 57.781254,
-        longitude: 14.177045,
-        radius: 1200,
+        latitude: 57.781546,
+        longitude: 14.179326,
+        radius: 650,
         request: [{
             categories: 'lodging',
             interestType: INTEREST.HOTELS
@@ -188,6 +210,27 @@ const PINS = [
             interestType: INTEREST.WELLNESS
         }, {
             categories: 'store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'drugstore',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'clothing_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'supermarket',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'furniture_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'book_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'convenience_store',
+            interestType: INTEREST.STORES
+        }, {
+            categories: 'shoe_store',
             interestType: INTEREST.STORES
         },]
 
@@ -287,24 +330,6 @@ const PINS = [
 ];
 
 
-async function getMaxSearch(category) {
-    switch (category) {
-        case 'store':
-            return 200;
-        case 'physiotherapist' || 'gym' || 'museum' || 'electronics_store' || 'hair_care' || 'beauty_salon':
-            return 20;
-        case 'supermarket' || 'convenience_store':
-            return 10;
-        case 'clothing_store' || 'shoe_store' || 'lodging':
-            return 60;
-        case 'shopping_mall' || 'movie_theater':
-            return 5;
-        case 'restaurant' || 'cafe' || 'tourist_attraction':
-            return 100;
-        default:
-            return 5;
-    }
-};
 
 //57.785533, 14.158831 -> tändsticks området 200/250m
 //57.782129, 14.155344 -> väster området 400m
@@ -325,7 +350,5 @@ async function getMaxSearch(category) {
 module.exports = {
     INTEREST,
     PINS,
-    getFileName,
-    PLACENAME,
-    getMaxSearch
+    PLACENAME
 };

@@ -1,12 +1,13 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
+//const auth = require('../backend/auth/authToken');
+const db = require('../backend/data/db');
 const auth = require('../backend/auth/authToken');
 
 //CHECK THAT A USER IS LOGGED IN AND ACTIVE TO SEE THIS SITE
 router.route('/')
     .get(async (req, res,) => {
-        const db = req.db;
 
         const userStores = [];
 
