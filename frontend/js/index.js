@@ -4,7 +4,7 @@ import {
   getDisctrict, 
   districtGenerateView 
 } from "./route/district.js"
-import { setLoginScreen, login, logout } from "./route/login.js"
+import { setLoginScreen, login, logout, register } from "./route/login.js"
 import { switchActiveScreen, trigger } from "./functionality.js"
 import { userStoreGenerateView } from "./util/userStore.js"
 
@@ -24,7 +24,24 @@ loginForm.addEventListener("submit", async (event) => {
   
   const myFormData = new FormData(event.target);
   const form = Object.fromEntries(myFormData);
-  const isLoggedIn = await login(form);
+  
+  console.log(form);
+  let isLoggedIn
+  
+  if (form.isRegister) {
+    isLoggedIn = await register({
+      username: form.username, 
+      password: form.password 
+    });
+  }
+  else {
+    isLoggedIn = await login({ 
+      username: form.username, 
+      password: form.password 
+    });
+  }
+  
+  window.loginUser = isLoggedIn;
   
   isLogin = isLoggedIn ? true : false;
   

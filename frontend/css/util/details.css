@@ -57,7 +57,7 @@ h2 + * {
   font-weight: 700;
   /* white-space: nowrap; */
 }
-.discover-district-detail-summary span:first-child {
+.discover-district-detail-summary span {
   width: 4rem;
   height: 4rem;
   border-radius: 10px;
@@ -68,14 +68,29 @@ h2 + * {
   justify-content: center;
   margin-right: 1.25em;
   margin-left: 0.75rem;
+  
+  background-color: #f2dcbb;
+}
+.discover-district-detail-summary span > button {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 10px;
+  background-color: #f3e1e1;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.25em;
+  margin-left: 0.75rem;
+  
+  background-color: #f2dcbb;
 }
 .discover-district-detail-summary span:first-child svg {
   width: 2.25rem;
   height: 2.25rem;
 }
 .discover-district-detail-summary span:last-child {
-  font-weight: 700;
-  margin-left: auto;
+  margin: 0;
 }
 .discover-district-detail-summary:focus {
   outline: none;
@@ -111,6 +126,10 @@ h2 + * {
 .discover-district-detail-more div {
   margin: auto;
   margin-bottom: 1.0rem;
+}
+
+.discover-district-remove-btn {
+  
 }
 
 @media screen and (max-width: 300px) {

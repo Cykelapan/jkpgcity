@@ -20,11 +20,18 @@ export async function userStoreGenerateView() {
   
   const districts = await getDisctrict();
   const userStores = await getDisctrictDetail(districts[0]);
+  // const userStores = await getUserData();
 
   for (let store of userStores ?? []) {
     const newElement = userStore.content.cloneNode(true);
 
     const form = newElement.querySelector(".updateStoreForm");
+
+    const removeBtn = newElement.querySelector("span:last-child > button");
+    
+    removeBtn.addEventListener("click", async (event) => {
+      console.log(store);
+    });
 
     const header = newElement.querySelector("h3");
     
@@ -59,9 +66,42 @@ export async function userStoreGenerateView() {
       event.preventDefault();
       const parseForm = new FormData(event.target);
       const data = Object.fromEntries(parseForm);
-      console.log(data);
+      
+      let postResponse = await postUserData(data);
+      console.log(postResponse);
     });
     
     userStoreContainer.appendChild(newElement);
+  }
+}
+
+export async function getUserData() {
+  try {
+    const response = await request("/userpage", {
+      method: "GET",
+      headers: CreateHeaders.getHeaders(),
+      signal: signal
+    });
+    
+    return await response.json();
+  } catch (error) {
+    console.error(`Fetch userpage get error: ${error.message}`);
+    return null;
+  }
+}
+
+export async function postUserData(data) {
+  try {
+    const response = await request("/userpage", {
+      method: "POST",
+      headers: CreateHeaders.getHeaders(),
+      body: JSON.stringify(data),
+      signal: signal
+    });
+    
+    return await response.json();
+  } catch (error) {
+    console.error(`Fetch userpage post error: ${error.message}`);
+    return null;
   }
 }

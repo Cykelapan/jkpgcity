@@ -8,7 +8,9 @@ router.route('/')
     .get(async (req, res,) => {
         const db = req.db;
 
-        res.status(200).send('<h1> USER PAGE </h1>');
+        const userStores = [];
+
+        res.status(200).json(userStores);
     })
     .post(async (req, res) => { res.json({}); });
 

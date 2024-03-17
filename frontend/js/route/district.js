@@ -52,8 +52,21 @@ export function districtDetailGenerateView() {
     const storeElement = newElement.querySelector("strong");
     const descriptionElement = newElement.querySelector("small");
     
-    storeElement.textContent = detailDistrict.name
-    descriptionElement.textContent = detailDistrict.description
+    storeElement.textContent = detailDistrict.name;
+    descriptionElement.textContent = detailDistrict.description;
+    
+    const lastSpan = newElement.querySelector("span:last-child");
+    
+    if (window.loginUser?.isAdmin) {
+      const adminRemoveBtn = lastSpan.querySelector("button");
+      adminRemoveBtn.addEventListener("click", async(event) => {
+        await adminRemoveStore(detailDistrict);
+      });
+    }
+    else {
+      lastSpan.style.display = "none";
+    }
+    
     
     const detailSection = newElement.querySelector(".discover-district-detail-more");
     
@@ -62,19 +75,35 @@ export function districtDetailGenerateView() {
     const locationElement = detailSection.querySelector("div:nth-child(3)");
     const googleMapsElement = detailSection.querySelector("div:nth-child(4)");
     
-    contactElement.querySelector("dt").textContent = "Contact:"
-    contactElement.querySelector("dd").textContent = detailDistrict.contactPhoneNumber
+    contactElement.querySelector("dt").textContent = "Contact:";
+    contactElement.querySelector("dd").textContent = detailDistrict.contactPhoneNumber;
     
-    websiteElement.querySelector("dd > a").textContent = "Website:"
-    websiteElement.querySelector("dd > a").href = detailDistrict.website
+    websiteElement.querySelector("dd > a").textContent = "Website:";
+    websiteElement.querySelector("dd > a").href = detailDistrict.website ?? "";
     
-    locationElement.querySelector("dt").textContent = "Location:"
-    locationElement.querySelector("dd").textContent = detailDistrict.address
+    locationElement.querySelector("dt").textContent = "Location:";
+    locationElement.querySelector("dd").textContent = detailDistrict.address;
     
-    googleMapsElement.querySelector("dd > a").textContent = "Google Maps:"
-    googleMapsElement.querySelector("dd > a").href =  detailDistrict.linkGoogleMaps
+    googleMapsElement.querySelector("dd > a").textContent = "Google Maps:";
+    googleMapsElement.querySelector("dd > a").href =  detailDistrict.linkGoogleMaps;
     
     discoverContainer.appendChild(newElement);
+  }
+}
+
+export async function adminRemoveStore(store) {
+  try {
+    const response = await request(`/districts`, {
+      method: "DELETE",
+      headers: CreateHeaders.getHeaders(),
+      body: JSON.stringify(store),
+      signal: signal
+    });
+    
+    const res = await response.json();
+    console.log("admin delete reposne", res);
+  } catch (e) {
+    console.log(e);
   }
 }
 

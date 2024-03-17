@@ -44,6 +44,15 @@ router.post("/", auth.requiredAdminLoggedIn, async (req, res) => {
   res.json({ ok: true });
 });
 
+router.delete("/", async (req, res) => {
+  // safe route
+  
+  console.log(req);
+  
+  res.json({ ok: true });
+});
+
+
 router.route('/:districtID')
   .get(async (req, res) => {
     //const db = req.db;

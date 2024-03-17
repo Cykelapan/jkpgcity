@@ -45,6 +45,7 @@ router.route('/')
     res.status(200).json({
       error: false,
       username: user.username,
+      isAdmin: user.isAdmin,
       description: `${user.username} is loggin`
     });
 
