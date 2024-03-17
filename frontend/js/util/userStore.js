@@ -73,6 +73,9 @@ export async function userStoreGenerateView() {
     
     userStoreContainer.appendChild(newElement);
   }
+  
+  const createStoreForm = userStore.content.cloneNode(true);
+  userStoreContainer.appendChild(createStoreForm);
 }
 
 export async function userDeleteStore(data) {

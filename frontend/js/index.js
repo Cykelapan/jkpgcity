@@ -13,7 +13,6 @@ FetchHeader.add('Content-Type', 'application/json');
 
 const loginForm = document.querySelector("#login-form");
 const logoutButton = document.querySelector("#logout");
-const district = document.querySelector("#district-api");
 const profile_name = document.querySelector("#profile-name");
 const nav_user = document.querySelector("[data-target=login]");
 
@@ -64,10 +63,6 @@ logoutButton.addEventListener("click", async (event) => {
   window.loginUser = null;
   setLoginScreen();
   switchActiveScreen("login");
-});
-
-district.addEventListener("click", (event) => {
-  districtGenerateView()
 });
 
 window.addEventListener("load", async (event) => {
