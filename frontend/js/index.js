@@ -15,6 +15,7 @@ const loginForm = document.querySelector("#login-form");
 const logoutButton = document.querySelector("#logout");
 const district = document.querySelector("#district-api");
 const api_result = document.querySelector("#api_result");
+const profile_name = document.querySelector("#profile-name");
 
 const sourcePages = document.querySelectorAll("[data-source]");
 const switchPages = document.querySelectorAll("[data-switch]");
@@ -32,6 +33,8 @@ loginForm.addEventListener("submit", async (event) => {
   
   if (!isLogin) { return; }
   
+  profile_name.textContent = isLoggedIn.username;
+  
   setLoginScreen();
   switchActiveScreen("login");
 
@@ -42,7 +45,9 @@ loginForm.addEventListener("submit", async (event) => {
 
 logoutButton.addEventListener("click", async (event) => {
   // Log out HERE!
+  // await someFunctionToLogout()
   
+  profile_name.textContent = "<LOG IN>";
   isLogin = false;
   setLoginScreen();
   switchActiveScreen("login");
