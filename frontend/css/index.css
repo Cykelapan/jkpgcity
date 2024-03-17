@@ -1,6 +1,7 @@
 @import "./util/details.css";
 @import "./util/form.css";
 @import "./util/nav.css";
+@import "./util/profile.css";
 
 * {
   box-sizing: border-box;
@@ -88,12 +89,9 @@ body {
   padding: 3.5rem 0;
 }
 
-details.discover-district-detail-hero {
-  flex: 1 1 200px;
-  background-color: cadetblue;
-}
-
 .discover-hero-container {
+  align-self: center;
+  background-color: cadetblue;
   flex: 1 1 350px;
 }
 

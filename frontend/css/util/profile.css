@@ -1,0 +1,37 @@
+
+.profile-container {
+  max-width: 800px;
+  height: 100%;
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.profile-page {
+  margin: auto;
+}
+
+.profile-card {
+  height: 100px;
+  width: 400px;
+  background-color: teal;
+  
+  border-radius: 10px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-store {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  
+  flex-direction: column;
+  
+  width: 100%;
+}
+
+.user-store-entry {
+  width: 100%;
+}

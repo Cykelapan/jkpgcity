@@ -6,6 +6,7 @@ import {
 } from "./route/district.js"
 import { login } from "./route/login.js"
 import { switchActiveScreen, trigger } from "./functionality.js"
+import { userStoreGenerateView } from "./util/userStore.js"
 
 FetchHeader.add('Accept', 'application/json');
 FetchHeader.add('Content-Type', 'application/json');
@@ -40,6 +41,8 @@ loginForm.addEventListener("submit", async (event) => {
 });
 
 logoutButton.addEventListener("click", async (event) => {
+  // Log out HERE!
+  
   isLogin = false;
   setLoginScreen();
   switchActiveScreen("login");
@@ -64,5 +67,6 @@ district.addEventListener("click", (event) => {
 });
 
 window.addEventListener("load", async (event) => {
+  // setLoginScreen()
   switchActiveScreen("discover");
 })

@@ -1,5 +1,6 @@
 "use strict";
 import { getDisctrict, districtGenerateView } from "./route/district.js"
+import { userStoreGenerateView } from "./util/userStore.js"
 
 const targetButtons = document.querySelectorAll("[data-target]");
 const sourcePages = document.querySelectorAll("[data-source]");
@@ -25,8 +26,9 @@ for (let targetBtn of targetButtons) {
 }
 
 export async function trigger() {
-  if (currentScreen === "login") {
-    return
+  if (currentScreen === "login" && isSwitchScreen) {
+    userStoreGenerateView();
+    return 
   }
   if (currentScreen === "discover" && isSwitchScreen) {
     return console.log("get Detail");

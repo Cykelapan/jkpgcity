@@ -78,7 +78,7 @@ export function districtDetailGenerateView() {
   }
 }
 
-async function getDisctrictDetail(district) {
+export async function getDisctrictDetail(district) {
   try {
     const response = await request(`/districts/${district}`, {
       method: "GET",
@@ -87,6 +87,7 @@ async function getDisctrictDetail(district) {
     });
     
     districtDetailList = await response.json();
+    return districtDetailList;
   } catch (e) {
     console.log(e);
   }
@@ -101,6 +102,7 @@ export async function getDisctrict() {
     });
     
     districtList = await response.json();
+    return districtList;
   } catch (e) {
     console.log(e);
   }

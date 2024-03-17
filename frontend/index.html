@@ -15,9 +15,85 @@
       </a>
     </nav>
     <section data-switch="login" class="container">
-      <div class="">
-        User Page
-        <button id="logout" type="button" name="button">Log out</button>
+      <div class="profile-container">
+        <div class="profile-page">
+          <div class="profile-card">
+            <div class="">
+              Username
+            </div>
+          </div>
+          <div class="user-store">
+            <div class="user-store-entry"></div>
+            
+            <template id="user-store-template">
+              <section class="discover-hero-container">
+                <details class="discover-district-detail-hero">
+              		<summary class="discover-district-detail-summary">
+              			<div>
+              				<span style="background-color: #f2dcbb;">
+                        <i class="fa fa-bars"></i>
+              				</span>
+                      <h3>
+                        <strong>Create</strong>
+                        <small>add</small>
+                      </h3>
+              			</div>
+              		</summary>
+              		<div>
+                    <form class="updateStoreForm">
+                			<dl class="discover-district-detail-more">
+                        <div>
+                          <dt>Store name:</dt>
+                          <dd>- <input type="text" name="storeName" value="" placeholder="Store name"> </dd>
+                        </div>
+                        
+                        <div>
+                          <dt>Description:</dt>
+                          <dd>- <input type="text" name="description" value="" placeholder="description"> </dd>
+                        </div>
+                        
+                				<div>
+                					<dt>Contact number:</dt>
+                					<dd>-
+                            <input type="tel" name="contactNumber" value="" placeholder="number">
+                          </dd>
+                				</div>
+          
+                				<div>
+                					<dt>Website:</dt>
+                					<dd>- <input type="text" name="website" value="" placeholder="Website"> </dd>
+                				</div>
+                        
+                				<div>
+                					<dt>Location:</dt>
+                					<dd>- 
+                            <input type="text" name="streetName" value="" placeholder="Street address">
+                            <input type="text" name="zipcode" value="" placeholder="Zip Code">
+                            <input type="text" name="cityName" value="" placeholder="City">
+                          </dd>
+                				</div>
+                        
+                				<div>
+                					<dt>Maps:</dt>
+                					<dd>- <input type="text" name="googlemaps" value="" placeholder="Google Maps"></dd>
+                				</div>
+                				<div>
+                					<dt></dt>
+                					<dd>- <button type="submit" name="button">Submit</button></dd>
+                				</div>
+                				<div style="display:none;">
+                          <input disabled type="text" name="google_id" value="">
+                				</div>
+                			</dl>
+                      
+                    </form>
+              		</div>
+              	</details>
+              </section>
+            </template>
+          </div>
+          <button id="logout" type="button" name="button">Log out</button>
+        </div>
       </div>
     </section>
     <section data-source="login" data-is-switch="false" class="container">
