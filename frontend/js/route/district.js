@@ -2,6 +2,7 @@
 import CreateHeaders from "../util/headerManager.js"
 import request from "../util/request.js"
 
+const discoverHeadline = document.querySelector(".discover-district-headline");
 const discoverContainer = document.querySelector("[data-source=discover] > .discover-district");
 const discover_template = document.querySelector("#discover-template");
 const discover_detail_template = document.querySelector("#discover-detail-template");
@@ -30,16 +31,15 @@ export function districtGenerateView() {
       let getDisctrictName = event.currentTarget.dataset.district;
       await getDisctrictDetail(getDisctrictName);
       
-      // console.log(districtDetailList);
-      districtDetailGenerateView()
+      await districtDetailGenerateView();
+      
+      discoverHeadline.textContent = `Discover ${getDisctrictName}`;
     });
     
-    discoverContainer.appendChild(newElement)
+    discoverContainer.appendChild(newElement);
+    discoverHeadline.textContent = `Discover Jönköping`;
   }
 }
-
-// console.log(districtDetailList);
-// districtDetailGenerateView()
 
 export function districtDetailGenerateView() {
   while (discoverContainer.hasChildNodes()) {
@@ -78,8 +78,6 @@ export function districtDetailGenerateView() {
   }
 }
 
-getDisctrictDetail("Torpa")
-
 async function getDisctrictDetail(district) {
   try {
     const response = await request(`/districts/${district}`, {
@@ -89,7 +87,6 @@ async function getDisctrictDetail(district) {
     });
     
     districtDetailList = await response.json();
-    console.log(districtDetailList[0]);
   } catch (e) {
     console.log(e);
   }
