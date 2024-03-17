@@ -22,4 +22,4 @@ async function getDecodeToken(bearer) {
     };
 };
 
-module.exports = { getDecodeToken };
+module.exports = getDecodeToken;

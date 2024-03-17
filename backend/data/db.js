@@ -1,32 +1,23 @@
 "use strict";
 const fs = require('node:fs');
-//const path = require('node:path');
-const { log, error } = require('node:console');
-
 const { MONGO_PORT, MONGO_CONTAINER_NAME, MONGO_URI } = process.env;
 const mongoose = require("mongoose");
-
 const PointOfInterest = require('./models/pointOfInterest');
 const Users = require('./models/user');
 const Comments = require('./models/comments');
-
-// RECOMMENDED: use require("path")
-// const path = require('node:path');
-// path.join(__dirname, "JSON", "api_google_allData.json") =>  '<this directory>/data/JSON/api_google_allData.json'
-const filesdasdasdadPath = [
-    './data/JSON/api_google_stores.json',
-    './data/JSON/api_google_wellness.json',
-    './data/JSON/api_google_resturants.json',
-    './data/JSON/api_google_entertaiment.json',
-    './data/JSON/api_google_hotels.json'
-];
 const filePathData = './data/JSON/api_google_allData.json';
 //need to know if it is better to make one schema with all the diffrent types and querie it or use diffrent schemas?
 class DB {
-    invoke() { };
+    static shared = null;
     constructor() {
+        if (DB.instance) {
+            return DB.instance;
+        }
+
         this.db = undefined;
         this.mongoose = mongoose;
+
+        DB.instance = this;
     }
 
     async connect() {
@@ -94,6 +85,10 @@ class DB {
 
     }
     //******************** POI ************************************** 
+    async getPOIAll() {
+        const pois = await PointOfInterest.find().select({});
+        return pois
+    }
     async getPOIByID(ID) {
         return await PointOfInterest.findById(ID).select({});
     }

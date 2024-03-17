@@ -4,11 +4,10 @@ metadata:
   name: jkpg-ingress
   namespace: jkpg-city-replica
   annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: HTTP
     nginx.ingress.kubernetes.io/ssl-redirect: 'false'
 spec:
   rules:
-    - host: getlostinjkpg.com
+    - host: localhost
       http:
         paths:
           - pathType: ImplementationSpecific
@@ -16,6 +15,6 @@ spec:
               service:
                 name: jkpg-service 
                 port:
-                  number: 5000
+                  number: 5500
 
 #to deploy evrething kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.4/deploy/static/provider/cloud/deploy.yaml

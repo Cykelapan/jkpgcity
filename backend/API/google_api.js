@@ -15,10 +15,9 @@ async function getPlacesAroundPoint(latitude, longitude, radius, categories) {
     let url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
     url.searchParams.set('location', `${latitude},${longitude}`);
     url.searchParams.set('radius', radius);
-    url.searchParams.set('key', API_KEY_GOOGLE);
+    url.searchParams.set('key', "AIzaSyDorFBHUNozDPeWaJJUdqvOOKr3vaHE48");
     url.searchParams.set('type', categories);
-    //url.searchParams.set('max_results', "1");
-    //await CALL.getMaxSearch(categories)
+
 
     let allPlaces = [];
     let nextPageToken = null;
@@ -27,12 +26,13 @@ async function getPlacesAroundPoint(latitude, longitude, radius, categories) {
     do {
         try {
             const response = await axios.get(url);
-
             if (response.status !== 200) {
                 throw new Error(`API request failed with status ${response.status}`);
             }
             allPlaces.push(...response.data.results);
             //allPlaces = allPlaces.concat(response.data.results);
+            console.log(response.data)
+            console.log(response.data.next_page_token)
             nextPageToken = response.data.next_page_token;
             iterationCount++;
 
@@ -48,26 +48,12 @@ async function getPlacesAroundPoint(latitude, longitude, radius, categories) {
     } while (nextPageToken && iterationCount < maxIterations);
     console.log(allPlaces.length);
     return await allPlaces;
-    //what happens if you get multiple pages?
-    /*
-    try {
-        const response = await axios.get(url);
-
-        if (response.status !== 200) {
-            throw new Error(`API request failed with status ${response.status}`);
-        }
-        console.log(response.data.next_page_token);
-        return await response.data.results;
-    } catch (error) {
-        console.error(`Error fetching data: ${error.message}`);
-        return [];
-    }*/
 }
 async function getPlacesAllAroundPoint(latitude, longitude, radius, categories) {
     const url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
     url.searchParams.set('location', `${latitude},${longitude}`);
     url.searchParams.set('radius', radius);
-    url.searchParams.set('key', API_KEY_GOOGLE);
+    url.searchParams.set('key', "AIzaSyDorFBHUNozDPeWaJJUdqvOOKr3vaHE48");
     url.searchParams.set('type', categories); // Set desired category filters
     url.searchParams.set('max_results', '200');
 
@@ -97,7 +83,7 @@ async function getPlacesAllAroundPoint(latitude, longitude, radius, categories) 
 async function getPlaceDetails(placeId) {
     const url = new URL('https://maps.googleapis.com/maps/api/place/details/json');
     url.searchParams.set('place_id', placeId);
-    url.searchParams.set('key', API_KEY_GOOGLE);
+    url.searchParams.set('key', "AIzaSyDorFBHUNozDPeWaJJUdqvOOKr3vaHE48");
 
     //make this better, question if you need restriction 
     try {
@@ -127,7 +113,6 @@ async function processData(placesAroundPin, INTEREST, PLACENAME) {
     const processData = [];
     for (const place of placesAroundPin) {
         const details = await getPlaceDetails(place.place_id);
-        console.log(details);
         if (details) {
             const dataObject = {
                 google_id: place.place_id,
@@ -205,7 +190,7 @@ function hasDataValue(data) {
 }
 
 async function updateData(placesAroundPin, interestType, placeName) {
-    const pathFile = './data/JSON/api_google_allData.json';
+    const pathFile = 'backend/data/JSON/api_google_allData.json';
     const oldData = await readFileData(pathFile);
     const newData = await processData(placesAroundPin, interestType, placeName);
     if (hasDataValue(oldData)) {
@@ -219,8 +204,8 @@ async function updateData(placesAroundPin, interestType, placeName) {
 
 
 async function loadGoogleAPI() {
-    for (pin of CALL.PINS) {
-        for (request of pin.request) {
+    for (let pin of CALL.PINS) {
+        for (let request of pin.request) {
             const placesAroundPin = await getPlacesAroundPoint(pin.latitude, pin.longitude, pin.radius, request.categories);
             await updateData(placesAroundPin, request.interestType, pin.name);
 
@@ -229,7 +214,7 @@ async function loadGoogleAPI() {
     }
 }
 
-//loadGoogleAPI();
+loadGoogleAPI();
 // rows last time 7102 and then -> 8916
 //DENNA SKA BARA KÖRAS OM DET INTE FINNS NÅGON JSON FIL!!
 // TAR 1000år att ladda..
@@ -316,4 +301,4 @@ async function test() {
 }
 
 
-test();
+//test();

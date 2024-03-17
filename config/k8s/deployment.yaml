@@ -4,31 +4,20 @@ metadata:
   name: jkpg-deployment # name on the app
   namespace: jkpg-city-replica # The namespace you choose
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:  # Ensure correct "matchLabels" key
-      app: jkpgcity # Ensure label matches pod template metadata
+      app: jkpg-app # Ensure label matches pod template metadata
   template:
     metadata:
       labels:  # Ensure correct "labels" key
-        app: jkpgcity # Ensure label matches selector
+        app: jkpg-app # Ensure label matches selector
     spec:
       containers:
-        - name: jkpgcity
-          image: localhost:5000/jkpgcity_backend-server:latest
-          imagePullPolicy: Always
-          env:
-          - name: DB_HOST
-            value: 27017_ds
-          ports:
-          - containerPort: 5000
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 5000
-              scheme: HTTP
-            initialDelaySeconds: 40
-            periodSeconds: 3
+        - name: jkpg-app
+          image: localhost:5000/jkpg-app:latest
+          
+          
               
         #can i do it like this and specifed the port? https://www.freecodecamp.org/news/deploy-docker-image-to-kubernetes/
 

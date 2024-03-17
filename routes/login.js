@@ -7,12 +7,11 @@ const bodyParser = require('body-parser');
 const validateRegister = require('../backend/validators/register');
 const validateLogin = require('../backend/validators/login');
 const jwt = require('../backend/auth/createToken');
-
+const db = require('../backend/data/db');
 router.use(bodyParser.json());
 
 router.route('/')
   .get(async (req, res,) => {
-    const db = req.db;
     res.status(200).send('<h1> Login PAGE </h1>');
   })
   .post(async (req, res) => {
@@ -22,9 +21,6 @@ router.route('/')
       res.status(406).send("not vaild login crededitals");
       return
     }
-
-    // handle login logic here
-    const db = req.db;
     const user = await db.getUserLogin(
       validate.validData.username,
       validate.validData.password

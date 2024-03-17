@@ -16,16 +16,11 @@ const app = express();
 const auth = require('./backend/auth/authToken');
 const checkToken = require('./backend/auth/refreshToken');
 
-const DB = require('./backend/data/db');
-const db = new DB();
+const db = require('./backend/data/db');
+
 
 app.use(express.static(path.join(__dirname, "frontend")))
 
-//How to send the db in another way?
-app.use((req, res, next) => {
-  req.db = db;
-  next();
-});
 app.use(checkToken);
 
 app.use('/discover', require('./routes/discover'));
@@ -33,16 +28,27 @@ app.use('/login', require('./routes/login'));
 app.use('/contact', require('./routes/contact'));
 app.use('/districts', require('./routes/district'));
 app.use('/userpage', auth.requiredUserLoggedIn, require('./routes/user'));
-//app.use('/intrest', require('./routes/interstOverview'));
+app.use('/intrest', require('./routes/interstOverview'));
+
 app.get('/', checkToken, async (req, res) => {
   const htmlFilePath = path.join(__dirname, "./frontend", "index.html")
+  const data = await db.getPOIAll()
+  console.log("hej")
 
   res.sendFile(htmlFilePath)
+  res.statusCode(200)
+}).post(async (req, res) => {
+  const data = await db.getPOITypes("STORES");
+  res.send(data)
+});
+app.get('/test', async (req, res) => {
+  const data = await await db.getPOIAll()
+  res.send(data)
 });
 
 app.listen(SERVER_PORT, async (error) => {
   if (error) { console.log(error); }
-  //await db.connect();
-  //await db.entryData();
+  await db.connect();
+  await db.entryData();
   console.log(`Server runing on ${SERVER_PORT}`)
 });

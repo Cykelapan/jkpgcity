@@ -27,10 +27,6 @@ async function createValidData(inDataJSON) {
 const validateRegister = async (inDataJSON) => {
     let validationErrors = [];
 
-    //if (!validate.isJSON(inDataJSON)) {
-    //    console.log("NOT JSON FORMAT")
-    //
-    //}
     const missingFields = _.difference(nameFileds, _.keys(inDataJSON));
     console.log(missingFields);
 

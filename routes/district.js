@@ -3,7 +3,7 @@ const path = require('node:path');
 
 const express = require('express');
 const router = express.Router();
-
+const db = require('../backend/data/db');
 const google_data = require(
   path.join(
     __dirname, "../backend/data/JSON", "api_google_allData1.json"
@@ -31,7 +31,6 @@ const groupedByDistrict = groupByDistricts()
 
 router.route('/')
   .get(async (req, res,) => {
-    //const db = req.db;
     res.status(200).json(groupedByDistrict);
   })
   .post(async (req, res) => {
@@ -40,8 +39,9 @@ router.route('/')
 
 router.route('/:districtID')
   .get(async (req, res) => {
-    //const db = req.db;
     const districtID = req.params.districtID
+
+
 
     res.status(200).json(groupedByDistrict[districtID] ?? {})
   })
