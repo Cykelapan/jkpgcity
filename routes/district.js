@@ -44,7 +44,7 @@ router.post("/", auth.requiredAdminLoggedIn, async (req, res) => {
   res.json({ ok: true });
 });
 
-router.delete("/", async (req, res) => {
+router.delete("/", auth.requiredAdminLoggedIn, async (req, res) => {
   // safe route
   
   console.log(req);

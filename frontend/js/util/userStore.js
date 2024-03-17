@@ -30,7 +30,7 @@ export async function userStoreGenerateView() {
     const removeBtn = newElement.querySelector("span:last-child > button");
     
     removeBtn.addEventListener("click", async (event) => {
-      console.log(store);
+      await userDeleteStore(data);
     });
 
     const header = newElement.querySelector("h3");
@@ -72,6 +72,22 @@ export async function userStoreGenerateView() {
     });
     
     userStoreContainer.appendChild(newElement);
+  }
+}
+
+export async function userDeleteStore(data) {
+  try {
+    const response = await request("/userpage", {
+      method: "DELETE",
+      headers: CreateHeaders.getHeaders(),
+      body: JSON.stringify(data),
+      signal: signal
+    });
+    
+    return await response.json();
+  } catch (error) {
+    console.error(`Fetch userpage post error: ${error.message}`);
+    return null;
   }
 }
 

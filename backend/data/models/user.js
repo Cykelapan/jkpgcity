@@ -57,7 +57,7 @@ userSchema.statics.login = async function (username, password) {
         id: "something_very_random",
         username: username,
         ownAStore: false,
-        isAdmin: true,
+        isAdmin: false,
     }
 
     const user = await this.findOne({ username });
