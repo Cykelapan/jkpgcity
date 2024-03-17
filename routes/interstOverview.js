@@ -2,7 +2,7 @@
 const express = require('express')
 const interstDetails = require('./intrestDetails')
 const router = express.Router()
-
+const auth = require('./../backend/auth/authToken')
 
 //send id to the next route, so yo can get the websites details
 //router.use(require('./intrestDetails')); getPointsOfIntrestID
@@ -25,6 +25,11 @@ router.route('/:interestType/:id')
         data = await db.getPointsOfIntrestID(t);
         res.send(`<h1> this should be details ${req.params.interestType}   </h1> \n ${data}`)
     })
-    .post(async (req, res) => { res.json({}); });
+    .post(auth.requiredAdminLoggedIn, async (req, res) => {
+
+        res.json({
+
+        });
+    });
 
 module.exports = router;

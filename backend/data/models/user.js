@@ -81,7 +81,7 @@ userSchema.statics.getAllUsersComments = async function (userID) {
     }
 };
 
-userSchema.statics.addCommentUser = async function (userID, comment) {
+userSchema.statics.addComment = async function (userID, comment) {
     try {
         const user = await User.findById(userID);
         if (user) {

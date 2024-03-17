@@ -1,0 +1,7 @@
+services:
+  myregistry:
+    image: registry # Use the official registry image
+    restart: always
+    container_name: registry_container
+    ports:
+      - 5000:5000

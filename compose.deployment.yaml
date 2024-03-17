@@ -1,0 +1,33 @@
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker compose reference guide at
+# https://docs.docker.com/go/compose-spec-reference/
+
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+services:
+  db:
+    image: mongo
+    restart: always
+    container_name: jkpg_db
+    ports:
+      - 5551:27017
+    volumes:
+      - mongo_data:/data/db
+
+  server:
+    container_name: jkpg_server_container
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 5500:5500
+    depends_on:
+      - db
+
+volumes:
+  mongo_data:
+    name: mongo_data

@@ -24,7 +24,7 @@ const checkToken = async (req, res, next) => {
         if (token) {
             const expirationTime = token.exp;
             const currentTime = Math.floor(Date.now() / 1000);
-            if ((expirationTime - currentTime) < 450) await refreshJWTtoken(decodeToken, res), next();
+            if ((expirationTime - currentTime) < 30) await refreshJWTtoken(decodeToken, res), next();
         } else {
             next();
         }

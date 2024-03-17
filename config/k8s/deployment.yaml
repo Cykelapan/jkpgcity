@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jkpg-deployment # name on the app
+  namespace: jkpg-city-replica # The namespace you choose
+spec:
+  replicas: 2
+  selector:
+    matchLabels:  # Ensure correct "matchLabels" key
+      app: jkpgcity # Ensure label matches pod template metadata
+  template:
+    metadata:
+      labels:  # Ensure correct "labels" key
+        app: jkpgcity # Ensure label matches selector
+    spec:
+      containers:
+        - name: jkpgcity
+          image: localhost:5000/jkpgcity_backend-server:latest
+          imagePullPolicy: Always
+          env:
+          - name: DB_HOST
+            value: 27017_ds
+          ports:
+          - containerPort: 5000
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+              scheme: HTTP
+            initialDelaySeconds: 40
+            periodSeconds: 3
+              
+        #can i do it like this and specifed the port? https://www.freecodecamp.org/news/deploy-docker-image-to-kubernetes/
+
+        # is like an container in k8s
+        # kubectl apply -f k8s/deployment.yaml
+#kubectl set image deployment/jkpg-city-replica-deployment jkpg-server=localhost:5000/jkpgcity_backend-server:<new-version> 
+ #pull the image here only https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy

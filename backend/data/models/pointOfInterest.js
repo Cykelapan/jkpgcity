@@ -2,7 +2,6 @@
 const mongoose = require('mongoose');
 const API_PINS = require('./../../API/api_pins_google');
 
-//TODO: REMBER DUPLETS!!!! hotels has resturangs as well as living, 
 const itemPointOfInterest = mongoose.Schema({
     google_id: {
         type: String,
@@ -88,11 +87,11 @@ const itemPointOfInterest = mongoose.Schema({
 });
 
 itemPointOfInterest.statics.findByDistrict = async function (inDistrict) {
-    return await this.find({ district: inDistrict });
+    return await this.find({ district: inDistrict }).sort({ name: 1 });
 };
 
 itemPointOfInterest.statics.findByInterest = async function (inType) {
-    return await this.find({ interestType: inType });
+    return await this.find({ interestType: inType }).sort({ name: 1 });
 };
 
 itemPointOfInterest.statics.findByDistrictAndIntrest = async function (inDistrict, inType) {
@@ -106,7 +105,7 @@ itemPointOfInterest.statics.getAllComments = async function (poiID) {
         return poi.comments;
     } catch (err) {
         console.error(err);
-        throw err;
+
     }
 };
 
@@ -121,7 +120,7 @@ itemPointOfInterest.statics.addComment = async function (poiID, comment) {
         }
     } catch (err) {
         console.error(err);
-        throw err;
+
     }
 }
 itemPointOfInterest.statics.removeComment = async function (poiID, commentID) {
@@ -131,11 +130,11 @@ itemPointOfInterest.statics.removeComment = async function (poiID, commentID) {
             poi.comments.pull(commentID);
             await poi.save();
         } else {
-            throw new Error("Point of Interest not found");
+            ;
         }
     } catch (err) {
         console.error(err);
-        throw err;
+
     }
 }
 
@@ -151,7 +150,7 @@ itemPointOfInterest.statics.addLike = async function (inID) {
         }
     } catch (err) {
         console.error(err);
-        throw err;
+
     }
 }
 
@@ -167,7 +166,6 @@ itemPointOfInterest.statics.addDislike = async function (inID) {
         }
     } catch (err) {
         console.error(err);
-        throw err; // Re-throw to allow error handling at the calling side
     }
 }
 

@@ -1,6 +1,0 @@
-apiVersion1: v1
-kind: namespace
-metadata:
-  name: jkpg-city-replica-dev
-
-  #when testing use dev otherwise use without dev
