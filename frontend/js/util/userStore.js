@@ -20,9 +20,9 @@ export async function userStoreGenerateView() {
   }
 
   const districts = await getDisctrict();
-  const userStores = await getDisctrictDetail(districts[0]);
+  // const userStores = await getDisctrictDetail(districts[0]);
+  const userStores = await getUserData();
   const interestTypeEnum = await getInterestTypes();
-  // const userStores = await getUserData();
 
   for (let store of userStores ?? []) {
     const newElement = userStore.content.cloneNode(true);

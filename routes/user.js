@@ -20,7 +20,7 @@ router.route('/')
           return res.status(200).json([]);
         }
         
-        const data = await db.getUserPOI(token._id)
+        const data = await db.getUserPOI(token.id)
         return res.status(200).json(data);
     })
 
@@ -47,7 +47,10 @@ router.route('/')
             const oldT = await getToken(req.headers.authorization)
             await db.removeToken(oldT)
             const updatedToken = await updateToken(token, true);
-            res.status(201).setHeader('Authorization', `Bearer ${updatedToken}`)
+            res
+              .status(201)
+              .setHeader('Authorization', `Bearer ${updatedToken}`)
+              .json({})
         }
     })
 
