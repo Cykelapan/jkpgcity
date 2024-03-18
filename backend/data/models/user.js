@@ -48,7 +48,7 @@ const userSchema = mongoose.Schema({
 
 }).pre('save', async function () {
     const hashCost = 10;
-    if (this.password.contains(`$2b$${hashCost}$`)) {
+    if (this.password.startsWith(`$2b$${hashCost}$`)) {
       return;
     }
     console.log("this.password", this.password)
