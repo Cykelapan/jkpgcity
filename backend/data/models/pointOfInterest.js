@@ -8,15 +8,16 @@ const itemPointOfInterest = mongoose.Schema({
     },
 
     name: String,
-    addres: String,
+    address: String,
     district: {
         type: String,
         require: true,
-        enum: [API_PINS.PLACENAME.PIREN,
-        API_PINS.PLACENAME.SÖDER,
-        API_PINS.PLACENAME.VÄSTER,
-        API_PINS.PLACENAME.TÄNDSTICKSOMRÅDET,
-        API_PINS.PLACENAME.ÖSTER
+        enum: [
+            API_PINS.PLACENAME.PIREN,
+            API_PINS.PLACENAME.SÖDER,
+            API_PINS.PLACENAME.VÄSTER,
+            API_PINS.PLACENAME.TÄNDSTICKSOMRÅDET,
+            API_PINS.PLACENAME.ÖSTER
         ]
     },
     openingHours: [String],
@@ -85,9 +86,18 @@ const itemPointOfInterest = mongoose.Schema({
         default: Date.now()
     }
 });
+itemPointOfInterest.statics.getAllDistrictsName = async function () {
+    return [
+        API_PINS.PLACENAME.PIREN,
+        API_PINS.PLACENAME.SÖDER,
+        API_PINS.PLACENAME.VÄSTER,
+        API_PINS.PLACENAME.TÄNDSTICKSOMRÅDET,
+        API_PINS.PLACENAME.ÖSTER
+    ];
+}
 
 itemPointOfInterest.statics.findByDistrict = async function (inDistrict) {
-    return await this.find({ district: inDistrict }).sort({ name: 1 });
+    return await this.find({ district: inDistrict }).sort({ name: 1 }).select({});
 };
 
 itemPointOfInterest.statics.findByInterest = async function (inType) {
@@ -108,16 +118,47 @@ itemPointOfInterest.statics.getAllComments = async function (poiID) {
 
     }
 };
+itemPointOfInterest.statics.updatePOI = async function (poiID, newData) {
+    try {
+        const poi = await this.findById(poiID);
+        if (!poi) {
+            return
+        }
+
+        const fieldsToUpdate = ['name',
+            'address',
+            'openingHours',
+            'website',
+            'description',
+            'contactPhoneNumber',
+            'interestType'];
+
+        for (const field in newData) {
+            if (fieldsToUpdate.includes(field)) {
+                poi[field] = newData[field];
+            }
+        }
+
+        await poi.save();
+        return poi
+    } catch (err) {
+        console.error(err);
+
+    }
+};
 itemPointOfInterest.statics.delete = async function (poiID) {
     try {
         const deletedPOI = await PointOfInterest.findByIdAndDelete(id);
         if (!deletedPOI) {
             console.error('POI not found with ID:', id);
+            return false
         } else {
             console.log('POI deleted:', deletedPOI);
+            return true
         }
     } catch (error) {
         console.error('Error deleting POI:', error);
+        return false
     }
 };
 
@@ -178,6 +219,16 @@ itemPointOfInterest.statics.addDislike = async function (inID) {
         }
     } catch (err) {
         console.error(err);
+    }
+}
+itemPointOfInterest.statics.createPOI = async function (poiData) {
+    try {
+        const newPOI = new this(poiData);
+        await newPOI.save();
+        return newPOI;
+    } catch (err) {
+        console.error('Error creating POI:', err);
+        return null
     }
 }
 

@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const PointOfInterest = require('./models/pointOfInterest');
 const Users = require('./models/user');
 const Comments = require('./models/comments');
-const filePathData = './data/JSON/api_google_allData.json';
+const TrackTokens = require('./models/whitelist');
+const filePathData = 'backend/data/JSON/api_google_allData.json';
 //need to know if it is better to make one schema with all the diffrent types and querie it or use diffrent schemas?
 class DB {
     static shared = null;
@@ -32,18 +33,18 @@ class DB {
     }
     async checkConnection() {
         try {
-            await this.db.command({ ping: 1 });
+            await this.command({ ping: 1 });
             console.log("Connection");
         } catch (error) {
             console.error('Ping failed:', error);
-            this.db.connect();
+            this.connect();
         }
     }
 
 
     async close() {
         if (this.db) {
-            await this.db.close();
+            await this.close();
             console.log('DB connection closed');
         }
     }
@@ -85,29 +86,31 @@ class DB {
 
     }
     //******************** POI ************************************** 
+    async getAllDirstrict() {
+        return await PointOfInterest.getAllDistrictsName();
+    }
     async getPOIAll() {
-        await this.checkConnection()
-        const pois = await PointOfInterest.find().select({});
+        const pois = await PointOfInterest.find().select({}).sort({ name: 1 });
+        return pois
+    }
+    async addPOI(inData) {
+        const validate = hej
+        const pois = await PointOfInterest.find().select({}).sort({ name: 1 });
         return pois
     }
     async getPOIByID(ID) {
-        await this.checkConnection()
         return await PointOfInterest.findById(ID).select({});
     }
     async getPOITypes(INTEREST) {
-        await this.checkConnection()
         return await PointOfInterest.findByInterest(INTEREST);
     }
     async getPOIDistrict(DISTRICT) {
-        await this.checkConnection()
         return await PointOfInterest.findByDistrict(DISTRICT);
     }
     async getPOIDistrictIntrest(DISTRICT, INTEREST) {
-        await this.checkConnection()
         return await PointOfInterest.findByDistrictAndIntrest(DISTRICT, INTEREST);
     }
     async getPOIComments(ID) {
-        await this.checkConnection()
         return PointOfInterest.getAllComments(ID)
     }
     async postPOILikes(isLike, ID) {
@@ -135,13 +138,13 @@ class DB {
             await Comments.removeComment(newComment._id);;
         }
     }
-
-    //vad ska uppdateras?
     async updatePOI(ID, inData) {
-        return
+        const poi = await PointOfInterest.updatePOI(ID, inData);
+        return poi
     }
     async deletPOI(ID) {
-        await PointOfInterest.delete(ID);
+        const isDeleted = await PointOfInterest.delete(ID);
+        return isDeleted
     };
 
     //***************************** Users **************************************
@@ -149,13 +152,10 @@ class DB {
     //Could return user and create a token at once
     async userSingup(userObject) {
         try {
-            console.log(userObject);
-            let newUser = new Users(userObject);
+            const newUser = new Users(userObject);
             await newUser.save();
         } catch (error) {
             console.log(error)
-            console.error(`Error message: ${error.message}`);
-            console.log("SOMETING WRONG WHEN SAVE A NEW USER");
             throw error;
         }
     }
@@ -198,10 +198,23 @@ class DB {
         await Users.delete(ID);
     };
 
+    async addToken(token) {
+        try {
+            const isAdded = await TrackTokens.add(token)
+        } catch (error) {
 
+        }
+    }
+    async isValidToken(token) {
+        return await TrackTokens.isValid(token)
+    };
 
+    async removeToken(token) {
+        return await TrackTokens.delete(token)
+    };
 
 }
+
 
 //är en singleton nu?
 module.exports = new DB();

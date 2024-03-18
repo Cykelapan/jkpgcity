@@ -1,8 +1,8 @@
 "use strict";
 import FetchHeader from "./util/headerManager.js"
-import { 
-  getDisctrict, 
-  districtGenerateView 
+import {
+  getDisctrict,
+  districtGenerateView
 } from "./route/district.js"
 import { setLoginScreen, login, logout, register } from "./route/login.js"
 import { switchActiveScreen, trigger } from "./functionality.js"
@@ -20,34 +20,34 @@ let isLogin = false;
 
 loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  
+
   const myFormData = new FormData(event.target);
   const form = Object.fromEntries(myFormData);
-  
+
   console.log(form);
   let isLoggedIn
-  
+
   if (form.isRegister) {
     isLoggedIn = await register({
-      username: form.username, 
-      password: form.password 
+      username: form.username,
+      password: form.password
     });
   }
   else {
-    isLoggedIn = await login({ 
-      username: form.username, 
-      password: form.password 
+    isLoggedIn = await login({
+      username: form.username,
+      password: form.password
     });
   }
-  
+
   window.loginUser = isLoggedIn;
-  
+
   isLogin = isLoggedIn ? true : false;
-  
+
   if (!isLogin) { return; }
-  
+
   profile_name.textContent = isLoggedIn.username;
-  
+
   setLoginScreen();
   switchActiveScreen("login");
   nav_user.textContent = "User";
@@ -56,7 +56,7 @@ loginForm.addEventListener("submit", async (event) => {
 logoutButton.addEventListener("click", async (event) => {
   // Log out HERE!
   await logout();
-  
+
   nav_user.textContent = "Login";
   profile_name.textContent = "<LOG IN>";
   isLogin = false;

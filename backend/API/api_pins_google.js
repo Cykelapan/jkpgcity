@@ -2,7 +2,7 @@
 
 const INTEREST = {
     STORES: 'stores',
-    WELLNESS: 'wellness',
+    WELLNESS: '"wellness"',
     RESTURANTS: 'resturants',
     HOTELS: 'accommodation',
     ENTERTAIMENT: 'entertaiment'
@@ -12,7 +12,8 @@ const PLACENAME = {
     VÄSTER: 'Väster',
     ÖSTER: 'Öster',
     TÄNDSTICKSOMRÅDET: 'Tändsticksområdet',
-    PIREN: 'Piren'
+    PIREN: 'Piren',
+    SÖDER: 'Söder'
 }
 
 function getFileName(category) {
@@ -235,73 +236,7 @@ const PINS = [
         },]
 
     },
-    /*
-    { // solåsen 57.761732, 14.178252
-        name: PLACENAME.SOLÅSEN,
-        latitude: 57.761732,
-        longitude: 14.178252,
-        radius: 1500,
-        request: [{
-            categories: 'store',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'gym',
-            interestType: INTEREST.WELLNESS
-        }, {
-            categories: 'park',
-            interestType: INTEREST.ENTERTAIMENT
-        },]
-    }, { //asecs 57.772049, 14.199010
-        name: PLACENAME.ASECS,
-        latitude: 57.772049,
-        longitude: 14.199010,
-        radius: 700,
-        request: [{
-            categories: 'store',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'drugstore',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'clothing_store',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'electronics_store',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'shoe_store',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'supermarket',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'convenience_store',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'shopping_mall',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'furniture_store',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'book_store',
-            interestType: INTEREST.STORES
-        }, {
-            categories: 'restaurant',
-            interestType: INTEREST.RESTURANTS,
-        }, {
-            categories: 'cafe',
-            interestType: INTEREST.RESTURANTS,
-        }, {
-            categories: 'beauty_salon',
-            interestType: INTEREST.WELLNESS
-        }, {
-            categories: 'hair_care',
-            interestType: INTEREST.WELLNESS
-        }]
 
-
-    },
     { //Söder 57.772609, 14.152337
         name: PLACENAME.SÖDER,
         latitude: 57.772609,
@@ -326,7 +261,7 @@ const PINS = [
             categories: 'park',
             interestType: INTEREST.ENTERTAIMENT
         },]
-    },*/
+    }
 ];
 
 

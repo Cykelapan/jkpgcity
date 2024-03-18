@@ -208,8 +208,6 @@ async function loadGoogleAPI() {
         for (let request of pin.request) {
             const placesAroundPin = await getPlacesAroundPoint(pin.latitude, pin.longitude, pin.radius, request.categories);
             await updateData(placesAroundPin, request.interestType, pin.name);
-
-
         }
     }
 }

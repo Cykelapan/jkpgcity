@@ -1,5 +1,5 @@
 "use strict";
-const { getDecodeToken } = require('./getDecodedToken.js');
+const getDecodeToken = require('./getDecodedToken.js');
 
 //todo Make specifc auth for routes that needs it
 /* Eg. userloggedIn, adminLoggedIn, logout

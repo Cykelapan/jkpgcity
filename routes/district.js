@@ -3,7 +3,8 @@ const path = require('node:path');
 
 const express = require('express');
 const router = express.Router();
-
+const db = require('../backend/data/db');
+const check = require('../backend/validators/validParmas');
 const auth = require('../backend/auth/authToken.js');
 
 const google_data = require(
@@ -32,13 +33,8 @@ function groupByDistricts() {
 const groupedByDistrict = groupByDistricts();
 
 router.get("/", async (req, res) => {
-  //const db = req.db;
-  let disctrictNames = [];
-  for (let district in groupedByDistrict) {
-    disctrictNames.push(district);
-  }
-
-  res.status(200).json(disctrictNames);
+  const data = await db.getAllDirstrict();
+  res.status(200).json(data);
 });
 
 router.post("/", auth.requiredAdminLoggedIn, async (req, res) => {
@@ -55,13 +51,18 @@ router.delete("/", auth.requiredAdminLoggedIn, async (req, res) => {
 });
 
 
-router.route('/:districtID')
+router.route('/:district')
   .get(async (req, res) => {
-    const districtID = req.params.districtID
+    const districtName = req.params.district
+    console.log(districtName)
+    if (check.checkDistrict(districtName)) {
+      const data = await db.getPOIDistrict(districtName);
 
+      res.status(200).json(data)
 
-
-    res.status(200).json(groupedByDistrict[districtID] ?? {})
+    } else {
+      res.status(404).json({});
+    }
   })
   .post(async (req, res) => {
 

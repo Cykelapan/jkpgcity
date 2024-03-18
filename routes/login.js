@@ -1,19 +1,20 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-
 const bodyParser = require('body-parser');
-
 const validateRegister = require('../backend/validators/register');
 const validateLogin = require('../backend/validators/login');
 const jwt = require('../backend/auth/createToken');
 const db = require('../backend/data/db');
+
 router.use(bodyParser.json());
 
 router.route('/')
   .get(async (req, res,) => {
     res.status(200).send('<h1> Login PAGE </h1>');
   })
+
+
   .post(async (req, res) => {
     // handle validation here
     const validate = await validateLogin(req.body);
@@ -26,6 +27,7 @@ router.route('/')
       validate.validData.password
     );
 
+    //user dose not exist
     if (!user) {
       return res.status(500).json({ error: "interval login error" });
     }
@@ -35,10 +37,10 @@ router.route('/')
     if (!token) {
       return res.status(500).json({ error: "interval token error" });
     }
-
+    //add token to whitlist
+    await db.addToken(token);
     // successfully identified
-    res.setHeader('Authorization', `Bearer ${token}`);
-    res.status(200).json({
+    res.setHeader('Authorization', `Bearer ${token}`).status(200).json({
       error: false,
       username: user.username,
       isAdmin: user.isAdmin,
@@ -51,20 +53,28 @@ router.route('/')
 
 router.route('/register')
   .get(async (req, res) => {
-    res.status(200).send('<h1> REGISTER PAGE </h1>');
+    res.status(200).json({});
   })
+
+
+
   .post(async (req, res) => {
     const validate = await validateRegister(req.body);
-    console.log(validate.haveErrors)
+
+    //if some data is missing
     if (validate.haveErrors) {
-      console.log(validate.errors);
+      //send back whats missing
       res.status(200).json({ error: validate.errors })
     } else {
-      const db = req.db;
+
       const checkDB = await db.checkUsernameAndEmail(validate.validData.username, validate.validData.email);
+
       if (checkDB.usernameExist || checkDB.emailExist) {
         res.status(403).json({ error: "Username or email exist" })
+
       } else {
+
+
         try {
           await db.userSingup(validate.validData);
           res.status(201).redirect('/login');

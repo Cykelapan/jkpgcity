@@ -1,11 +1,16 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-
-// this is client side
+const db = require('../backend/data/db');
+const fun = require('../backend/auth/getDecodedToken');
 router.route('/')
     .get(async (req, res) => {
-        //how to clear jwt
+        const token = await fun.getDecodeToken(req.headers.authorization);
+        if (token) {
+            const deleted = await db.removeToken(token);
+
+        }
+
         res.status(200).json({});
     });
 

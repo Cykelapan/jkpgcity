@@ -21,22 +21,18 @@ const db = require('./backend/data/db');
 app.use(express.static(path.join(__dirname, "frontend")))
 app.use(checkToken);
 
-app.use('/discover', require('./routes/discover'));
+
 app.use('/login', require('./routes/login'));
 app.use('/logout', require('./routes/logout'));
-
-app.use('/contact', require('./routes/contact'));
+app.use('/contact', require('./routes/contact')); //används ej?
 app.use('/districts', require('./routes/district'));
-app.use('/userpage', auth.requiredUserLoggedIn, require('./routes/user'));
-app.use('/intrest', require('./routes/interstOverview'));
-app.use('/admin', auth.requiredAdminLoggedIn, requrie('./routes/admin'));
+app.use('/userpage', auth.requiredUserLoggedIn, require('./routes/user')); // hur ska den användas
+//app.use('/admin', auth.requiredAdminLoggedIn, requrie('./routes/admin')); // används ej?
 
 
 
 app.get('/', async (req, res) => {
   const htmlFilePath = path.join(__dirname, "./frontend", "index.html")
-  const data = await db.getPOIAll()
-  console.log("hej")
 
   res.sendFile(htmlFilePath)
   res.statusCode(200)

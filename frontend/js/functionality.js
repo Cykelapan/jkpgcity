@@ -18,7 +18,7 @@ for (let targetBtn of targetButtons) {
       btn.classList.remove("active");
     }
     event.target.classList.add("active");
-    
+
     // switch active screen: 
     // incase error default to first screen
     switchActiveScreen(event.target.dataset.target);
@@ -28,7 +28,7 @@ for (let targetBtn of targetButtons) {
 export async function trigger() {
   if (currentScreen === "login" && isSwitchScreen) {
     userStoreGenerateView();
-    return 
+    return
   }
   if (currentScreen === "discover" && isSwitchScreen) {
     return console.log("get Detail");
@@ -42,15 +42,15 @@ export async function trigger() {
 
 export function switchActiveScreen(targetScreen = "") {
   let isSwitchSuccess = false;
-  
+
   for (let switchPage of switchPages) {
     switchPage.classList.remove("active");
   }
-  
+
   for (let sourcePage of sourcePages) {
     sourcePage.classList.remove("active");
   }
-  
+
   for (let sourcePage of sourcePages) {
     if (sourcePage.dataset.isSwitch === "true") {
       for (let switchPage of switchPages) {
@@ -74,8 +74,8 @@ export function switchActiveScreen(targetScreen = "") {
       }
     }
   }
-  
+
   trigger();
-  
+
   return isSwitchSuccess;
 }

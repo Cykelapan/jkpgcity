@@ -7,6 +7,7 @@
 # You can add other services your application may depend on here, such as a
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
+# docker testuser and  testpassword to login 
 services:
   db:
     image: mongo
@@ -19,7 +20,7 @@ services:
 
   server:
     image: jkpg-app
-    container_name: jkpg_server_container
+    container_name: jkpg-container
     build:
       context: .
     environment:
