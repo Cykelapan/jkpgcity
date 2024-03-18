@@ -2,7 +2,7 @@
 
 const INTEREST = {
     STORES: 'stores',
-    WELLNESS: '"wellness"',
+    WELLNESS: "wellness",
     RESTURANTS: 'resturants',
     HOTELS: 'accommodation',
     ENTERTAIMENT: 'entertaiment'

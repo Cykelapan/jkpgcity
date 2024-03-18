@@ -23,12 +23,16 @@ export function setLoginScreen() {
 
 export async function register({ username, password }) {
   try {
-    const response = await request("/register", {
+    const response = await request("/login/register", {
       method: "POST",
       headers: CreateHeaders.getHeaders(),
       body: JSON.stringify({
         username: username,
-        password: password
+        password2: password,
+        password1: password,
+        email: `${(Math.random()).toString(16).substring(2)}@test.com`,
+        fName: "user",
+        lName: "test"
       }),
       signal: signal
     });
@@ -49,8 +53,8 @@ export async function login({ username, password }) {
       method: "POST",
       headers: CreateHeaders.getHeaders(),
       body: JSON.stringify({
-        username: username,
-        password: password
+          username: username,
+          password: password
       }),
       signal: signal
     });

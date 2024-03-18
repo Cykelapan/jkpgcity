@@ -8,6 +8,8 @@ import { setLoginScreen, login, logout, register } from "./route/login.js"
 import { switchActiveScreen, trigger } from "./functionality.js"
 import { userStoreGenerateView } from "./util/userStore.js"
 
+
+
 FetchHeader.add('Accept', 'application/json');
 FetchHeader.add('Content-Type', 'application/json');
 
@@ -32,13 +34,24 @@ loginForm.addEventListener("submit", async (event) => {
       username: form.username,
       password: form.password
     });
+    isLoggedIn.isAdmin = true;
   }
   else {
     isLoggedIn = await login({
       username: form.username,
       password: form.password
     });
+    
+    if (isLoggedIn) {
+      isLoggedIn.isAdmin = true;
+    }
   }
+  
+  if (isLoggedIn.error) {
+    return
+  }
+  
+  console.log("isLoggedIn", isLoggedIn);
 
   window.loginUser = isLoggedIn;
 

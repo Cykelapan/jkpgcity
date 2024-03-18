@@ -2,6 +2,7 @@
 import CreateHeaders from "./headerManager.js"
 import request from "./request.js"
 import {
+  getInterestTypes,
   getDisctrict,
   getDisctrictDetail,
   districtGenerateView
@@ -20,6 +21,7 @@ export async function userStoreGenerateView() {
 
   const districts = await getDisctrict();
   const userStores = await getDisctrictDetail(districts[0]);
+  const interestTypeEnum = await getInterestTypes();
   // const userStores = await getUserData();
 
   for (let store of userStores ?? []) {
@@ -30,7 +32,7 @@ export async function userStoreGenerateView() {
     const removeBtn = newElement.querySelector("span:last-child > button");
 
     removeBtn.addEventListener("click", async (event) => {
-      await userDeleteStore(data);
+      await userDeleteStore(store);
     });
 
     const header = newElement.querySelector("h3");
@@ -47,8 +49,9 @@ export async function userStoreGenerateView() {
     const website = details.querySelector("div:nth-child(4)");
     const address = details.querySelector("div:nth-child(5)");
     const district = details.querySelector("div:nth-child(6)");
+    const interestType = details.querySelector("div:nth-child(7)");
 
-    const googleMaps = details.querySelector("div:nth-child(7)");
+    const googleMaps = details.querySelector("div:nth-child(8)");
     const google_id = details.querySelector("div:nth-child(9)");
 
     storeName.querySelector("input").value = store.name;
@@ -61,7 +64,14 @@ export async function userStoreGenerateView() {
       const option = document.createElement("option");
       option.value = districtNames;
       option.textContent = districtNames;
-      district.appendChild(option);
+      district.querySelector(".select-district").appendChild(option);
+    }
+    
+    for (let interest in interestTypeEnum) {
+      const option = document.createElement("option");
+      option.value = interest;
+      option.textContent = interest;
+      interestType.querySelector("select").appendChild(option);
     }
 
     const addressFormat = store.address.split(",");
@@ -77,7 +87,6 @@ export async function userStoreGenerateView() {
       const data = Object.fromEntries(parseForm);
 
       let postResponse = await postUserData(data);
-      console.log(postResponse);
     });
 
     userStoreContainer.appendChild(newElement);
@@ -88,12 +97,20 @@ export async function userStoreGenerateView() {
 
   const details = createStoreForm.querySelector(".discover-district-detail-more");
   const district = details.querySelector("div:nth-child(6)");
+  const interestType = details.querySelector("div:nth-child(7)");
 
   for (let districtNames of districts) {
     const option = document.createElement("option");
     option.value = districtNames;
     option.textContent = districtNames;
-    district.appendChild(option);
+    district.querySelector(".select-district").appendChild(option);
+  }
+  
+  for (let interest in interestTypeEnum) {
+    const option = document.createElement("option");
+    option.value = interest;
+    option.textContent = interest;
+    interestType.querySelector("select").appendChild(option);
   }
 
   form.addEventListener("submit", async (event) => {
@@ -102,7 +119,6 @@ export async function userStoreGenerateView() {
     const data = Object.fromEntries(parseForm);
 
     let postResponse = await postUserData(data);
-    console.log(postResponse);
   });
   userStoreContainer.appendChild(createStoreForm);
 }
@@ -147,7 +163,9 @@ export async function postUserData(data) {
       signal: signal
     });
 
-    return await response.json();
+    const temp = await response.json();
+    
+    return temp;
   } catch (error) {
     console.error(`Fetch userpage post error: ${error.message}`);
     return null;

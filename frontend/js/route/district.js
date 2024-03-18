@@ -136,3 +136,17 @@ export async function getDisctrict() {
     console.log(e);
   }
 }
+
+export async function getInterestTypes() {
+  try {
+    const response = await request("/interestType", {
+      method: "GET",
+      headers: CreateHeaders.getHeaders(),
+      signal: signal
+    });
+    
+    return await response.json();
+  } catch (e) {
+    console.log(e);
+  }
+}

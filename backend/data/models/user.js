@@ -53,6 +53,12 @@ const userSchema = mongoose.Schema({
 
 userSchema.statics.login = async function (username, password) {
     /* REMOVE THIS WHEN FRONTEND DONE */
+    /*return {
+        id: "something_very_random",
+        username: username,
+        ownAStore: false,
+        isAdmin: false,
+    }*/
     try {
         const user = await this.findOne({ username });
         if (!user) {

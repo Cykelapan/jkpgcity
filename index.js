@@ -1,5 +1,6 @@
 "use strict";
 const path = require('node:path');
+const { INTEREST } = require('./backend/API/api_pins_google.js');
 
 const dotenv = require('dotenv').config();
 const { SERVER_PORT } = process.env;
@@ -29,13 +30,14 @@ app.use('/districts', require('./routes/district'));
 app.use('/userpage', auth.requiredUserLoggedIn, require('./routes/user')); // hur ska den användas
 //app.use('/admin', auth.requiredAdminLoggedIn, requrie('./routes/admin')); // används ej?
 
-
+app.get("/interestType", async(req, res) => {
+  res.json(INTEREST);
+});
 
 app.get('/', async (req, res) => {
   const htmlFilePath = path.join(__dirname, "./frontend", "index.html")
 
-  res.sendFile(htmlFilePath)
-  res.status(200)
+  res.status(200).sendFile(htmlFilePath)
 }).post(async (req, res) => {
   const data = await db.getPOITypes("STORES");
   res.send(data)

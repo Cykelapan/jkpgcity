@@ -1,11 +1,13 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
+
 const db = require('../backend/data/db');
-const fun = require('../backend/auth/getDecodedToken');
+const getDecodeToken = require('../backend/auth/getDecodedToken');
+
 router.route('/')
     .get(async (req, res) => {
-        const token = await fun(req.headers.authorization);
+        const token = await getDecodeToken(req.headers.authorization);
         if (token) {
             const deleted = await db.removeToken(token);
 
