@@ -148,7 +148,7 @@ itemPointOfInterest.statics.updatePOI = async function (poiID, newData) {
 };
 itemPointOfInterest.statics.delete = async function (poiID) {
     try {
-        const deletedPOI = await this.findByIdAndDelete(poiID);
+        const deletedPOI = await this.deleteOne({ _id: poiID })
         if (!deletedPOI) {
             console.error('POI not found with ID:', poiID);
             return false
@@ -223,6 +223,7 @@ itemPointOfInterest.statics.addDislike = async function (inID) {
 }
 itemPointOfInterest.statics.createPOI = async function (poiData) {
     try {
+        console.log(poiData)
         const newPOI = new this(poiData);
         await newPOI.save();
         return newPOI;

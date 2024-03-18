@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const db = require('../backend/data/db');
 const validData = require('../backend/validators/validPOIdata')
 const decodeToken = require('../backend/auth/getDecodedToken');
+const getToken = require('../backend/auth/getTokenRaw');
 const updateToken = require('../backend/auth/updateToken');
 const auth = require('../backend/auth/authToken');
 
@@ -29,33 +30,40 @@ router.route('/')
         
         const data = await validData(newData)
         if (!data) {
-          res.status(500).json({ error: 'Missing inputs' });
-          return;
+            res.status(500).json({ error: 'Missing inputs' });
+            return;
         }
-        
+
         const token = await decodeToken(req.headers.authorization)
         const newObject = await db.createNewPOI(data, token.id)
-        
-        if (newObject) {
-          res.status(500).json({ error: 'Could not create new data' });
-          return;
+
+        if (!newObject) {
+            res.status(500).json({ error: 'Could not create new data' });
         }
-        
-        const updatedToken = await updateToken(token, true);
-        res.status(201)
-          .header('Authorization', `Bearer ${updatedToken}`)
-          .json({ newObject });
+
+        if (token.isStoreOwner) {
+            res.status(201).json({ newObject });
+        } else {
+            const oldT = await getToken(req.headers.authorization)
+            await db.removeToken(oldT)
+            const updatedToken = await updateToken(token, true);
+            res.status(201).setHeader('Authorization', `Bearer ${updatedToken}`)
+        }
     })
 
     .delete(async (req, res) => {
         const { _id } = req.body
         
-        const token = await decodeToken(req.headers.authorization)
-        
-        const isDeleted = await db.deletPOI(_id);
-        await db.deleteStore(token.id, _id)
-        
-        res.status(isDeleted ? 200 : 500).json({})
+        if (_id) {
+            const token = await decodeToken(req.headers.authorization)
+            const isDeleted = await db.deletPOI(_id);
+            await db.deleteStore(token.id, _id)
+            if (isDeleted) res.status(200).json({})
+            else res.status(500).json({})
+
+        }
+        else res.status(500).json({})
     });
+
 
 module.exports = router;

@@ -93,9 +93,15 @@ class DB {
     }
     async createNewPOI(inData, userID) {
         const poi = await PointOfInterest.createPOI(inData);
-        const updateUser = await Users.addStore(userID, poi._id)
-        if (!updateUser) console.log("ERROR TO UPDATE USER IS STORE OWNER");
-        return poi
+        if (poi) {
+            console.log(poi)
+            const updateUser = await Users.addStore(userID, poi.id)
+            if (!updateUser) console.log("ERROR TO UPDATE USER IS STORE OWNER");
+            else return poi
+        } else {
+            return null
+        }
+
     }
     async getPOIByID(ID) {
         return await PointOfInterest.findById(ID).select({});
@@ -142,6 +148,7 @@ class DB {
         return poi
     }
     async deletPOI(ID) {
+        console.log(ID)
         const isDeleted = await PointOfInterest.delete(ID);
         return isDeleted
     };

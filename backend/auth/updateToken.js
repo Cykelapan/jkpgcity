@@ -10,10 +10,8 @@ async function updateTheToken(token, ownAStore) {
         isAdmin: token.isAdmin,
     }
     const newToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30m' });
-    await db.removeToken(token);
-    await db.addToken(newToken);
     return newToken
 }
 
 
-module.exports = updateTheToken;
+module.exports = updateTheToken
