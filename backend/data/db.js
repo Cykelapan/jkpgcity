@@ -11,10 +11,11 @@ const filePathData = 'backend/data/JSON/api_google_allData.json';
 class DB {
     constructor() {
         if (DB.instance) {
-            console.log('Comments schema has been created')
             return DB.instance;
         }
 
+        console.log('DB class is creating');
+        
         this.db = undefined;
         this.mongoose = mongoose;
         DB.instance = this;
@@ -22,11 +23,9 @@ class DB {
 
     async connect() {
         try {
-            console.log('Comments schema has been created')
-            console.log(MONGO_URI)
             const url = MONGO_URI || 'mongodb://localhost:27017/development'
             await this.mongoose.connect(url);
-            console.log('DB connected');
+            console.log('DB connected to database');
             this.db = this.mongoose.connection;
         } catch (error) {
             console.error('Error connecting to database:', error);
@@ -35,7 +34,7 @@ class DB {
     async checkConnection() {
         try {
             await this.command({ ping: 1 });
-            console.log("Connection");
+            console.log("Check database connection");
         } catch (error) {
             console.error('Ping failed:', error);
             this.connect();
@@ -45,6 +44,7 @@ class DB {
 
     async close() {
         if (this.db) {
+            console.log('DB closing connection');
             await this.close();
             console.log('DB connection closed');
         }
@@ -77,7 +77,7 @@ class DB {
     async entryData() {
         const count = await PointOfInterest.countDocuments();
         if (count > 5) {
-            console.log(count)
+            console.log("PointOfInterest count:", count)
 
         } else {
             const jsonData = await this.readJsonFile(filePathData);
@@ -96,14 +96,14 @@ class DB {
     }
     async createNewPOI(inData, userID) {
         const poi = await PointOfInterest.createPOI(inData);
-        if (poi) {
-            console.log(poi)
-            const updateUser = await Users.addStore(userID, poi.id)
-            if (!updateUser) console.log("ERROR TO UPDATE USER IS STORE OWNER");
-            else return poi
-        } else {
-            return null
+        if (!poi) {
+          return null
         }
+        
+        console.log("createNewPOI :", poi);
+        const updateUser = await Users.addStore(userID, poi.id);
+        if (!updateUser) console.log("ERROR TO UPDATE USER IS STORE OWNER");
+        else return poi;
 
     }
     async getPOIByID(ID) {
@@ -127,7 +127,7 @@ class DB {
             else PointOfInterest.addDislike(ID)
 
         } catch (error) {
-            console.error(error);
+            console.error("postPOILikes :", error);
             // Handle errors
         }
     }
@@ -139,19 +139,20 @@ class DB {
 
     async postPOIComment(poiID, userID, inComment) {
         const newComment = await Comments.addComment(userID, inComment);
-        if (newComment) {
-            PointOfInterest.addComment(poiID, newComment);
-            Users.addComment(userID, newComment);
-        } else {
-            await Comments.removeComment(newComment._id);;
+        if (!newComment) {
+          await Comments.removeComment(newComment._id);
+          return
         }
+        
+        PointOfInterest.addComment(poiID, newComment);
+        Users.addComment(userID, newComment);
     }
     async updatePOI(ID, inData) {
         const poi = await PointOfInterest.updatePOI(ID, inData);
         return poi
     }
     async deletPOI(ID) {
-        console.log(ID)
+        console.log("deletPOI :", ID)
         const isDeleted = await PointOfInterest.delete(ID);
         return isDeleted
     };
@@ -235,6 +236,5 @@ class DB {
     };
 
 }
-console.log('DB is created');
 
 module.exports = new DB();

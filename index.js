@@ -42,9 +42,10 @@ app.get('/', async (req, res) => {
 
 
 const setupServer = async () => {
+  console.log("Setting up database........")
   await db.connect();
   await db.entryData();
-  console.log("SETUP")
+  console.log("Setup done.")
   app.listen(SERVER_PORT, (error) => { if (error) { console.log(error); } })
 }
 setupServer();
