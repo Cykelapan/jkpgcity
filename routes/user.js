@@ -27,7 +27,6 @@ router.route('/')
 
     .post(async (req, res) => {
         const newData = req.body
-
         const data = await validData(newData)
         if (!data) {
             res.status(500).json({ error: 'Missing inputs' });

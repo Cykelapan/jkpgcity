@@ -150,7 +150,7 @@ itemPointOfInterest.statics.delete = async function (poiID) {
     try {
         const deletedPOI = await this.deleteOne({ _id: poiID })
         if (!deletedPOI) {
-            console.error('POI not found with ID:', id);
+            console.error('POI not found with ID:', poiID);
             return false
         } else {
             console.log('POI deleted:', deletedPOI);

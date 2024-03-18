@@ -1,3 +1,4 @@
+"use strict";
 const API_PINS = require('../API/api_pins_google');
 
 async function checkDistrict(inValue) {
@@ -9,13 +10,8 @@ async function checkDistrict(inValue) {
 
 async function checkIntrest(inValue) {
     let intrest = []
-    for (i in API_PINS.INTEREST) {
-        if (i.toLowerCase() === inValue.toLowerCase()) {
-            if (i === API_PINS.INTEREST.HOTELS) {
-                intrest.push(API_PINS.INTEREST.HOTELS)
-
-            } else intrest.push(i.toLowerCase())
-        }
+    for (let i in API_PINS.INTEREST) {
+        if (i.toLowerCase() === inValue.toLowerCase()) intrest.push(i.toLowerCase())
     }
     return intrest
 }
