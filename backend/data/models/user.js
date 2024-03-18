@@ -47,24 +47,20 @@ const userSchema = mongoose.Schema({
     }]
 
 }).pre('save', async function () {
+    console.log(this.password)
     const salt = await bycrypt.genSalt(10);
     this.password = await bycrypt.hash(this.password, salt);
 });
 
 userSchema.statics.login = async function (username, password) {
-    /* REMOVE THIS WHEN FRONTEND DONE */
-    /*return {
-        id: "something_very_random",
-        username: username,
-        ownAStore: false,
-        isAdmin: false,
-    }*/
     try {
         const user = await this.findOne({ username });
         if (!user) {
             throw Error('Incorret username');
         }
+
         const match = await bycrypt.compare(password, user.password);
+        console.log(match)
         if (!match) {
             throw Error('Incorrect passsword');
         }
@@ -142,7 +138,7 @@ userSchema.statics.delete = async function (poiID) {
     }
 };
 
-userSchema.methods.getStoresID = async function (userID) {
+userSchema.statics.getStoresID = async function (userID) {
     try {
         const user = await this.findById(userID);
         if (user.isStoreOwner) {
@@ -155,7 +151,7 @@ userSchema.methods.getStoresID = async function (userID) {
     }
 };
 
-userSchema.methods.deleteStoreByID = async function (userID, storeID) {
+userSchema.statics.deleteStoreByID = async function (userID, storeID) {
     try {
         const user = await this.findById(userID);
         user.store.pull(storeID);
