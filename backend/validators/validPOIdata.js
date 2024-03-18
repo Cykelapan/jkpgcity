@@ -1,0 +1,41 @@
+const API_PINS = require('../API/api_pins_google');
+
+async function checkDistrict(inValue) {
+    for (i in API_PINS.PLACENAME) {
+        if (i.toLowerCase() === inValue.toLowerCase()) return i
+    }
+    return null
+}
+
+async function checkIntrest(inValue) {
+    let intrest = []
+    for (i in API_PINS.INTEREST) {
+        if (i.toLowerCase() === inValue.toLowerCase()) intrest.push(i)
+    }
+    return intrest
+}
+
+async function getValidDataObject(inValue) {
+    const district = await checkDistrict(inValue.district)
+    const intrest = await checkIntrest(inValue.district)
+    if (intrest.length == 0 || !district) return null
+    return {
+        google_id: "",
+        name: inValue.name ?? "No name",
+        address: inValue.address ?? "unknown",
+        district: district,
+        openingHours: "unknown",
+        website: inValue.website ?? "unknown",
+        description: inValue.description,
+        contactPhoneNumber: inValue.contactPhoneNumber,
+        coordinates: {
+            longitude: 0,
+            latitude: 0
+        },
+        linkGoogleMaps: inValue.googlemaps,
+        interestType: intrest
+    }
+}
+
+
+module.exports = getValidDataObject

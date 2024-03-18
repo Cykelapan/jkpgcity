@@ -9,7 +9,6 @@ const TrackTokens = require('./models/whitelist');
 const filePathData = 'backend/data/JSON/api_google_allData.json';
 //need to know if it is better to make one schema with all the diffrent types and querie it or use diffrent schemas?
 class DB {
-    static shared = null;
     constructor() {
         if (DB.instance) {
             return DB.instance;
@@ -17,7 +16,6 @@ class DB {
 
         this.db = undefined;
         this.mongoose = mongoose;
-
         DB.instance = this;
     }
 
@@ -93,10 +91,11 @@ class DB {
         const pois = await PointOfInterest.find().select({}).sort({ name: 1 });
         return pois
     }
-    async addPOI(inData) {
-        const validate = hej
-        const pois = await PointOfInterest.find().select({}).sort({ name: 1 });
-        return pois
+    async createNewPOI(inData, userID) {
+        const poi = await PointOfInterest.createPOI(inData);
+        const updateUser = await Users.addStore(userID, poi._id)
+        if (!updateUser) console.log("ERROR TO UPDATE USER IS STORE OWNER");
+        return poi
     }
     async getPOIByID(ID) {
         return await PointOfInterest.findById(ID).select({});
@@ -168,6 +167,15 @@ class DB {
             return null
         }
     }
+    async getUserPOI(userID) {
+        const poiIDs = await Users.getStoresID(userID);
+        if (poiIDs.length === 0) {
+            return null
+        } else {
+            const pois = await PointOfInterest.find({ _id: { $in: poiIDs } });
+            return pois
+        }
+    }
 
     async checkUsernameAndEmail(username, email) {
         try {
@@ -197,6 +205,9 @@ class DB {
     async deletUser(ID) {
         await Users.delete(ID);
     };
+    async deleteStore(userID, storeID) {
+        await Users.deleteStoreByID(userID, storeID)
+    }
 
     async addToken(token) {
         try {
@@ -215,6 +226,4 @@ class DB {
 
 }
 
-
-//är en singleton nu?
 module.exports = new DB();

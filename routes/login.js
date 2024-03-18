@@ -19,35 +19,35 @@ router.route('/')
     // handle validation here
     const validate = await validateLogin(req.body);
     if (validate.haveErrors) {
-      res.status(406).json({ error: "not vaild login crededitals" });
-      return
-    }
-    const user = await db.getUserLogin(
-      validate.validData.username,
-      validate.validData.password
-    );
+      res.status(406).redirect('/login');
+    } else {
+      const user = await db.getUserLogin(
+        validate.validData.username,
+        validate.validData.password
+      );
 
-    //user dose not exist
-    if (!user) {
-      return res.status(500).json({ error: "interval login error" });
-    }
+      //user dose not exist
+      if (user) {
+        // create jwt token
+        const token = await jwt.createToken(user);
+        if (token) {
+          await db.addToken(token);
+          // successfully identified
+          res.setHeader('Authorization', `Bearer ${token}`).status(200).json({
+            error: false,
+            username: user.username,
+            isAdmin: user.isAdmin,
+            description: `${user.username} is loggin`
+          });
+        } else {
+          res.status(500).redirect('/login');
+        }
 
-    // create jwt token
-    const token = await jwt.createToken(user);
-    if (!token) {
-      return res.status(500).json({ error: "interval token error" });
-    }
-    //add token to whitlist
-    await db.addToken(token);
-    // successfully identified
-    res.setHeader('Authorization', `Bearer ${token}`).status(200).json({
-      error: false,
-      username: user.username,
-      isAdmin: user.isAdmin,
-      description: `${user.username} is loggin`
-    });
+      } else {
+        res.status(500).redirect('/login');
+      }
 
-    return
+    }
   });
 
 
@@ -73,8 +73,6 @@ router.route('/register')
         res.status(403).json({ error: "Username or email exist" })
 
       } else {
-
-
         try {
           await db.userSingup(validate.validData);
           res.status(201).redirect('/login');

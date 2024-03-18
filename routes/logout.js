@@ -5,7 +5,7 @@ const db = require('../backend/data/db');
 const fun = require('../backend/auth/getDecodedToken');
 router.route('/')
     .get(async (req, res) => {
-        const token = await fun.getDecodeToken(req.headers.authorization);
+        const token = await fun(req.headers.authorization);
         if (token) {
             const deleted = await db.removeToken(token);
 

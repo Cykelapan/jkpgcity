@@ -35,11 +35,13 @@ app.get('/', async (req, res) => {
   const htmlFilePath = path.join(__dirname, "./frontend", "index.html")
 
   res.sendFile(htmlFilePath)
-  res.statusCode(200)
+  res.status(200)
 }).post(async (req, res) => {
   const data = await db.getPOITypes("STORES");
   res.send(data)
 });
+
+
 
 
 app.listen(SERVER_PORT, async (error) => {
