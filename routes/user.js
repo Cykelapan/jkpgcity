@@ -29,7 +29,7 @@ router.route('/')
         console.log(newData)
         // res.status(500).json({ error: 'Could not create new data' });
         
-        const data = validData(newData)
+        const data = await validData(newData)
         if (!data) {
           res.status(500).json({ error: 'Missing inputs' });
           return;
@@ -53,7 +53,12 @@ router.route('/')
         const { _id } = req.body
         const token = await decodeToken(req.headers.authorization)
         const isDeleted = await db.deletPOI(_id);
-        await db.deleteStore(token._id, _id)
+        
+        // console.log("mmeee here", token, token.id, _id);
+        
+        await db.deleteStore(token.id, _id)
+        
+        // console.log("done??");
         if (isDeleted) res.status(200).json({})
         else res.status(500).json({})
     });

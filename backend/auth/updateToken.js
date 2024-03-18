@@ -1,6 +1,5 @@
 "use strict";
 const jwt = require('jsonwebtoken');
-const validate = require("validator");
 const db = require('../data/db.js')
 
 async function updateTheToken(token, ownAStore) {

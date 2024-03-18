@@ -155,7 +155,7 @@ userSchema.methods.getStoresID = async function (userID) {
     }
 };
 
-userSchema.methods.deleteStoreByID = async function (userID, storeID) {
+userSchema.statics.deleteStoreByID = async function (userID, storeID) {
     try {
         const user = await this.findById(userID);
         user.store.pull(storeID);
