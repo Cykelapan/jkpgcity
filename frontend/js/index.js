@@ -34,17 +34,12 @@ loginForm.addEventListener("submit", async (event) => {
       username: form.username,
       password: form.password
     });
-    isLoggedIn.isAdmin = true;
   }
   else {
     isLoggedIn = await login({
       username: form.username,
       password: form.password
     });
-    
-    if (isLoggedIn) {
-      isLoggedIn.isAdmin = true;
-    }
   }
   
   if (isLoggedIn.error) {

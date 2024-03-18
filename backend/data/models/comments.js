@@ -33,7 +33,4 @@ itemComment.statics.removeComment = async function (commentID) {
     comment.delete();
 };
 
-
-console.log('Comments schema has been created')
-
 module.exports = mongoose.model('Comment', itemComment)

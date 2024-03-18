@@ -1,33 +1,31 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-const db = require('../backend/data/db');
-const auth = require('../backend/auth/authToken');
-const validData = require('../backend/validators/validPOIdata')
 const bodyParser = require('body-parser');
+
+const db = require('../backend/data/db');
+const validData = require('../backend/validators/validPOIdata')
 const decodeToken = require('../backend/auth/getDecodedToken');
 const updateToken = require('../backend/auth/updateToken');
+const auth = require('../backend/auth/authToken');
+
 router.use(bodyParser.json());
-
-
 
 router.route('/')
     .get(async (req, res,) => {
-        const userStores = [];
         const token = await decodeToken(req.headers.authorization)
-        if (token.ownAStore) {
-            const data = await db.getUserPOI(token._id)
-            res.status(200).json(data);
-        } else {
-            res.status(200).json(userStores);
+        
+        if (!token.ownAStore) {
+          return res.status(200).json([]);
         }
+        
+        const data = await db.getUserPOI(token._id)
+        return res.status(200).json(data);
     })
 
 
     .post(async (req, res) => {
         const newData = req.body
-        console.log(newData)
-        // res.status(500).json({ error: 'Could not create new data' });
         
         const data = await validData(newData)
         if (!data) {
@@ -51,16 +49,13 @@ router.route('/')
 
     .delete(async (req, res) => {
         const { _id } = req.body
+        
         const token = await decodeToken(req.headers.authorization)
+        
         const isDeleted = await db.deletPOI(_id);
-        
-        // console.log("mmeee here", token, token.id, _id);
-        
         await db.deleteStore(token.id, _id)
         
-        // console.log("done??");
-        if (isDeleted) res.status(200).json({})
-        else res.status(500).json({})
+        res.status(isDeleted ? 200 : 500).json({})
     });
 
 module.exports = router;
