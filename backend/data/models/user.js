@@ -47,8 +47,12 @@ const userSchema = mongoose.Schema({
     }]
 
 }).pre('save', async function () {
-    console.log(this.password)
-    const salt = await bycrypt.genSalt(10);
+    const hashCost = 10;
+    if (this.password.contains(`$2b$${hashCost}$`)) {
+      return;
+    }
+    console.log("this.password", this.password)
+    const salt = await bycrypt.genSalt(hashCost);
     this.password = await bycrypt.hash(this.password, salt);
 });
 
