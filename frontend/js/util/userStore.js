@@ -78,7 +78,7 @@ export async function userStoreGenerateView() {
     address.querySelector("input:nth-child(1)").value = addressFormat[0];
     address.querySelector("input:nth-child(2)").value = addressFormat[1];
     address.querySelector("input:nth-child(3)").value = addressFormat[2];
-
+    
     google_id.querySelector("input").value = store.google_id;
 
     form.addEventListener("submit", async (event) => {

@@ -27,20 +27,26 @@ router.route('/')
     .post(async (req, res) => {
         const newData = req.body
         console.log(newData)
-        res.status(500).json({ error: 'Could not create new data' });
-
+        // res.status(500).json({ error: 'Could not create new data' });
+        
         const data = validData(newData)
-        if (data) {
-            const newObject = await db.createNewPOI(data, token.id)
-            if (newObject) {
-                const token = await decodeToken(req.headers.authorization)
-                const updatedToken = await updateToken(token, true);
-                res.status(201).header('Authorization', `Bearer ${newToken}`).json({ newObject });
-            }
-            else res.status(500).json({ error: 'Could not create new data' });
-        } else {
-            res.status(500).json({ error: 'Missing inputs' });
+        if (!data) {
+          res.status(500).json({ error: 'Missing inputs' });
+          return;
         }
+        
+        const token = await decodeToken(req.headers.authorization)
+        const newObject = await db.createNewPOI(data, token.id)
+        
+        if (newObject) {
+          res.status(500).json({ error: 'Could not create new data' });
+          return;
+        }
+        
+        const updatedToken = await updateToken(token, true);
+        res.status(201)
+          .header('Authorization', `Bearer ${updatedToken}`)
+          .json({ newObject });
     })
 
     .delete(async (req, res) => {

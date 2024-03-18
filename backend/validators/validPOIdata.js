@@ -17,17 +17,17 @@ async function checkIntrest(inValue) {
 
 async function getValidDataObject(inValue) {
     const district = await checkDistrict(inValue.district)
-    const intrest = await checkIntrest(inValue.district)
+    const intrest = await checkIntrest(inValue.interestType)
     if (intrest.length == 0 || !district) return null
     return {
-        google_id: "",
-        name: inValue.name ?? "No name",
-        address: inValue.address ?? "unknown",
+        google_id: inValue.google_id ?? "",
+        name: inValue.storeName ?? "No name",
+        address: inValue.streetName ?? "unknown",
         district: district,
         openingHours: "unknown",
         website: inValue.website ?? "unknown",
         description: inValue.description,
-        contactPhoneNumber: inValue.contactPhoneNumber,
+        contactPhoneNumber: inValue.contactNumber,
         coordinates: {
             longitude: 0,
             latitude: 0
