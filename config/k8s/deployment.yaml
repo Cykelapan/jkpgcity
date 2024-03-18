@@ -6,16 +6,22 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels:  # Ensure correct "matchLabels" key
-      app: jkpg-app # Ensure label matches pod template metadata
+    matchLabels:  
+      app: jkpg-app 
   template:
     metadata:
-      labels:  # Ensure correct "labels" key
-        app: jkpg-app # Ensure label matches selector
+      labels:  
+        app: jkpg-app 
     spec:
       containers:
         - name: jkpg-app
           image: localhost:5000/jkpg-app:latest
+          env:
+            - name: MONGO_URI
+              value: "mongodb://mongodb-service:27017/jkpg_db"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5500
           
           
               

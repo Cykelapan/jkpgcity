@@ -4,13 +4,13 @@ services:
       - .env
     image: mongo
     restart: always
-    container_name: ${MONGO_CONTAINER_NAME}
+    container_name: jkpg_db
     environment:
-      - MONGO_HOST=${MONGO_HOST}
+      - MONGO_URI=mongodb://localhost:27017/development
     ports:
       - "5551:${MONGO_PORT}"
     volumes:
-      - mongo_data:/data/db
+      - mongo_data_dev:/data/db
 
 volumes:
   mongo_data:

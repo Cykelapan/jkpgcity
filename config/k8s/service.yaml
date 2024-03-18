@@ -4,11 +4,12 @@ metadata:
   name: jkpg-service #own service name
   namespace: jkpg-city-replica
 spec:
+  type: LoadBalancer
   selector: 
     app: jkpg-app
   ports:
     - protocol: TCP
-      port: 5500
+      port: 48484
       targetPort: 5500
 
 

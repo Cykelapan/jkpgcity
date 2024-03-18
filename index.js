@@ -30,7 +30,7 @@ app.use('/districts', require('./routes/district'));
 app.use('/userpage', auth.requiredUserLoggedIn, require('./routes/user')); // hur ska den användas
 //app.use('/admin', auth.requiredAdminLoggedIn, requrie('./routes/admin')); // används ej?
 
-app.get("/interestType", async(req, res) => {
+app.get("/interestType", async (req, res) => {
   res.json(INTEREST);
 });
 
@@ -38,17 +38,22 @@ app.get('/', async (req, res) => {
   const htmlFilePath = path.join(__dirname, "./frontend", "index.html")
 
   res.status(200).sendFile(htmlFilePath)
-}).post(async (req, res) => {
-  const data = await db.getPOITypes("STORES");
-  res.send(data)
-});
+})
 
 
+const setupServer = async () => {
+  await db.connect();
+  await db.entryData();
+  console.log("SETUP")
+  app.listen(SERVER_PORT, (error) => { if (error) { console.log(error); } })
+}
+setupServer();
 
-
+/*
 app.listen(SERVER_PORT, async (error) => {
   if (error) { console.log(error); }
   await db.connect();
   await db.entryData();
   console.log(`Server runing on ${SERVER_PORT}`)
 });
+*/

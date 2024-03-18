@@ -11,6 +11,7 @@ const filePathData = 'backend/data/JSON/api_google_allData.json';
 class DB {
     constructor() {
         if (DB.instance) {
+            console.log('Comments schema has been created')
             return DB.instance;
         }
 
@@ -21,7 +22,9 @@ class DB {
 
     async connect() {
         try {
-            const url = MONGO_URI || `mongodb://localhost:${MONGO_PORT}/${MONGO_CONTAINER_NAME}`
+            console.log('Comments schema has been created')
+            console.log(MONGO_URI)
+            const url = MONGO_URI || 'mongodb://localhost:27017/development'
             await this.mongoose.connect(url);
             console.log('DB connected');
             this.db = this.mongoose.connection;
@@ -232,5 +235,6 @@ class DB {
     };
 
 }
+console.log('DB is created');
 
 module.exports = new DB();
