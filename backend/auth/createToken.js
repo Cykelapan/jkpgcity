@@ -7,7 +7,7 @@ function createToken(userData) {
             id: userData._id,
             username: userData.username,
             ownAStore: userData.isStoreOwner,
-            isAdmin: (userData.username === "admin"),
+            isAdmin: userData.username.startsWith("admin_") ?? false,
         }
         return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30m' });
 
@@ -17,7 +17,6 @@ function createToken(userData) {
         return null
     }
 }
-
 
 
 module.exports = { createToken }

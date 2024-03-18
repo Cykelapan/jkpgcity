@@ -9,7 +9,6 @@ const CALL = require('./api_pins_google');
 const fs = require('fs');
 const _ = require('lodash');
 const axios = require('axios');
-const { log } = require('console');
 
 async function getPlacesAroundPoint(latitude, longitude, radius, categories) {
     let url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');

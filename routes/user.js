@@ -1,32 +1,33 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-const db = require('../backend/data/db');
-const auth = require('../backend/auth/authToken');
-const validData = require('../backend/validators/validPOIdata')
 const bodyParser = require('body-parser');
+
+const db = require('../backend/data/db');
+const validData = require('../backend/validators/validPOIdata')
 const decodeToken = require('../backend/auth/getDecodedToken');
 const getToken = require('../backend/auth/getTokenRaw');
 const updateToken = require('../backend/auth/updateToken');
+const auth = require('../backend/auth/authToken');
+
 router.use(bodyParser.json());
-
-
 
 router.route('/')
     .get(async (req, res,) => {
-        const userStores = [];
         const token = await decodeToken(req.headers.authorization)
-        if (token.ownAStore) {
-            const data = await db.getUserPOI(token.id)
-            res.status(200).json(data);
-        } else {
-            res.status(200).json(userStores);
+        
+        if (!token.ownAStore) {
+          return res.status(200).json([]);
         }
+        
+        const data = await db.getUserPOI(token._id)
+        return res.status(200).json(data);
     })
 
 
     .post(async (req, res) => {
         const newData = req.body
+        
         const data = await validData(newData)
         if (!data) {
             res.status(500).json({ error: 'Missing inputs' });
@@ -52,6 +53,7 @@ router.route('/')
 
     .delete(async (req, res) => {
         const { _id } = req.body
+        
         if (_id) {
             const token = await decodeToken(req.headers.authorization)
             const isDeleted = await db.deletPOI(_id);
@@ -61,7 +63,6 @@ router.route('/')
 
         }
         else res.status(500).json({})
-
     });
 
 

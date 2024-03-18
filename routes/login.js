@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
+
 const validateRegister = require('../backend/validators/register');
 const validateLogin = require('../backend/validators/login');
 const jwt = require('../backend/auth/createToken');
@@ -14,40 +15,38 @@ router.route('/')
     res.status(200).send('<h1> Login PAGE </h1>');
   })
 
-
   .post(async (req, res) => {
     // handle validation here
     const validate = await validateLogin(req.body);
     if (validate.haveErrors) {
-      res.status(406).redirect('/login');
-    } else {
-      const user = await db.getUserLogin(
-        validate.validData.username,
-        validate.validData.password
-      );
-
-      //user dose not exist
-      if (user) {
-        // create jwt token
-        const token = await jwt.createToken(user);
-        if (token) {
-          await db.addToken(token);
-          // successfully identified
-          res.setHeader('Authorization', `Bearer ${token}`).status(200).json({
-            error: false,
-            username: user.username,
-            isAdmin: user.isAdmin,
-            description: `${user.username} is loggin`
-          });
-        } else {
-          res.status(500).redirect('/login');
-        }
-
-      } else {
-        res.status(500).redirect('/login');
-      }
-
+      return res.status(406).redirect('/login');
     }
+    
+    const user = await db.getUserLogin(
+      validate.validData.username,
+      validate.validData.password
+    );
+    
+    //user dose not exist
+    if (!user) {
+      return res.status(500).redirect('/login');
+    }
+    
+    // create jwt token
+    const token = await jwt.createToken(user);
+    if (!token) {
+      res.status(500).redirect('/login');
+      return;
+    }
+    
+    await db.addToken(token);
+    // successfully identified
+    res.setHeader('Authorization', `Bearer ${token}`).status(200).json({
+      error: false,
+      username: user.username,
+      isAdmin: user.isAdmin,
+      description: `${user.username} is loggin`
+    });
   });
 
 
@@ -55,8 +54,6 @@ router.route('/register')
   .get(async (req, res) => {
     res.status(200).json({});
   })
-
-
 
   .post(async (req, res) => {
     const validate = await validateRegister(req.body);
@@ -67,7 +64,10 @@ router.route('/register')
       res.status(200).json({ error: validate.errors })
     } else {
 
-      const checkDB = await db.checkUsernameAndEmail(validate.validData.username, validate.validData.email);
+      const checkDB = await db.checkUsernameAndEmail(
+        validate.validData.username, 
+        validate.validData.email
+      );
 
       if (checkDB.usernameExist || checkDB.emailExist) {
         res.status(403).json({ error: "Username or email exist" })
