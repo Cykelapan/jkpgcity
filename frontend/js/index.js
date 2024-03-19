@@ -26,7 +26,6 @@ loginForm.addEventListener("submit", async (event) => {
   const myFormData = new FormData(event.target);
   const form = Object.fromEntries(myFormData);
 
-  console.log(form);
   let isLoggedIn
 
   if (form.isRegister) {
@@ -43,7 +42,7 @@ loginForm.addEventListener("submit", async (event) => {
   }
   
   if (isLoggedIn.error) {
-    return
+    return console.error("Encountered error on login");
   }
   
   console.log("isLoggedIn", isLoggedIn);

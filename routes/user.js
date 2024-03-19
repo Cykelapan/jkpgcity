@@ -30,7 +30,7 @@ router.route('/')
         
         const data = await validData(newData)
         if (!data) {
-            res.status(500).json({ error: 'Missing inputs' });
+            res.status(400).json({ error: 'Missing inputs' });
             return;
         }
 
@@ -39,16 +39,17 @@ router.route('/')
 
         if (!newObject) {
             res.status(500).json({ error: 'Could not create new data' });
+            return; // no return here??
         }
 
         if (token.isStoreOwner) {
-            res.status(201).json({ newObject });
+            res.status(200).json({ newObject });
         } else {
             const oldT = await getToken(req.headers.authorization)
             await db.removeToken(oldT)
             const updatedToken = await updateToken(token, true);
             res
-              .status(201)
+              .status(202)
               .setHeader('Authorization', `Bearer ${updatedToken}`)
               .json({})
         }

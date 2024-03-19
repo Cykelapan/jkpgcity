@@ -28,9 +28,9 @@ const validateRegister = async (inDataJSON) => {
     let validationErrors = [];
 
     const missingFields = _.difference(nameFileds, _.keys(inDataJSON));
-    console.log(missingFields);
 
     if (missingFields.length > 0) {
+        console.log(missingFields);
         validationErrors.push(`Missing required fields: ${missingFields.join(', ')}`);
     }
 

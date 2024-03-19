@@ -19,7 +19,7 @@ router.route('/')
     // handle validation here
     const validate = await validateLogin(req.body);
     if (validate.haveErrors) {
-      return res.status(406).redirect('/login');
+      return res.status(400).redirect('/login');
     }
     
     const user = await db.getUserLogin(
@@ -61,7 +61,7 @@ router.route('/register')
     //if some data is missing
     if (validate.haveErrors) {
       //send back whats missing
-      res.status(200).json({ error: validate.errors })
+      res.status(400).json({ error: validate.errors })
     } else {
 
       const checkDB = await db.checkUsernameAndEmail(
@@ -70,7 +70,7 @@ router.route('/register')
       );
 
       if (checkDB.usernameExist || checkDB.emailExist) {
-        res.status(403).json({ error: "Username or email exist" })
+        res.status(401).json({ error: "Username or email exist" })
 
       } else {
         try {
