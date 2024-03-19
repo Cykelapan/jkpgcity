@@ -15,7 +15,7 @@ class DB {
         }
 
         console.log('DB class is creating');
-        
+
         this.db = undefined;
         this.mongoose = mongoose;
         DB.instance = this;
@@ -97,9 +97,9 @@ class DB {
     async createNewPOI(inData, userID) {
         const poi = await PointOfInterest.createPOI(inData);
         if (!poi) {
-          return null
+            return null
         }
-        
+
         console.log("createNewPOI :", poi);
         const updateUser = await Users.addStore(userID, poi.id);
         if (!updateUser) console.log("ERROR TO UPDATE USER IS STORE OWNER");
@@ -140,10 +140,10 @@ class DB {
     async postPOIComment(poiID, userID, inComment) {
         const newComment = await Comments.addComment(userID, inComment);
         if (!newComment) {
-          await Comments.removeComment(newComment._id);
-          return
+            await Comments.removeComment(newComment._id);
+            return
         }
-        
+
         PointOfInterest.addComment(poiID, newComment);
         Users.addComment(userID, newComment);
     }

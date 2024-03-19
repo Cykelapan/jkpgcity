@@ -46,15 +46,19 @@ const userSchema = mongoose.Schema({
         ref: `Comment`
     }]
 
-}).pre('save', async function () {
-    const hashCost = 10;
-    if (this.password.startsWith(`$2b$${hashCost}$`)) {
-      return;
+})
+
+userSchema.statics.register = async function (data) {
+    try {
+        const hashCost = 10;
+        const salt = await bycrypt.genSalt(hashCost);
+        data.password = await bycrypt.hash(data.password, salt);
+        const newUser = await new this(data);
+        await newUser.save()
+    } catch (error) {
+        throw error
     }
-    console.log("this.password", this.password)
-    const salt = await bycrypt.genSalt(hashCost);
-    this.password = await bycrypt.hash(this.password, salt);
-});
+}
 
 userSchema.statics.login = async function (username, password) {
     try {
