@@ -19,6 +19,7 @@ async function getVerifyToken(token) {
     return new Promise(function (resolve, reject) {
         jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, async (err, decodeToken) => {
             if (err) {
+                resolve(null);
                 await db.removeToken(token)
             } else {
                 resolve(decodeToken);
