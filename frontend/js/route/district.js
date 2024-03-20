@@ -4,14 +4,18 @@ import request from "../util/request.js"
 
 const discoverHeadline = document.querySelector(".discover-district-headline");
 const discoverContainer = document.querySelector("[data-source=discover] > .discover-district");
+const discoverFilterContainer = document.querySelector(".discover-district-filter");
+
 const discover_template = document.querySelector("#discover-template");
 const discover_detail_template = document.querySelector("#discover-detail-template");
+const discover_filter_template = document.querySelector("#discover-filter-template");
 
 const controller = new AbortController();
 const signal = controller.signal;
 
 let districtList = [];
 let districtDetailList = [];
+let districtFilters = {};
 
 export function districtGenerateView() {
   while (discoverContainer.hasChildNodes()) {
@@ -29,8 +33,8 @@ export function districtGenerateView() {
     
     districtElement.addEventListener("click", async (event) => {
       let getDisctrictName = event.currentTarget.dataset.district;
-      await getDisctrictDetail(getDisctrictName);
       
+      await getDisctrictDetail(getDisctrictName);
       await districtDetailGenerateView();
       
       discoverHeadline.textContent = `Discover ${getDisctrictName}`;
@@ -41,10 +45,80 @@ export function districtGenerateView() {
   }
 }
 
+export function removeFilterView() {
+  while (discoverFilterContainer.hasChildNodes()) {
+    discoverFilterContainer.removeChild(discoverFilterContainer.firstChild);
+  }
+}
+
+export function addFilterView() {
+  while (discoverFilterContainer.hasChildNodes()) {
+    discoverFilterContainer.removeChild(discoverFilterContainer.firstChild);
+  }
+  
+  const newElement = discover_filter_template.content.cloneNode(true);
+  const filters = newElement.querySelectorAll("select");
+  
+  for (let filter of filters) {
+    if (districtFilters[filter.name]) {
+      filter.value = districtFilters[filter.name].name;
+    }
+     if (filter.name === "name") {
+       filter.addEventListener("change", async(event) => {
+         districtFilters[filter.name] = {
+           name: event.target.value,
+           rearrange: (a, b) => {
+             if (event.target.value === "asc") {
+               return a.name.localeCompare(b.name, "sv", { sensitivity: "variant" });
+             }
+             return b.name.localeCompare(a.name, "sv", { sensitivity: "variant" });
+           }
+         }
+         sortDistrictDetailList();
+       });
+     }
+     if (filter.name === "date") {
+       filter.addEventListener("change", async(event) => {
+         districtFilters[filter.name] = {
+           name: event.target.value,
+           rearrange: (a, b) => {
+             if (event.target.value === "asc") {
+               return a.createdAt.localeCompare(b.createdAt, "sv", { sensitivity: "variant" })
+             }
+             return b.createdAt.localeCompare(a.createdAt, "sv", { sensitivity: "variant" })
+           }
+         }
+         sortDistrictDetailList();
+       });
+     }
+  }
+  
+  discoverFilterContainer.appendChild(newElement);
+}
+
+
+function sortDistrictDetailList() {
+  districtDetailList.sort((a, b) => {
+    for (let filter in districtFilters) {
+      if (typeof districtFilters[filter].rearrange !== "function") {
+        continue;
+      }
+      
+      const res = districtFilters[filter].rearrange(a, b) === 1 ? true : false;
+      if (res) { return true; }
+    }
+    
+    return false;
+  });
+  districtDetailGenerateView();
+}
+
 export function districtDetailGenerateView() {
   while (discoverContainer.hasChildNodes()) {
     discoverContainer.removeChild(discoverContainer.firstChild);
   }
+  
+  addFilterView();
   
   for (let detailDistrict of districtDetailList) {
     const newElement = discover_detail_template.content.cloneNode(true);

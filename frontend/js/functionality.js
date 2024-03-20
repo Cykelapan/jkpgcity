@@ -1,5 +1,5 @@
 "use strict";
-import { getDisctrict, districtGenerateView } from "./route/district.js"
+import { getDisctrict, districtGenerateView, removeFilterView } from "./route/district.js"
 import { userStoreGenerateView } from "./util/userStore.js"
 
 const targetButtons = document.querySelectorAll("[data-target]");
@@ -34,6 +34,7 @@ export async function trigger() {
     return console.log("get Detail");
   }
   if (currentScreen === "discover") {
+    removeFilterView();
     await getDisctrict();
     districtGenerateView();
     return;
