@@ -27,7 +27,7 @@ for (let targetBtn of targetButtons) {
 
 export async function trigger() {
   if (currentScreen === "login" && isSwitchScreen) {
-    userStoreGenerateView();
+    await userStoreGenerateView();
     return
   }
   if (currentScreen === "discover" && isSwitchScreen) {

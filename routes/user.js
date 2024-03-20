@@ -51,7 +51,7 @@ router.route('/')
             res
               .status(202)
               .setHeader('Authorization', `Bearer ${updatedToken}`)
-              .json({})
+              .json({ acknowledged: true })
         }
     })
 
@@ -62,11 +62,11 @@ router.route('/')
             const token = await decodeToken(req.headers.authorization)
             const isDeleted = await db.deletPOI(_id);
             await db.deleteStore(token.id, _id)
-            if (isDeleted) res.status(200).json({})
-            else res.status(500).json({})
+            if (isDeleted) res.status(200).json({ acknowledged: true })
+            else res.status(500).json({ acknowledged: false })
 
         }
-        else res.status(500).json({})
+        else res.status(500).json({ acknowledged: false })
     });
 
 

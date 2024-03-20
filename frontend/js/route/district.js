@@ -123,6 +123,7 @@ export function districtDetailGenerateView() {
       adminRemoveBtn.addEventListener("click", async(event) => {
         const adminRes = await adminRemoveStore(detailDistrict);
         if (adminRes.ok) {
+          await getDisctrictDetail(detailDistrict.district);
           await districtDetailGenerateView();
         }
       });

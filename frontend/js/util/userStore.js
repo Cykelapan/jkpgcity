@@ -32,7 +32,10 @@ export async function userStoreGenerateView() {
     const removeBtn = newElement.querySelector("span:last-child > button");
 
     removeBtn.addEventListener("click", async (event) => {
-      await userDeleteStore(store);
+      const deletResposne = await userDeleteStore(store);
+      if (deletResposne.acknowledged) {
+        await userStoreGenerateView();
+      }
     });
 
     const header = newElement.querySelector("h3");
@@ -87,12 +90,18 @@ export async function userStoreGenerateView() {
       const data = Object.fromEntries(parseForm);
 
       let postResponse = await postUserData(data);
+      
+      if (postResponse.acknowledged) {
+        await userStoreGenerateView();
+      }
     });
 
     userStoreContainer.appendChild(newElement);
   }
 
   const createStoreForm = userStore.content.cloneNode(true);
+  
+  const removeBtn = createStoreForm.querySelector("span:last-child");
   const form = createStoreForm.querySelector(".updateStoreForm");
 
   const details = createStoreForm.querySelector(".discover-district-detail-more");
@@ -113,12 +122,17 @@ export async function userStoreGenerateView() {
     interestType.querySelector("select").appendChild(option);
   }
 
+  removeBtn.style.display = "none";
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const parseForm = new FormData(event.target);
     const data = Object.fromEntries(parseForm);
 
     let postResponse = await postUserData(data);
+    if (postResponse.acknowledged) {
+      await userStoreGenerateView();
+    }
   });
   userStoreContainer.appendChild(createStoreForm);
 }
@@ -164,7 +178,6 @@ export async function postUserData(data) {
     });
 
     const temp = await response.json();
-    
     return temp;
   } catch (error) {
     console.error(`Fetch userpage post error: ${error.message}`);
