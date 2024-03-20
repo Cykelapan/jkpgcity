@@ -1,9 +1,15 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
+const bodyParser = require('body-parser');
+
 const db = require('../backend/data/db');
 const check = require('../backend/validators/validParmas');
 const auth = require('../backend/auth/authToken.js');
+const decodeToken = require('../backend/auth/getDecodedToken');
+
+
+router.use(bodyParser.json());
 
 router.get("/", async (req, res) => {
   const data = await db.getAllDirstrict();
@@ -16,11 +22,19 @@ router.post("/", auth.requiredAdminLoggedIn, async (req, res) => {
 });
 
 router.delete("/", auth.requiredAdminLoggedIn, async (req, res) => {
-  // safe route
-
-  console.log(req);
-
-  res.json({ ok: true });
+  const { _id } = req.body
+  
+  
+  if (_id) {
+      const token = await decodeToken(req.headers.authorization)
+      const isDeleted = await db.deletPOI(_id);
+      await db.deleteStore(token.id, _id)
+      if (isDeleted) res.status(200).json({ ok: true })
+      else res.status(500).json({ ok: false })
+  }
+  else {
+    res.status(500).json({ ok: false })
+  }
 });
 
 

@@ -121,7 +121,10 @@ export function districtDetailGenerateView() {
     if (window.loginUser?.isAdmin) {
       const adminRemoveBtn = lastSpan.querySelector("button");
       adminRemoveBtn.addEventListener("click", async(event) => {
-        await adminRemoveStore(detailDistrict);
+        const adminRes = await adminRemoveStore(detailDistrict);
+        if (adminRes.ok) {
+          await districtDetailGenerateView();
+        }
       });
     }
     else {
@@ -154,6 +157,7 @@ export function districtDetailGenerateView() {
 
 export async function adminRemoveStore(store) {
   try {
+    console.log(store);
     const response = await request(`/districts`, {
       method: "DELETE",
       headers: CreateHeaders.getHeaders(),
@@ -163,6 +167,7 @@ export async function adminRemoveStore(store) {
     
     const res = await response.json();
     console.log("admin delete reposne", res);
+    return res;
   } catch (e) {
     console.log(e);
   }
