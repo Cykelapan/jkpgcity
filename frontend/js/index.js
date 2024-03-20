@@ -26,6 +26,10 @@ loginForm.addEventListener("submit", async (event) => {
   const myFormData = new FormData(event.target);
   const form = Object.fromEntries(myFormData);
 
+  if (validateLoginForm(form) === false) {
+    return console.error("Invalide input");
+  }
+
   if (form.isRegister) {
     let isRegister = await register({
       username: form.username,
@@ -33,7 +37,7 @@ loginForm.addEventListener("submit", async (event) => {
     });
     
     if (isRegister.ok !== 200) {
-      return console.warn("Register Failed");
+      return console.warn("Register Failed", isRegister);
     }
   }
   
@@ -77,3 +81,10 @@ window.addEventListener("load", async (event) => {
   // setLoginScreen()
   switchActiveScreen("discover");
 })
+
+function validateLoginForm(form) {
+  if (!form.username.length || !form.password.length) {
+    return false;
+  }
+  return true;
+}
