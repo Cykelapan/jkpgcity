@@ -52,9 +52,7 @@ export function removeFilterView() {
 }
 
 export function addFilterView() {
-  while (discoverFilterContainer.hasChildNodes()) {
-    discoverFilterContainer.removeChild(discoverFilterContainer.firstChild);
-  }
+  removeFilterView();
   
   const newElement = discover_filter_template.content.cloneNode(true);
   const filters = newElement.querySelectorAll("select");
@@ -63,34 +61,21 @@ export function addFilterView() {
     if (districtFilters[filter.name]) {
       filter.value = districtFilters[filter.name].name;
     }
-     if (filter.name === "name") {
-       filter.addEventListener("change", async(event) => {
-         districtFilters[filter.name] = {
-           name: event.target.value,
-           rearrange: (a, b) => {
-             if (event.target.value === "asc") {
-               return a.name.localeCompare(b.name, "sv", { sensitivity: "variant" });
-             }
-             return b.name.localeCompare(a.name, "sv", { sensitivity: "variant" });
-           }
-         }
-         sortDistrictDetailList();
-       });
-     }
-     if (filter.name === "date") {
-       filter.addEventListener("change", async(event) => {
-         districtFilters[filter.name] = {
-           name: event.target.value,
-           rearrange: (a, b) => {
-             if (event.target.value === "asc") {
-               return a.createdAt.localeCompare(b.createdAt, "sv", { sensitivity: "variant" })
-             }
-             return b.createdAt.localeCompare(a.createdAt, "sv", { sensitivity: "variant" })
-           }
-         }
-         sortDistrictDetailList();
-       });
-     }
+    
+    filter.addEventListener("change", async(event) => {
+      districtFilters[filter.name] = {
+        name: event.target.value,
+        rearrange: (a, b) => {
+          const first = a[filter.dataset.entry];
+          const second = b[filter.dataset.entry];
+          if (event.target.value === "asc") {
+            return first.localeCompare(second, "sv", { sensitivity: "variant" });
+          }
+          return second.localeCompare(first, "sv", { sensitivity: "variant" });
+        }
+      }
+      sortDistrictDetailList();
+    });
   }
   
   discoverFilterContainer.appendChild(newElement);
@@ -121,6 +106,7 @@ export function districtDetailGenerateView() {
   addFilterView();
   
   for (let detailDistrict of districtDetailList) {
+    // console.log(detailDistrict);
     const newElement = discover_detail_template.content.cloneNode(true);
     
     const storeElement = newElement.querySelector("strong");
