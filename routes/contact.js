@@ -7,7 +7,7 @@ router.route('/')
     .get(async (req, res,) => {
         const db = req.db;
 
-        res.status(200).send('<h1> CONTACT PAGE </h1>');
+        res.status(200).json({ description: "CONTACT PAGE" });
     })
     .post(async (req, res) => { res.json({}); });
 

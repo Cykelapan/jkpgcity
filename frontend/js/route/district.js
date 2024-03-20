@@ -103,10 +103,11 @@ export function districtDetailGenerateView() {
     discoverContainer.removeChild(discoverContainer.firstChild);
   }
   
-  addFilterView();
+  if (districtDetailList.length) {
+    addFilterView();
+  }
   
   for (let detailDistrict of districtDetailList) {
-    // console.log(detailDistrict);
     const newElement = discover_detail_template.content.cloneNode(true);
     
     const storeElement = newElement.querySelector("strong");

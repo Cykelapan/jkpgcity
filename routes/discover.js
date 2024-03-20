@@ -8,7 +8,7 @@ router.use(require('./interstOverview'));
 router.get('/', async (req, res,) => {
     const db = req.db;
 
-    res.status(200).send('<h1> Discover </h1>')
+    res.status(200).send({ ok: 200 })
 });
 
 

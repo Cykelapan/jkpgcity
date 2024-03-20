@@ -11,7 +11,7 @@ router.route('/')
     .get(async (req, res,) => {
         const db = req.db;
 
-        res.status(200).send('<h1> ADMIN PAGE </h1>');
+        res.status(200).json({ description: "ADMIN PAGE" });
     })
     .post(async (req, res) => { res.json({}); });
 

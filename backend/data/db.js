@@ -162,8 +162,7 @@ class DB {
     //Could return user and create a token at once
     async userSingup(userObject) {
         try {
-            const newUser = new Users(userObject);
-            await newUser.save();
+            await Users.register(userObject);
         } catch (error) {
             console.log(error)
             throw error;

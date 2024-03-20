@@ -26,26 +26,27 @@ loginForm.addEventListener("submit", async (event) => {
   const myFormData = new FormData(event.target);
   const form = Object.fromEntries(myFormData);
 
-  let isLoggedIn
-
   if (form.isRegister) {
-    isLoggedIn = await register({
+    let isRegister = await register({
       username: form.username,
       password: form.password
     });
+    
+    if (isRegister.ok !== 200) {
+      return console.warn("Register Failed");
+    }
   }
-  else {
-    isLoggedIn = await login({
-      username: form.username,
-      password: form.password
-    });
-  }
+  
+  let isLoggedIn = await login({
+    username: form.username,
+    password: form.password
+  });
+  
+  console.log("isLoggedIn", isLoggedIn);
   
   if (isLoggedIn.error) {
     return console.error("Encountered error on login");
   }
-  
-  console.log("isLoggedIn", isLoggedIn);
 
   window.loginUser = isLoggedIn;
 

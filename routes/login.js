@@ -54,8 +54,6 @@ router.route('/register')
     res.status(200).json({});
   })
 
-
-
 router.route('/register')
   .get(async (req, res) => {
     res.status(200).json({});
@@ -81,7 +79,7 @@ router.route('/register')
       } else {
         try {
           await db.userSingup(validate.validData);
-          res.status(201).redirect('/login');
+          res.status(201).json({ ok: 200 });
         } catch (error) {
           res.status(500).json({ error: "Internal error with add the data to the db" })
         }
