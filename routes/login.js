@@ -2,10 +2,14 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
+
 const validateRegister = require('../backend/validators/register');
 const validateLogin = require('../backend/validators/login');
+
 const jwt = require('../backend/auth/createToken');
 const db = require('../backend/data/db');
+
+const { isAdminByUsername } = require('../backend/validators/isAdminChecker.js');
 
 router.use(bodyParser.json());
 
@@ -43,7 +47,7 @@ router.route('/')
     res.setHeader('Authorization', `Bearer ${token}`).status(200).json({
       error: false,
       username: user.username,
-      isAdmin: user.isAdmin,
+      isAdmin: isAdminByUsername(user.username),
       description: `${user.username} is loggin`
     });
   });

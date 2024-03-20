@@ -1,5 +1,6 @@
 "use strict";
 const jwt = require('jsonwebtoken');
+const { isAdminByUsername } = require('../validators/isAdminChecker.js');
 
 function createToken(userData) {
     try {
@@ -7,7 +8,7 @@ function createToken(userData) {
             id: userData._id,
             username: userData.username,
             ownAStore: userData.isStoreOwner,
-            isAdmin: userData.username.startsWith("admin_") ?? false,
+            isAdmin: isAdminByUsername(userData.username),
         }
         return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30m' });
 
