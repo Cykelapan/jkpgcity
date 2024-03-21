@@ -3,33 +3,47 @@ import CreateHeaders from "../util/headerManager.js"
 import request from "../util/request.js"
 
 const discoverHeadline = document.querySelector(".discover-district-headline");
+const discoverVisualize = document.querySelector(".discover-district-visualize");
 const discoverContainer = document.querySelector("[data-source=discover] > .discover-district");
 const discoverFilterContainer = document.querySelector(".discover-district-filter");
 
 const discover_template = document.querySelector("#discover-template");
 const discover_detail_template = document.querySelector("#discover-detail-template");
 const discover_filter_template = document.querySelector("#discover-filter-template");
+const discover_visualize_template = document.querySelector("#discover-visualize-template");
 
 const controller = new AbortController();
 const signal = controller.signal;
 
 let districtList = [];
+let districtListColor = [];
 let districtDetailList = [];
 let districtFilters = {};
 
-export function districtGenerateView() {
+export async function districtGenerateView() {
   while (discoverContainer.hasChildNodes()) {
     discoverContainer.removeChild(discoverContainer.firstChild);
   }
   
+  const temps = [];
+  for (let district of districtList) {
+    const detail = await getDisctrictDetailReturn(district)
+    temps.push(detail);
+  }
+  
+  let loopIndex = 0;
+  
   for (let district of districtList) {
     const newElement = discover_template.content.cloneNode(true);
-    const title = newElement.querySelector(".card-title");
+    const title = newElement.querySelector(".card-title:nth-child(1)");
+    const store = newElement.querySelector(".card-title:nth-child(2)");
     title.textContent = district;
+    store.textContent = `Store: ${temps[loopIndex].length}`;
     
     const districtElement = newElement.querySelector(".discover-district-title");
     
     districtElement.dataset.district = district;
+    districtElement.style.backgroundColor = districtListColor[loopIndex];
     
     districtElement.addEventListener("click", async (event) => {
       let getDisctrictName = event.currentTarget.dataset.district;
@@ -42,6 +56,63 @@ export function districtGenerateView() {
     
     discoverContainer.appendChild(newElement);
     discoverHeadline.textContent = `Discover Jönköping`;
+    
+    loopIndex++;
+  }
+  
+  await visualizeGenerateView();
+}
+
+export function clearVisualizeView() {
+  while (discoverVisualize.hasChildNodes()) {
+    discoverVisualize.removeChild(discoverVisualize.firstChild);
+  }
+  
+  discoverVisualize.style.display = "none";
+}
+
+function generateRandomColor() {
+  return "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0");
+}
+
+export async function visualizeGenerateView() {
+  clearVisualizeView();
+  discoverVisualize.style.display = "";
+  
+  let loopIndex = 0;
+  const temps = [];
+  let totalLength = 0;
+  let pushupIndex = 0;
+  
+  for (let district of districtList) {
+    const detail = await getDisctrictDetailReturn(district)
+    temps.push({ name: district, places: detail });
+    
+    totalLength += detail.length;
+  }
+  
+  for (let place of temps) {
+    if (place.places.length !== 0) {
+      pushupIndex = 0;
+    }
+    const newElement = discover_visualize_template.content.cloneNode(true);
+    const container = newElement.querySelector("div");
+    
+    container.setAttribute("data-title-name", place.name);
+    container.style.setProperty("--var-position-index", `${pushupIndex}`);
+    
+    const elementCssVar = container.dataset.var;
+    const widthPercent = place.places.length/totalLength * 100;
+    
+    container.style.setProperty(elementCssVar, `${widthPercent}%`);
+    container.style.backgroundColor = districtListColor[loopIndex];
+    
+    discoverVisualize.appendChild(container);
+    loopIndex++;
+    
+    if (place.places.length === 0) {
+      pushupIndex++;
+    }
   }
 }
 
@@ -102,6 +173,8 @@ export function districtDetailGenerateView() {
   while (discoverContainer.hasChildNodes()) {
     discoverContainer.removeChild(discoverContainer.firstChild);
   }
+  
+  clearVisualizeView();
   
   if (districtDetailList.length) {
     addFilterView();
@@ -174,6 +247,20 @@ export async function adminRemoveStore(store) {
   }
 }
 
+export async function getDisctrictDetailReturn(district) {
+  try {
+    const response = await request(`/districts/${district}`, {
+      method: "GET",
+      headers: CreateHeaders.getHeaders(),
+      signal: signal
+    });
+    
+    return await response.json();
+  } catch (e) {
+    return [];
+  }
+}
+
 export async function getDisctrictDetail(district) {
   try {
     const response = await request(`/districts/${district}`, {
@@ -198,6 +285,11 @@ export async function getDisctrict() {
     });
     
     districtList = await response.json();
+    
+    for (let district of districtList) {
+      districtListColor.push(generateRandomColor());
+    }
+    
     return districtList;
   } catch (e) {
     console.log(e);

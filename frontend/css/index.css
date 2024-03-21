@@ -70,14 +70,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   
   border-radius: 1rem;
+  border: 2px black dashed;
   
   flex: 1 1 200px;
   background-color: teal;
   
   width: 200px;
   height: 100px;
+}
+
+.discover-district-title > span {
+  color: azure;
+  font-weight: 700;
+  text-shadow: 0px 0px 2px black;
+  text-align: center;
 }
 
 .discover-district-headline {
@@ -93,6 +102,41 @@ body {
   align-self: center;
   background-color: cadetblue;
   flex: 1 1 350px;
+}
+
+.discover-district-visualize {
+  width: 100%;
+  background-color: teal; 
+  display: flex;
+  
+  max-width: 1100px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  
+  height: 3rem;
+  padding: 1rem 0.5rem;
+  
+  justify-content: start;
+  align-items: center;
+}
+
+.discover-district-visualize-entry {
+  --var-width: 0px;
+  --var-position-index: 0;
+  position: relative;
+  
+  width: var(--var-width);
+  height: 38px;
+}
+
+.discover-district-visualize-entry::before {
+  position: absolute;
+  
+  top: calc(-100% + -50% * var(--var-position-index));
+  right: 50%;
+  transform: translateX(50%);
+  
+  content: attr(data-title-name);
 }
 
 @media screen and (max-width: 400px) {

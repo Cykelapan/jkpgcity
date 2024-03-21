@@ -30,9 +30,6 @@ export async function trigger() {
     await userStoreGenerateView();
     return
   }
-  if (currentScreen === "discover" && isSwitchScreen) {
-    return console.log("get Detail");
-  }
   if (currentScreen === "discover") {
     removeFilterView();
     await getDisctrict();
